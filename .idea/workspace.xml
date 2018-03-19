@@ -107,8 +107,8 @@
       <file leaf-file-name="application.css.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="285" column="28" lean-forward="false" selection-start-line="285" selection-start-column="28" selection-end-line="285" selection-end-column="28" />
+            <state relative-caret-position="-2539">
+              <caret line="867" column="31" lean-forward="false" selection-start-line="867" selection-start-column="31" selection-end-line="867" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -129,6 +129,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>item</find>
+      <find>back</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -424,12 +425,12 @@
       <option name="presentableId" value="Default" />
       <updated>1521380369539</updated>
       <workItem from="1521380370848" duration="1295000" />
-      <workItem from="1521394838826" duration="11862000" />
+      <workItem from="1521394838826" duration="12085000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13157000" />
+    <option name="totallyTimeSpent" value="13380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -746,8 +747,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="285" column="28" lean-forward="false" selection-start-line="285" selection-start-column="28" selection-end-line="285" selection-end-column="28" />
+        <state relative-caret-position="-2539">
+          <caret line="867" column="31" lean-forward="false" selection-start-line="867" selection-start-column="31" selection-end-line="867" selection-end-column="31" />
           <folding />
         </state>
       </provider>
