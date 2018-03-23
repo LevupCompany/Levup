@@ -1,11 +1,8 @@
 module ApplicationHelper
   #Модуль создания переменных экземпляра для динамического отображения названий страниц
-  def full_title(page_title)
-    base_title = "LevUP Company"
-    if page_title.empty?
-      base_title
-    else
-      "#{page_title} - #{base_title}"
+    def meta_title_for(title, site)
+      return site if title.blank?
+      title.include?(site) ? title : "#{title} — #{site}"
     end
+
   end
-end
