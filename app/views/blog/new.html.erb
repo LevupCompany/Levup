@@ -1,0 +1,39 @@
+<style> form #blog_name {
+  border: 1px solid #1faee2;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  padding: 10px;
+}
+form input{
+  font-size:1rem;
+  padding: 10px;
+}
+form .btn {
+  background: #1faae2;
+  btn: white;
+  border-radius:5px;
+}</style>
+
+<br>
+<br>
+<br>
+<div class="wrap">
+  <%= simple_form_for @blog, :url => { :action => "create" }, :input_html => {class: 'form'} do |blog|%>
+    <%= blog.label (:name), ("Название статьи") %><br>
+    <%= blog.text_field (:name) %>
+    <br>
+    <br>
+    <%= blog.text_field (:annotation) %>
+    <br>
+    <br>
+    <%= blog.input :tag, as: :select, :collection => [['Дизайн', 1], ['Разработка сайта', 2], ['CRM', 3],['Мобильные приложения', 4]], label: 'Выбор категории' %>
+    <br>
+    <br>
+    <%= blog.input (:description), :input_html => { class: 'ckeditor'} %>
+    <%= blog.input :image, as: :file %>
+    <%= blog.button :submit %>
+    <br>
+    <br>
+  <% end %>
+</div>

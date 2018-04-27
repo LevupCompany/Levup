@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.1.5'
+gem 'rails', '~> 5.1.6'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
@@ -16,6 +16,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.2'
 gem 'omniauth', '~> 1.8', '>= 1.8.1'
 gem 'metamagic'
+gem 'ckeditor'
+gem 'paperclip'
+gem 'simple_form'
+
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'

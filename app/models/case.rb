@@ -1,4 +1,4 @@
-class Blog < ApplicationRecord
+class Case < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :annotation, presence: true,length: {maximum:180}

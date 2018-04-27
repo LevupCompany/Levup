@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<form name="Site">
+  <h1>Тип сайта</h1>
+  <p>
+    <label for="corp_site">Корпоративный сайт</label>
+    <input type="radio" name="site_type" class="site_type" id="corp_site" value="corp_site" onchange="Prices(); arrsum(); arraySum(); calculating()" >
+  </p>
+  <p>
+    <label for="portal_site">Сайт-портал</label>
+    <input type="radio" name="site_type" class="site_type" id="portal_site" value="portal_site" onchange="Prices(); arrsum(); arraySum(); calculating() ">
+  </p>
+  <p>
+    <label for="lending">Лендинг</label>
+    <input type="radio" name="site_type" class="site_type" id="lending" value="lending" onchange="Prices(); arrsum(); arraySum(); calculating()">
+  </p>
+  <p>
+    <label for="ecommerce">Интернет-магазин</label>
+    <input type="radio" name="site_type" class="site_type" id="ecommerce" value="ecommerce" onchange="Prices(); arrsum(); arraySum(); calculating()">
+  </p>
+  <h2>Выберите дизайн</h2>
+  <p>
+    <label for="self_design">Свой дизайн</label>
+    <input type="radio"  name="site_design" id="self_design" value=400 class="design" onchange="arraySum(); calculating()"><span id="self_design-c" ></span>
+  </p>
+  <p>
+    <label for="template_design">Шаблонный дизайн</label>
+    <input type="radio"  name="site_design" id="template_design" value=100 class="design" onchange="arraySum(); calculating()"><span id="template_design-c" ></span>
+  </p>
+  <p>
+    <label for="author_design">Авторский дизайн</label>
+    <input type="radio"  name="site_design" id="author_design" value=600 class="design" onchange="arraySum(); calculating()"><span id="author_design-c"></span>
+  </p>
+  <p>
+    <label for="design_logo">Лого</label>
+    <input type="checkbox" name="design_logo" value=70 id="design_logo" class="design" onchange="arraySum(); calculating()"><span id="design_logo-c"></span>
+  </p>
+  <p>
+    <label for="design_banner">Баннер</label>
+    <input type="checkbox" name="design_banner" value=40 id="design_banner" class="design" onchange="arraySum(); calculating()"><span id="design_banner-c"></span>
+  </p>
+  <p>
+    <label for="design_page">Посадочная странница</label>
+    <input type="checkbox" name="design_page" value=200 id="design_page" class="design" onchange="arraySum(); calculating()"><span id="design_page-c"></span>
+  </p>
+  <h2>Выбор движка</h2>
+  <p>
+    <label for="engine_modx">MODX</label>
+    <input type="radio" name="engine" value="modx" id="engine_modx" onchange="Prices(); arrsum(); arraySum(); calculating() ">
+  </p>
+  <p>
+    <label for="engine_ruby">Ruby On Rails</label>
+    <input type="radio" name="engine" value="rails" id="engine_ruby" onchange="Prices(); arrsum(); arraySum(); calculating()">
+  </p>
+  <p>
+    <label for="engine_python">Python</label>
+    <input type="radio" name="engine" value="python" id="engine_python" onchange="Prices(); arrsum(); arraySum(); calculating()">
+  </p>
+  <h2>Выбор функционала</h2>
+  <p>
+    <label for="module_otzyvy">Отзывы</label>
+    <input type="checkbox"  name="module_otzyvy" value=100 id="module_otzyvy" class="functional" onchange="arrsum(); calculating()"><span id="otzyv"></span>
+  </p>
+  <p>
+    <label for="module_blog">Блог</label>
+    <input type="checkbox" name="module_blog" value=80 id="module_blog" class="functional" onchange="arrsum(); calculating()"><span id="blog"></span>
+  </p>
+  <p>
+    <label for="module_slider">Слайдер</label>
+    <input type="checkbox" name="module_slider" value=20 id="module_slider" class="functional" onchange="arrsum(); calculating()"><span id="slider"></span>
+  </p>
+  <p>
+    <label for="module_gallery">Фотогалерея</label>
+    <input type="checkbox" name="module_gallery" value=30 id="module_gallery" class="functional" onchange="arrsum(); calculating()"><span id="gallery"></span>
+  </p>
+  <p>
+    <label for="module_easycalc">Простой калькулятор</label>
+    <input type="checkbox" name="module_easycalc" value=50 id="module_easycalc" class="functional" onchange="arrsum(); calculating()"><span id="easycalc"></span>
+  </p>
+  <p>
+    <label for="module_hardcalc">Сложный калькулятор</label>
+    <input type="checkbox" name="module_hardcalc" value=200 id="module_hardcalc" class="functional" onchange="arrsum(); calculating()"><span id="hardcalc"></span>
+  </p>
+  <p>
+    <label for="module_formit">Обратная связь</label>
+    <input type="checkbox" name="module_formit" value=20 id="module_formit" class="functional" onchange="arrsum(); calculating()"><span id="formit"></span>
+  </p>
+  <p>
+    <label for="module_callback">Обратный звонок</label>
+    <input type="checkbox" name="module_callback" value=30 id="module_callback" class="functional" onchange="arrsum(); calculating()"><span id="callback"></span>
+  </p>
+  <p>
+    <label for="module_chat">Онлайн чат</label>
+    <input type="checkbox" name="module_chat" value=50 id="module_chat" class="functional" onchange="arrsum(); calculating()"><span id="chat"></span>
+  </p>
+  <p>
+    <label for="module_mailer">Подписка и рассылка</label>
+    <input type="checkbox" name="module_mailer" value=100 id="module_mailer" class="functional" onchange="arrsum(); calculating()"><span id="mailer"></span>
+  </p>
+  <p>
+    <label for="module_multilang">Мультиязычность</label>
+    <input type="checkbox" name="module_multilang" value=100 id="module_multilang" class="functional" onchange="arrsum(); calculating()"><span id="multilang"></span>
+  </p>
+  <p>
+    <label for="module_catalog">Каталог товаров</label>
+    <input type="checkbox" name="module_catalog" value=150 id="module_catalog" class="functional" onchange="arrsum(); calculating()"><span id="catalog"></span>
+  </p>
+  <p>
+    <label for="module_basket">Корзина</label>
+    <input type="checkbox" name="module_basket" value=80 id="module_basket" class="functional" onchange="arrsum(); calculating()"><span id="basket"></span>
+  </p>
+  <p>
+    <label for="module_payment">Онлайн оплата</label>
+    <input type="checkbox" name="module_payment" value=120 id="module_payment" class="functional" onchange="arrsum(); calculating()"><span id="payment"></span>
+  </p>
+  <p>
+    <label for="module_currency">Выбор валюты</label>
+    <input type="checkbox" name="module_currency" value=30 id="module_currency" class="functional" onchange="arrsum(); calculating()"><span id="currency"></span>
+  </p>
+  <p>
+    <label for="module_multitovar">Виды товаров</label>
+    <input type="checkbox" name="module_multitovar" value=60 id="module_multitovar" class="functional" onchange="arrsum(); calculating()"><span id="multitovar"></span>
+  </p>
+  <p>
+    <label for="module_sales">Акции</label>
+    <input type="checkbox" name="module_sales" value=40 id="module_sales" class="functional" onchange="arrsum(); calculating()"><span id="sales"></span>
+  </p>
+  <p>
+    <label for="module_api">API импортер</label>
+    <input type="checkbox" name="module_api" value=300 id="module_api" class="functional" onchange="arrsum(); calculating()"><span id="api"></span>
+  </p>
+  <p>
+    <label for="module_reg">Регистрация</label>
+    <input type="checkbox" name="module_reg" value=50 id="module_reg" class="functional" onchange="arrsum(); calculating()"><span id="reg"></span>
+  </p>
+  <p>
+    <label for="module_cabinet">Личный кабинет пользователя</label>
+    <input type="checkbox" name="module_cabinet" value=200 id="module_cabinet" class="functional" onchange="arrsum(); calculating()"><span id="cabinet"></span>
+  </p>
+  <p>
+    <label for="module_recomendation">Сопутствующие товары</label>
+    <input type="checkbox" name="module_recomendation" value=40 id="module_recomendation" class="functional" onchange="arrsum(); calculating()"><span id="recomendation"></span>
+  </p>
+  <p>
+    <label for="module_importer">Импортер ресурсов</label>
+    <input type="checkbox" name="module_importer" value=100 id="module_importer" class="functional" onchange="arrsum(); calculating()"><span id="importer"></span>
+  </p>
+  <p>
+    <label for="module_referal">Реферальная программа</label>
+    <input type="checkbox" name="module_referal"  value=100 id="module_referal" class="functional" onchange="arrsum(); calculating()"><span id="referal"></span>
+  </p>
+  <h2>Поддержка и наполнение сайта</h2>
+  <p>
+    <label for="content_easypage">Простая страница</label>
+    <input type="number" name="content_easypage" value=1 id="content_easypage" oninput="supportic(); calculating()" >
+    <input type="checkbox" name="c_easypage" class="support" onchange="supportic()"><span id="c-easypage"></span>
+  </p>
+  <p>
+    <label for="content_hardpage">Сложная страница</label>
+    <input type="number" name="content_hardpage" value=1 id="content_hardpage" oninput="supportic(); calculating()" >
+    <input type="checkbox" name="c_hardpage" class="support" onchange="supportic()"><span id="c-hardpage"></span>
+
+  </p>
+  <p>
+    <label for="content_editpage">Редактирование страницы</label>
+    <input type="number" name="content_editpage" value=1 id="content_editpage" oninput="supportic(); calculating()" >
+    <input type="checkbox" name="c_editpage" class="support" onchange="supportic()"><span id="c-editpage"></span>
+
+  </p>
+  <p>
+    <label for="content_post">Размещение материала</label>
+    <input type="number" name="content_post" value=1 id="content_post" oniput="supportic(); calculating()" >
+    <input type="checkbox" name="c_post" class="support" onchange="supportic(); calculating()"><span id="c-post"></span>
+
+  </p>
+  <p>
+    <label for="content_translate">Перевод страницы</label>
+    <input type="number" name="content_translate" value=1 id="content_translate" oninput="supportic(); calculating()" >
+    <input type="checkbox" name="c_translate" class="support" onchange="supportic(); calculating()"><span id="c-translate"></span>
+
+  </p>
+  <p>
+    <label for="module_googlemaps">Google карта</label>
+    <input type="checkbox" name="module_googlemaps" value=20 id="module_googlemaps" class="functional" onchange="arrsum(); calculating(); Prices()"><span id="c-googlemaps"></span>
+  </p>
+
+
+
+  <button>KUKU</button>
+</form>
+<script type="text/javascript">
+
+    function Prices(){
+        e_price = document.Site.engine.value;
+        otzyv = document.getElementById('module_otzyvy');
+        blog = document.getElementById('module_blog');
+        slider = document.getElementById('module_slider');
+        gallery = document.getElementById('module_gallery');
+        easycalc = document.getElementById('module_easycalc');
+        hardcalc = document.getElementById('module_hardcalc');
+        formit = document.getElementById('module_formit');
+        callback = document.getElementById('module_callback');
+        chat = document.getElementById('module_chat');
+        mailer = document.getElementById('module_mailer');
+        multilang = document.getElementById('module_multilang');
+        catalog = document.getElementById('module_catalog');
+        basket = document.getElementById('module_basket');
+        payment = document.getElementById('module_payment');
+        currency = document.getElementById('module_currency');
+        multitovar = document.getElementById('module_multitovar');
+        sales = document.getElementById('module_sales');
+        api = document.getElementById('module_api');
+        reg = document.getElementById('module_reg');
+        cabinet = document.getElementById('module_cabinet');
+        recomendation = document.getElementById('module_recomendation');
+        importer = document.getElementById('module_importer');
+        referal = document.getElementById('module_referal');
+
+
+        d_price = document.Site.site_type.value;
+        Selfic = document.getElementById('self_design');
+        template = document.getElementById('template_design');
+        author = document.getElementById("author_design");
+        switch(d_price){
+            case "corp_site":
+                Selfic.setAttribute('value', 400);
+                template.setAttribute('value', 100);
+                author.setAttribute('value', 600);
+                author.checked = true;
+                document.Site.design_logo.checked = true;
+                otzyv.checked = false;
+                blog.checked = true;
+                slider.checked = true;
+                gallery.checked = true;
+                easycalc.checked = false;
+                hardcalc.checked = false;
+                formit.checked = true;
+                callback.checked = false;
+                chat.checked = false;
+                mailer.checked = false;
+                multilang.checked = false;
+                catalog.checked = false;
+                basket.checked = false;
+                payment.checked = false;
+                currency.checked = false;
+                multitovar.checked = false;
+                sales.checked = false;
+                api.checked = false;
+                reg.checked = false;
+                cabinet.checked = false;
+                recomendation.checked = false;
+                importer.checked = false;
+                referal.checked = false;
+                break;
+            case "portal_site":
+                Selfic.setAttribute('value', 800);
+                template.setAttribute('value', 200);
+                author.setAttribute('value', 1200);
+                author.checked = true;
+                document.Site.design_logo.checked = true;
+                otzyv.checked = true;
+                blog.checked = true;
+                slider.checked = true;
+                gallery.checked = true;
+                easycalc.checked = false;
+                hardcalc.checked = false;
+                formit.checked = true;
+                callback.checked = true;
+                chat.checked = true;
+                mailer.checked = true;
+                multilang.checked = false;
+                catalog.checked = true;
+                basket.checked = false;
+                payment.checked = false;
+                currency.checked = false;
+                multitovar.checked = false;
+                sales.checked = false;
+                api.checked = false;
+                reg.checked = true;
+                cabinet.checked = true;
+                recomendation.checked = false;
+                importer.checked = false;
+                referal.checked = false;
+                break;
+            case "lending":
+                Selfic.setAttribute('value', 200);
+                template.setAttribute('value', 50);
+                author.setAttribute('value', 300);
+                author.checked = true;
+                document.Site.design_logo.checked = true;
+                otzyv.checked = false;
+                blog.checked = false;
+                slider.checked = true;
+                gallery.checked = true;
+                easycalc.checked = false;
+                hardcalc.checked = false;
+                formit.checked = true;
+                callback.checked = true;
+                chat.checked = true;
+                mailer.checked = false;
+                multilang.checked = false;
+                catalog.checked = false;
+                basket.checked = false;
+                payment.checked = false;
+                currency.checked = false;
+                multitovar.checked = false;
+                sales.checked = false;
+                api.checked = false;
+                reg.checked = false;
+                cabinet.checked = false;
+                recomendation.checked = false;
+                importer.checked = false;
+                referal.checked = false;
+                break;
+            case "ecommerce":
+                Selfic.setAttribute('value', 600);
+                template.setAttribute('value', 150);
+                author.setAttribute('value', 900);
+                author.checked = true;
+                document.Site.design_logo.checked = true;
+                otzyv.checked = false;
+                blog.checked = false;
+                slider.checked = true;
+                gallery.checked = true;
+                easycalc.checked = false;
+                hardcalc.checked = false;
+                formit.checked = true;
+                callback.checked = true;
+                chat.checked = false;
+                mailer.checked = false;
+                multilang.checked = false;
+                catalog.checked = true;
+                basket.checked = true;
+                payment.checked = true;
+                currency.checked = true;
+                multitovar.checked = true;
+                sales.checked = true;
+                api.checked = false;
+                reg.checked = false;
+                cabinet.checked = false;
+                recomendation.checked = false;
+                importer.checked = true;
+                referal.checked = false;
+        }
+        document.getElementById('self_design-c').innerHTML = Selfic.value + '$';
+        document.getElementById('template_design-c').innerHTML = template.value + '$';
+        document.getElementById('author_design-c').innerHTML = author.value + '$';
+        document.getElementById('design_logo-c').innerHTML = document.Site.design_logo.value + '$';
+        document.getElementById('design_banner-c').innerHTML = document.Site.design_banner.value + '$';
+        document.getElementById('design_page-c').innerHTML = document.Site.design_page.value + '$';
+
+
+        switch (e_price){
+            case "modx":
+                otzyv.setAttribute('value', 100);
+                blog.setAttribute('value', 80);
+                slider.setAttribute('value', 20);
+                gallery.setAttribute('value', 30);
+                easycalc.setAttribute('value', 50);
+                hardcalc.setAttribute('value', 250);
+                formit.setAttribute('value', 20);
+                callback.setAttribute('value', 30);
+                chat.setAttribute('value', 50);
+                mailer.setAttribute('value', 100);
+                multilang.setAttribute('value', 100);
+                catalog.setAttribute('value', 150);
+                basket.setAttribute('value', 80);
+                payment.setAttribute('value', 120);
+                currency.setAttribute('value', 30);
+                multitovar.setAttribute('value', 50);
+                sales.setAttribute('value', 40);
+                api.setAttribute('value', 400);
+                reg.setAttribute('value', 50);
+                cabinet.setAttribute('value', 200);
+                recomendation.setAttribute('value', 30);
+                importer.setAttribute('value', 150);
+                referal.setAttribute('value', 180);
+                break;
+            case "rails":
+                otzyv.setAttribute('value', 300);
+                blog.setAttribute('value', 240);
+                slider.setAttribute('value', 60);
+                gallery.setAttribute('value', 45);
+                easycalc.setAttribute('value', 90);
+                hardcalc.setAttribute('value', 360);
+                formit.setAttribute('value', 60);
+                callback.setAttribute('value', 90);
+                chat.setAttribute('value', 150);
+                mailer.setAttribute('value', 300);
+                multilang.setAttribute('value', 300);
+                catalog.setAttribute('value', 450);
+                basket.setAttribute('value', 300);
+                payment.setAttribute('value', 250);
+                currency.setAttribute('value', 60);
+                multitovar.setAttribute('value', 120);
+                sales.setAttribute('value', 100);
+                api.setAttribute('value', 900);
+                reg.setAttribute('value', 150);
+                cabinet.setAttribute('value', 600);
+                recomendation.setAttribute('value', 80);
+                importer.setAttribute('value', 300);
+                referal.setAttribute('value', 300);
+                break;
+            case "python":
+                otzyv.setAttribute('value', 320);
+                blog.setAttribute('value', 200);
+                slider.setAttribute('value', 40);
+                gallery.setAttribute('value', 35);
+                easycalc.setAttribute('value', 100);
+                hardcalc.setAttribute('value', 400);
+                formit.setAttribute('value', 90);
+                callback.setAttribute('value', 100);
+                chat.setAttribute('value', 200);
+                mailer.setAttribute('value', 200);
+                multilang.setAttribute('value', 200);
+                catalog.setAttribute('value', 350);
+                basket.setAttribute('value', 250);
+                payment.setAttribute('value', 200);
+                currency.setAttribute('value', 50);
+                multitovar.setAttribute('value', 150);
+                sales.setAttribute('value', 120);
+                api.setAttribute('value', 800);
+                reg.setAttribute('value', 200);
+                cabinet.setAttribute('value', 500);
+                recomendation.setAttribute('value', 100);
+                importer.setAttribute('value', 250);
+                referal.setAttribute('value', 350);
+                break;
+        }
+        document.getElementById('otzyv').innerHTML = otzyv.value + '$';
+        document.getElementById('blog').innerHTML = blog.value + '$';
+        document.getElementById('slider').innerHTML = slider.value + '$';
+        document.getElementById('gallery').innerHTML = gallery.value + '$';
+        document.getElementById('easycalc').innerHTML = easycalc.value + '$';
+        document.getElementById('hardcalc').innerHTML = hardcalc.value + '$';
+        document.getElementById('formit').innerHTML = formit.value + '$';
+        document.getElementById('callback').innerHTML = callback.value + '$';
+        document.getElementById('chat').innerHTML = chat.value + '$';
+        document.getElementById('mailer').innerHTML = mailer.value + '$';
+        document.getElementById('multilang').innerHTML = multilang.value + '$';
+        document.getElementById('catalog').innerHTML = catalog.value + '$';
+        document.getElementById('basket').innerHTML = basket.value + '$';
+        document.getElementById('payment').innerHTML = payment.value + '$';
+        document.getElementById('currency').innerHTML = currency.value + '$';
+        document.getElementById('multitovar').innerHTML = multitovar.value + '$';
+        document.getElementById('sales').innerHTML = sales.value + '$';
+        document.getElementById('api').innerHTML = api.value + '$';
+        document.getElementById('reg').innerHTML = reg.value + '$';
+        document.getElementById('cabinet').innerHTML = cabinet.value + '$';
+        document.getElementById('recomendation').innerHTML = recomendation.value + '$';
+        document.getElementById('importer').innerHTML = importer.value + '$';
+        document.getElementById('referal').innerHTML = referal.value + '$';
+        document.getElementById('c-googlemaps').innerHTML = document.Site.module_googlemaps.value + '$';
+
+
+    }
+    design = document.getElementsByClassName('design');
+    function arraySum(){
+        sum = 0;
+        for(i = 0; i < design.length; i++){
+            if (design[i].checked)
+                sum += parseInt(design[i].value);
+        }
+        console.log(sum);
+    }
+    arraySum(design);
+    functional = document.getElementsByClassName('functional');
+    function arrsum() {
+        summa = 0;
+        for(i=0; i < functional.length; i++){
+            if(functional[i].checked)
+                summa+= parseInt(functional[i].value);
+        }
+        console.log(summa);
+    }
+    arrsum(functional);
+    support = document.getElementsByClassName('support');
+    function supportic(){
+        EasypageValue = document.Site.content_easypage.value * 10;
+        document.Site.c_easypage.setAttribute('value', EasypageValue);
+        document.getElementById('c-easypage').innerHTML = EasypageValue + '$';
+        HardpageValue = document.Site.content_hardpage.value * 30;
+        document.Site.c_hardpage.setAttribute('value', HardpageValue);
+        document.getElementById('c-hardpage').innerHTML = HardpageValue + '$';
+        EditpageValue = document.Site.content_editpage.value * 10;
+        document.Site.c_editpage.setAttribute('value', EditpageValue);
+        document.getElementById('c-editpage').innerHTML = EditpageValue + '$';
+        PostValue = document.Site.content_post.value * 10;
+        document.Site.c_post.setAttribute('value', PostValue);
+        document.getElementById('c-post').innerHTML = PostValue + '$';
+        TranslateValue = document.Site.content_translate.value * 10;
+        document.Site.c_translate.setAttribute('value', TranslateValue);
+        document.getElementById('c-translate').innerHTML = TranslateValue + '$';
+        suumma=0;
+        for (i=0; i < support.length; i++){
+            if(support[i].checked)
+                suumma+= parseInt(support[i].value)
+        }
+        console.log(suumma);
+    }
+    supportic(support);
+
+    function calculating() {
+        calculatin = sum + summa + suumma;
+        console.log(calculatin);
+        document.title = calculatin + '$';
+    }
+
+</script>
+</body>
+</html>

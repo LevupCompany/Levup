@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<form name="Designs">
+  <h1>Разработка логотипа</h1>
+  <h2>Вид логотипа</h2>
+  <p>
+    <label for="text_logo">Текстовый</label>
+    <input type="radio" name="type_logo" id="text_logo" class="logo" onchange="designer()" value=25>
+    <span id="text-logo">25$</span>
+  </p>
+  <p>
+    <label for="text_logo">Эмблема</label>
+    <input type="radio" name="type_logo" id="icon_logo" class="logo" onchange="designer()" value=50>
+    <span id="icon-logo">50$</span>
+  </p>
+  <p>
+    <label for="text_logo">Комбинированный</label>
+    <input type="radio" name="type_logo" id="combo_logo" class="logo" onchange="designer()" value=75>
+    <span id="combo-logo">75$</span>
+  </p>
+  <p>
+    <label for="text_logo">Авторская разработка</label>
+    <input type="radio" name="type_logo" id="author_logo" class="logo" onchange="designer()" value=100>
+    <span id="author-logo">100$</span>
+  </p>
+  <h2>Дополнительная информация по логотипу</h2>
+  <p>
+    <label for="elements_logo">Отрисовка с множеством элементов</label>
+    <input type="checkbox" name="elements_logo" onchange="designer()" class="logo" id="elements_logo" disabled value=>
+    <span id="elements-logo"></span>
+  </p>
+  <p>
+    <label for="prototype_logo">Разработка логотипа по предоставленному прототипу</label>
+    <input type="checkbox" name="prototype_logo" onchange="designer()" class="logo" id="prototype_logo" disabled value=>
+    <span id="prototype-logo"></span>
+  </p>
+  <p>
+    <label for="variant_logo">Количество дополнительных вариантов логотипа для выбора заказчика.
+    </label>
+    <input type="number" name="variant_logo" id="variant_logo" oninput="designer()"  disabled value=0 >
+    <input type="hidden" name="variate_logo" disabled id="variate_logo">
+    <span id="variant-logo"></span>
+  </p>
+  <h2>Элементы фирменного стиля</h2>
+  <p>
+    <label for="oneside_visitka">Визитка односторонняя</label>
+    <input type="checkbox" name="oneside_visitka" onchange="designer()" class="firm" id="oneside_visitka" value =20>
+    <span id="oneside-visitka">20$</span>
+  </p>
+  <p>
+    <label for="twoside_visitka">Визитка двусторонняя</label>
+    <input type="checkbox" name="twoside_visitka" onchange="designer()" class="firm" id="twoside_visitka" value=30>
+    <span id="twoside-visitka">30$</span>
+  </p>
+  <p>
+    <label for="blank">Бланк</label>
+    <input type="checkbox" name="blank" onchange="designer()" class="firm" id="blank" value=30>
+    <span id="blanks">30$</span>
+  </p>
+  <p>
+    <label for="convert">Конверт</label>
+    <input type="checkbox" name="convert" onchange="designer()" class="firm" id="convert" value=25>
+    <span id="converts">25$</span>
+  </p>
+  <p>
+    <label for="cennik">Ценник</label>
+    <input type="checkbox" name="cennik" onchange="designer()" class="firm" id="cennik" value=10>
+    <span id="cenniks">10$</span>
+  </p>
+  <p>
+    <label for="papka">Папка</label>
+    <input type="checkbox" name="papka" onchange="designer()" class="firm" id="papka" value=25>
+    <span id="papkas">25$</span>
+  </p>
+  <p>
+    <label for="uniform">Униформа</label>
+    <input type="checkbox" name="uniform" onchange="designer()" class="firm" id="uniform" value=40>
+    <span id="uniforms">40$</span>
+  </p>
+  <p>
+    <label for="disk">Диск + вкладыш</label>
+    <input type="checkbox" name="disk" onchange="designer()" class="firm" id="disk" value=25>
+    <span id="disks">25$</span>
+  </p>
+  <p>
+    <label for="email_send">Письмо для e:mail рассылки</label>
+    <input type="checkbox" name="email_send" onchange="designer()" class="firm" id="email_send" value=75>
+    <span id="email-send">75$</span>
+  </p>
+  <p>
+    <label for="suvenir">Дизайн сувенирной продукции</label>
+    <input type="checkbox" name="suvenir" onchange="designer()" class="firm" id="suvenir" value=20>
+    <span id="suvenirs">20$</span>
+  </p>
+  <p>
+    <label for="flier">Разработка флаера</label>
+    <input type="checkbox" name="flier" onchange="designer()" class="firm" id="flier" value=50>
+    <span id="fliers">50$</span>
+  </p>
+  <p>
+    <label for="plakat">Разработка плаката</label>
+    <input type="checkbox" name="plakat" onchange="designer()" class="firm" id="plakat" value=100>
+    <span id="plakats">100$</span>
+  </p>
+  <p>
+    <label for="banner">Разработка баннера (бигборда)</label>
+    <input type="checkbox" name="banner" onchange="designer()" class="firm" id="banner" value=250>
+    <span id="banners">250$</span>
+  </p>
+  <p>
+    <label for="shtender">Разработка штендера</label>
+    <input type="checkbox" name="shtender" onchange="designer()" class="firm" id="shtender" value=40>
+    <span id="shtenders">40$</span>
+  </p>
+</form>
+<script type="text/javascript">
+    function designer() {
+        element = document.getElementById('elements_logo');
+        prototype = document.getElementById('prototype_logo');
+        variant = document.getElementById('variate_logo');
+        variate = document.getElementById('variant_logo').value;
+        if (document.getElementById('text_logo').checked) {
+            element.setAttribute('value', 25);
+            document.getElementById('elements-logo').innerHTML = '+25$';
+            prototype.setAttribute('value', -15);
+            document.getElementById('prototype-logo').innerHTML = '-15$';
+            variant.setAttribute('value', 10);
+            element.removeAttribute('disabled');
+            prototype.removeAttribute('disabled');
+            variant.removeAttribute('disabled');
+            document.getElementById('variant_logo').removeAttribute('disabled');
+
+        }
+        else if (document.getElementById('icon_logo').checked) {
+            element.setAttribute('value', 50);
+            document.getElementById('elements-logo').innerHTML = '+50$';
+            prototype.setAttribute('value', -20);
+            document.getElementById('prototype-logo').innerHTML = '-20$';
+            variant.setAttribute('value', 20);
+            element.removeAttribute('disabled');
+            prototype.removeAttribute('disabled');
+            variant.removeAttribute('disabled');
+            document.getElementById('variant_logo').removeAttribute('disabled');
+
+        }
+        else if (document.getElementById('combo_logo').checked) {
+            element.setAttribute('value', 75);
+            document.getElementById('elements-logo').innerHTML = '+75$';
+            prototype.setAttribute('value', -35);
+            document.getElementById('prototype-logo').innerHTML = '-35$';
+            element.setAttribute('value', 150);
+            prototype.setAttribute('value', 40);
+            variant.setAttribute('value', 30);
+            element.removeAttribute('disabled');
+            prototype.removeAttribute('disabled');
+            variant.removeAttribute('disabled');
+            document.getElementById('variant_logo').removeAttribute('disabled');
+
+        }
+        else if (document.getElementById('author_logo').checked) {
+            element.setAttribute('value', 100);
+            document.getElementById('elements-logo').innerHTML = '+100$';
+            prototype.setAttribute('value', -50);
+            document.getElementById('prototype-logo').innerHTML = '-50$';
+            variant.setAttribute('value', 40);
+            element.removeAttribute('disabled');
+            prototype.removeAttribute('disabled');
+            variant.removeAttribute('disabled');
+            document.getElementById('variant_logo').removeAttribute('disabled');
+
+        }
+        vari = variate * variant.value;
+        document.getElementById('variant-logo').innerHTML = vari + '$';
+
+        holocost = document.getElementsByClassName('logo');
+        ssuma = 0;
+        for (i = 0; i < holocost.length; i++) {
+            if (holocost[i].checked)
+                ssuma += parseInt(holocost[i].value);
+        }
+        logotype = ssuma + vari;
+        firma = document.getElementsByClassName('firm');
+        sumka = 0;
+        for (i = 0; i < firma.length; i++) {
+            if (firma[i].checked)
+                sumka += parseInt(firma[i].value);
+        }
+        console.log(sumka);
+        if (logotype > 0){
+            calci = logotype + sumka;
+            document.title = calci+'$';
+        }
+        else{
+            document.title = sumka + '$';
+        }
+
+    }
+
+
+
+</script>
+</body>
+</html>

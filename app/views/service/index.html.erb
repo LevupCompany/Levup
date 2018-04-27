@@ -17,46 +17,6 @@
 
     </div>
   </div>
-  <div class="screen" id="screen_services">
-    <div>
-      <a href="#" class="services" id="comp">
-        <%= image_tag "icon/computer1.png"%>
-        <span>Создание сайтов</span>
-      </a>
-    </div>
-    <div>
-      <a href="#" class="services">
-        <%= image_tag "icon/smartphone2.png"%>
-        <span id="razmob">Разработка мобильных приложений</span>
-      </a>
-    </div>
-    <div>
-      <a href="#" class="services">
-        <%= image_tag "icon/paint-board-and-brush1.png"%>
-        <span id="grafdiz">Графический дизайн</span>
-      </a>
-    </div>
-    <div>
-      <a href="#" class="services">
-        <%= image_tag "icon/bussinesssymbol1.png"%>
-        <span id="buicn">Разработка приложений для бизнеса</span>
-      </a>
-    </div>
-  </div>
-  <div class="screen" id="screen_tehnology">
-    <h2>Технологии которыми мы владеем</h2>
-    <div class="tehnology">
-      <div id="css"></div>
-      <div id="htmlsp"></div>
-      <div id="jssp"></div>
-      <div id="rails"></div>
-      <div id="java"></div>
-    </div>
-    <div class="tehnology">
-      <div id="angular"></div>
-      <div id=modx></div>
-      <div id="swift"></div>
-    </div>
-  </div>
+  <%=render 'layouts/services'%>
 <%=render 'layouts/contactform'%>
 </main>
