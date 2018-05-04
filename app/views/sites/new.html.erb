@@ -1,0 +1,25 @@
+<main class="page">
+  <div class="screen for_screen" id="screen2">
+    <h1>УСЛУГИ</h1>
+  </div>
+
+
+<%= render 'form', site: @site %>
+  <div id="screen_form">
+    <div class="wrap">
+      <form action="#" class="form_calc">
+        <p>Имя Фамилия:</p>
+        <input type="text">
+        <p>E-mail:</p>
+        <input type="email">
+        <p>Телефон:</p>
+        <input type="tel">
+        <p>Описание задания:</p>
+        <textarea></textarea>
+        <div class="calc_price sticky">Цена: <span id="total_calc">Не выбрана</span></div>
+        <button type="submit" class="calc_btn">Отправить заказ</button>
+      </form>
+    </div>
+  </div>
+</main>
+<%= link_to 'Back', sites_path %>

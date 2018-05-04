@@ -1,0 +1,116 @@
+<main class="page">
+  <div class="screen for_screen" id="screen3">
+    <h1>ПОРТФОЛИО</h1>
+  </div>
+  <div class="screen filtr wrap">
+    <%= render 'filtr' %>
+    <div class="filtr_wrap ">
+      <% @portfolios.each do |portfolio| %>
+        <style>#filtr_item<%="#{portfolio.id}" %>{
+          background-image: url("<%=portfolio.image.url(:small)%>");
+        }</style>
+        <%= link_to  portfolio, class: "filtr_item", id: "filtr_item#{portfolio.id}" do %>
+
+        <%= image_tag 'ojo.png'%>
+        <%= content_tag(:span, "#{portfolio.title}") %>
+          <% end %>
+      <% end %>
+    <a href="#" class="filtr_item" id="filtr_item1">
+        <img src="img/ojo.png" alt="">
+        <span>
+                     Доготип того-то тогото
+                  </span>
+      </a>
+      <a href="#" class="filtr_item" id="filtr_item2">
+        <img src="img/ojo.png" alt="">
+        <span>
+                     Доготип того-то тогото
+                  </span>
+      </a>
+      <a href="#" class="filtr_item" id="filtr_item3">
+        <img src="img/ojo.png" alt="">
+        <span>
+                     Доготип того-то тогото
+                  </span>
+      </a>
+      <a href="#" class="filtr_item" id="filtr_item4">
+        <img src="img/ojo.png" alt="">
+        <span>
+                     Доготип того-то тогото
+                  </span>
+      </a>
+      <a href="#" class="filtr_item" id="filtr_item5">
+        <img src="img/ojo.png" alt="">
+        <span>
+                     Доготип того-то тогото
+                  </span>
+      </a>
+      <a href="#" class="filtr_item" id="filtr_item6">
+        <img src="img/ojo.png" alt="">
+        <span>
+                     Доготип того-то тогото
+                  </span>
+      </a>
+      <a href="#" class="filtr_item" id="filtr_item7">
+        <img src="img/ojo.png" alt="">
+        <span>
+                     Доготип того-то тогото
+                  </span>
+      </a>
+      <a href="#" class="filtr_item" id="filtr_item8">
+        <img src="img/ojo.png" alt="">
+        <span>
+                     Доготип того-то тогото
+                  </span>
+      </a>
+      <a href="#" class="filtr_item" id="filtr_item9">
+        <img src="img/ojo.png" alt="">
+        <span>
+                     Доготип того-то тогото
+                  </span>
+      </a>
+    </div>
+  </div>
+  <div class="screen" id="screen_forma">
+    <h2>Обратная связь</h2>
+    <div class="wrap">
+      <form action="#" class="form">
+        <input type="text" placeholder="Дурашка">
+        <input type="tel" placeholder="Телефон">
+        <input type="email" placeholder="E-mail">
+        <textarea>Суть вопроса...</textarea>
+        <button type="submit">Отправить запрос</button>
+      </form>
+    </div>
+  </div>
+
+</main>
+<p id="notice"><%= notice %></p>
+
+<h1>Portfolios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Tag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @portfolios.each do |portfolio| %>
+      <tr>
+        <td><%= portfolio.title %></td>
+        <td><%= portfolio.tag %></td>
+        <td><%= link_to 'Show', portfolio %></td>
+        <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
+        <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Portfolio', new_portfolio_path %>

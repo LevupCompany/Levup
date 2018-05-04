@@ -1,0 +1,485 @@
+  <form class="wrap" name="Site">
+    <div class="calc_descr" id="calc_descr">
+      <img src="img/ico/calc.png" alt="">
+      <div class="calc_descr__info">
+        <h3>Калькулятор стоимости сайта</h3>
+        <p>Калькулятор – универсальный электронный помощник для быстрого расчёта стоимости продукта. Любой из вас теперь сможет быстро и эффективно (в режиме онлайн времени) посчитать какое количество финансовых средств вам придётся затратить для реализации вашего интернет – проекта. С помощью нашего калькулятора вам не придётся прибегать к помощи вспомогательных средств, теперь всё за вас это будет делать дополнительная функция, а у вас останется больше свободного времени для решения повседневных и рабочих задач. Калькулятор – экономия вашего драгоценного рабочего времени.
+      </div>
+    </div>
+    <h3 class="centr">ТИП САЙТА</h3>
+    <hr class="w500">
+    <div class="calc_item">
+      Тип сайта – разновидность сайта, которую заказывает клиент для реализации своего интернет – проекта. Сайты бывают нескольких видов и разной степени сложности. К ним можно отнести: корпоративный сайт, сайт – портал, лендинг (посадочная страница), интернет – магазин. В зависимости от того, что вам нужно разработать зависит и общая финансовая стоимость вашего проекта. Например, разработка интернет – магазина будет стоить вам больше чем, например, лендинга из-за большого объёма работы. Кроме этого выбор типа сайта напрямую влияет на стоимость разработки дизайна и вёрстки. Для уточнения финансовой стоимости вы можете воспользоваться услугами нашего калькулятора.
+    </div>
+    <div class="label_wrap">
+      <div class="label_item">
+        <input type="radio" name="site_type" class="site_type" id="corp_site" value="corp_site" onchange="Prices(); arrsum(); arraySum(); calculating()" >
+        <label for="corp_site"></label>
+        <img src="img/ico/corp.png" alt="">
+        <h3>Корпоративный сайт</h3>
+        <p>Официальный сайт компании, представленный на просторах интернет паутины. Содержит всю основную информацию о предприятии и дополнительные возможности.</p>
+      </div>
+      <div class="label_item">
+        <input type="radio" name="site_type" class="site_type" id="portal_site" value="portal_site" onchange="Prices(); arrsum(); arraySum(); calculating()">
+        <label for="portal_site"></label>
+        <img src="img/ico/portal.png" alt="">
+        <h3>Сайт-портал</h3>
+        <p>Обладает разносторонним контентом – новости, обзоры, экономика, спорт, магазины, сайты для предоставления услуг и.т.п. Удобен для поиска информации (“рекламная Википедия”).
+        </p>
+      </div>
+      <div class="label_item">
+        <input type="radio" name="site_type" class="site_type" id="lending" value="lending" onchange="Prices(); arrsum(); arraySum(); calculating()" >
+        <label for="lending"></label>
+        <img src="img/ico/lending.png" alt="">
+        <h3>Лендинг</h3>
+        <p>Посадочная страница - важнейший элемент для расширения рекламной эффективности и клиентской аудитории. Содержит в себе информационный контент о конкретном товаре или услуге.
+        </p>
+      </div>
+      <div class="label_item">
+        <input type="radio" name="site_type" class="site_type" id="ecommerce" value="ecommerce" onchange="Prices(); arrsum(); arraySum(); calculating()">
+        <label for="ecommerce"></label>
+        <img src="img/ico/shop.png" alt="">
+        <h3>Интернет-магазин</h3>
+        <p>Ресурс, продающий определенный вид товаров или услуг, на котором можно оформить и оплатить заказ не отходя от веб приложения. Самое перспективное направление продаж XXI века.
+        </p>
+      </div>
+    </div>
+    <a href="#design_and_verstka" id="design_and_verstka" class="calc_btn">Далее</a>
+    <h3 class="centr" >ДИЗАЙН И ВЕРСТКА</h3>
+    <hr class="w500_grey ">
+    <div class="calc_item__grey">
+      Дизайн и вёрстка сайта – два наиважнейших этапа разработки интернет – проекта. Дизайн сайта – это лицо всего проекта, его визуальное олицетворение и эффектная картинка, которая приятна для глаз настоящих и будущих клиентов. Грамотный и со вкусом, сделанный визуал – это минимум 50% предстоящего успеха. То же самое можно отнести и к вёрстке, так как она является своеобразной реализацией дизайна в браузерном окне, благодаря которой ваш сайт будет стабильно работать, не выдавая каждый месяц фатальных ошибок. Дизайн и вёрстка –  это ваши две стороны золотой инновационной медали. Рискните и вы не пожалеете!
+    </div>
+    <div class="design_wrap">
+      <div class="design_item">
+        <input type="radio"  name="site_design" id="self_design" value=300 class="design" disabled onchange="arraySum(); calculating()">
+        <label for="self_design"></label>
+        <img src="img/ico/1.png" alt="" class="design_item__img">
+        <h3>Свой дизайн</h3>
+        <p>Дизайн, который сформирован и предоставлен непосредственно клиентом. Пропускается этап дизайна однако время верстки может увеличиться.</p>
+        <span ><img src="img/birka.png" alt=""> <span id="self_design-c">Выберите тип сайта!</span></span>
+      </div>
+      <div class="design_item">
+        <input type="radio"  name="site_design" id="template_design" value=100 class="design"  disabled onchange="arraySum(); calculating()">
+        <label for="template_design"></label>
+        <img src="img/ico/2.png" alt="" class="design_item__img">
+        <h3>Шаблонный дизайн</h3>
+        <p>Заказ шаблона у нас с возможностью выбора подходящей цветовой гаммы. Мы готовы предоставить наши варианты руководствуясь вашей тематикой.
+        </p>
+        <span ><img src="img/birka.png" alt=""> <span id="template_design-c">Выберите тип сайта!</span></span>
+      </div>
+      <div class="design_item">
+        <input type="radio"  name="site_design" id="author_design" value=600 class="design" disabled onchange="arraySum(); calculating()">
+        <label for="author_design"></label>
+        <img src="img/ico/3.png" alt="" class="design_item__img">
+        <h3>Авторский дизайн</h3>
+        <p>Мы разрабатываем макет в соответствии с Вашими пожеланиями. В итоге дизайн полностью уникальный, что повышает ценность сайта и доверие посетителей.</p>
+        <span ><img src="img/birka.png" alt=""> <span id="author_design-c">Выберите тип сайта!</span></span>
+      </div>
+      <div class="design_item_chek">
+        <input type="checkbox" name="design_logo" value=70 id="design_logo" class="design" onchange="arraySum(); calculating()">
+        <label for="design_logo"></label>
+        <img src="img/ico/design/logo.png" alt="">
+        <div>
+          <h3>Лого</h3>
+          <p>Помимо разработки сайта мы также можем разработать уникальный подходящий к Вашему стилю логотип. При создании логотипа будет учтена специфика сайта.
+          </p>
+          <span ><img src="img/birka.png" alt=""> <span id="design_logo-c">70$</span></span>
+        </div>
+      </div>
+      <div class="design_item_chek">
+        <input type="checkbox" name="design_banner" value=40 id="design_banner" class="design" onchange="arraySum(); calculating()">
+        <label for="design_banner"></label>
+        <img src="img/ico/design/banner.png" alt="">
+        <div>
+          <h3>Баннер</h3>
+          <p>Рекламный баннер для Вашего сайта. Основная задача – привлечение клиентов, подача информации и создание дополнительного имиджа компании.</p>
+          <span ><img src="img/birka.png" alt=""> <span id="design_banner-c">40$</span></span>
+        </div>
+      </div>
+      <div class="design_item_chek">
+        <input type="checkbox" name="design_page" value=200 id="design_page" class="design" onchange="arraySum(); calculating()">
+        <label for="design_page"></label>
+        <img src="img/ico/design/lending_page.png" alt="">
+        <div>
+          <h3>Посадочная странница</h3>
+          <p>Веб-страница целью, которой является выполнение пользователем определенного действия. Важный элемент для расширения эффективности сайта.
+          </p>
+          <span><img src="img/birka.png" alt=""><span id="design_page-c">200$</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn_wrap__calc">
+      <a href="#calc_descr" class="calc_btn">Назад</a>
+      <a href="#tech_dev" class="calc_btn" id="tech_dev">Далее</a>
+    </div>
+
+
+    <h3 class="centr">ВЫБОР (ДВИЖКА) САЙТА</h3>
+    <hr class="w500">
+    <div class="calc_item">
+      Выбор движка – важный и определяющий фактор для вашего будущего интернет – проекта. Данный фактор имеет непосредственное влияние на конечную стоимость разработки функционала и сроки его выполнения. К данному вопросу нужно отнестись бережно, ведь выбор движка определяет его возможность для последующих расширений ресурса (если таковые будут необходимы). Например, для разработки корпоративного сайта, небольших порталов, мелких интернет – магазинов и лендингов идеальным вариантом считается MODX. Для более сложных вариаций порталов, корп.сайтов, интернет – магазинов более уместен фреймворк Ruby on Rails или фреймворки языка Python.
+    </div>
+    <div class="cms_wrap">
+      <div class="cms_item">
+        <input type="radio" name="engine" value="modx" id="engine_modx" onchange="Prices(); arrsum(); arraySum(); calculating() ">
+        <label for="engine_modx"></label>
+        <img src="img/radio_modx.png" alt="">
+      </div>
+      <div class="cms_item">
+        <input type="radio" name="engine" value="rails" id="engine_ruby" onchange="Prices(); arrsum(); arraySum(); calculating()">
+        <label for="engine_ruby"></label>
+        <img src="img/radio_rails.png" alt="">
+      </div>
+      <div class="cms_item">
+        <input type="radio" name="engine" value="python" id="engine_python" onchange="Prices(); arrsum(); arraySum(); calculating()">
+        <label for="engine_python"></label>
+        <img src="img/radio_piton.png" alt="">
+      </div>
+    </div>
+    <div class="btn_wrap__calc">
+      <a href="#design_and_verstka" class="calc_btn">Назад</a>
+      <a href="#functional_calc" class="calc_btn" id="functional_calc">Далее</a>
+    </div>
+    <h3 class="centr">ВЫБОР ФУНКЦИОНАЛА</h3>
+    <hr class="w500_grey">
+    <div class="calc_item__grey">
+      Выбор функционала – одно из важнейших направлений, которое помогает вам правильно сориентироваться и понять, какие конкретно паутинные функции вы хотите видеть в своём интернет – проекте. Внимательно прочтя весь перечень услуг, которые мы готовы вам предоставить, вы получите исчерпывающую информацию, которая будет для вас крайне полезной и эффективной. Вы сможете понять, что, например, функция движущихся слайдеров для привлечения клиентов будет очень кстати на вашем сайте путешествий. А вот функция онлайн чата пока может и подождать. Для просчёта стоимости той или иной услуги функционала вам поможет наш калькулятор.
+    </div>
+    <div class="function_wrap">
+      <div class="function_item">
+        <input type="checkbox"  name="module_otzyvy" value=100 id="module_otzyvy" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_otzyvy"></label>
+        <img src="img/ico/func/otzyv.png" alt="" class="function_item__img">
+        <div>
+          <h3>Отзывы</h3>
+          <p>Модуль отзывов или комментариев, который позволяет пользователям давать обратную связь на сайте, тем самым взаимодействую с Вашим веб-приложением.</p>
+          <span ><img src="img/birka.png" alt=""> <span id="otzyv">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_blog" value=80 id="module_blog" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_blog"></label>
+        <img src="img/ico/func/blog.png" alt="" class="function_item__img">
+        <div>
+          <h3>Блог</h3>
+          <p>Категория сайта, наполняемая свежим информационным контентом (текстом, изображением или видеороликом). Для более эффективного использования ведётся несколькими людьми.
+          </p>
+          <span ><img src="img/birka.png" alt=""> <span id="blog">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_slider" value="20" id="module_slider" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_slider"></label>
+        <img src="img/ico/func/slider.png" alt="" class="function_item__img">
+        <div>
+          <h3>Слайдер</h3>
+          <p>Блок различных размеров, размещённый чаще всего в шапке сайта. Основное достоинство – создание динамичных элементов в ручном или автоматическом режиме (фотографии, изображения, тексты).
+          </p>
+          <span ><img src="img/birka.png" alt=""> <span id="slider">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_gallery" value="30" id="module_gallery" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_gallery"></label>
+        <img src="img/ico/func/gallery.png" alt="" class="function_item__img">
+        <div>
+          <h3>Фотогалерея</h3>
+          <p>Выставление на показ всех загруженных фото, картинок и изображений. Имеет множество положительных плюсов, главный из которых – расширение представления клиента о предлагаемом товаре.</p>
+          <span ><img src="img/birka.png" alt=""> <span id="gallery">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_easycalc" value=50 id="module_easycalc" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_easycalc"></label>
+        <img src="img/ico/func/easycalc.png" alt="" class="function_item__img">
+        <div>
+          <h3>Простой калькулятор</h3>
+          <p>Функциональная разработка для сайта. Имеет небольшое количество функций для более точного автоматического расчёта стоимости продукта. Команды вводятся при помощи мышки или клавиатуры.</p>
+          <span ><img src="img/birka.png" alt=""> <span id="easycalc">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_hardcalc" value=250 id="module_hardcalc" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_hardcalc"></label>
+        <img src="img/ico/func/hardcalc.png" alt="" class="function_item__img">
+        <div>
+          <h3>Сложный калькулятор</h3>
+          <p>Функциональная разработка для сайта. Помимо простейших функций имеет ряд дополнительных и важных функций для более точечного расчета стоимости. Команды вводятся при помощи мышки или клавиатуры.
+          </p>
+          <span ><img src="img/birka.png" alt=""> <span id="hardcalc">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_formit" value=20 id="module_formit" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_formit"></label>
+        <img src="img/ico/func/formit.png" alt="" class="function_item__img">
+        <div>
+          <h3>Обратная связь</h3>
+          <p>Удобный инструмент для взаимодействия между администратором сайта и клиентом. Оформлена в виде таблицы размещённой на сайте. Элемент предоставления информационного контента для покупателя.
+          </p>
+          <span ><img src="img/birka.png" alt=""> <span id="formit">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_callback" value=30 id="module_callback" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_callback"></label>
+        <img src="img/ico/func/callback.png" alt="" class="function_item__img">
+        <div>
+          <h3>Обратный звонок</h3>
+          <p>Применяется различными сайтами для коммуникации между продавцом и покупателем. Функциональное предназначение – расширение пользовательского интереса и привлечение новых покупателей.
+          </p>
+          <span ><img src="img/birka.png" alt=""> <span id="callback">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_chat" value=50 id="module_chat" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_chat"></label>
+        <img src="img/ico/func/chat.png" alt="" class="function_item__img">
+        <div>
+          <h3>Онлайн чат</h3>
+          <p>Очень эффективный инструмент, где проходит интенсивное общение между потребителем и производителем. Помогает выявлять новые направления и идеи, которые способствовали бы развитию интернет сайта.</p>
+          <span ><img src="img/birka.png" alt=""> <span id="chat">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_mailer" value=100 id="module_mailer" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_mailer"></label>
+        <img src="img/ico/func/mailer.png" alt="" class="function_item__img">
+        <div>
+          <h3>Подписка и рассылка</h3>
+          <p>Информационный контент, который заинтересовал бы человека на посещение сайта (новые поступления товаров, акции и скидки) пересылается ему через электронную почту. Рассылка бывает платной или бесплатной.</p>
+          <span ><img src="img/birka.png" alt=""> <span id="mailer">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_multilang" value=100 id="module_multilang" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_multilang"></label>
+        <img src="img/ico/func/multilang.png" alt="" class="function_item__img">
+        <div>
+          <h3>Мультиязычность</h3>
+          <p>Версия сайта, который не ограничивается одним языком. Весь информационный контент можно прочитать не только на местном, но и на других языках с целью охвата большей аудитории посетителей.</p>
+          <span ><img src="img/birka.png" alt=""> <span id="multilang">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_catalog" value=150 id="module_catalog" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_catalog"></label>
+        <img src="img/ico/func/catalog.png" alt="" class="function_item__img">
+        <div>
+          <h3>Каталог товаров</h3>
+          <p>Полный перечень товарной продукции, который представлен на интернет сайте дабы облегчить клиенту поиск необходимого товара. Имеет несколько видов – товарный, рекламный, почтовый, выставочный.
+          </p>
+          <span ><img src="img/birka.png" alt=""> <span id="catalog">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_basket" value=80 id="module_basket" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_basket"></label>
+        <img src="img/ico/func/basket.png" alt="" class="function_item__img">
+        <div>
+          <h3>Корзина</h3>
+          <p>Интерфейс сайта, куда клиент может добавлять товарную продукцию. Обязательный элемент для оформления покупки с большим количеством товаров. Присутствует на всех коммерческих сайтах.</p>
+          <span ><img src="img/birka.png" alt=""> <span id="basket">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_payment" value=120 id="module_payment" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_payment"></label>
+        <img src="img/ico/func/payment.png" alt="" class="function_item__img">
+        <div>
+          <h3>Онлайн оплата</h3>
+          <p>Подключение на сайте сервиса для приёма денежных платежей. Перспективное направление, которое в будущем будет составлять конкуренцию традиционным видам оплаты за услуги или товар.</p>
+          <span ><img src="img/birka.png" alt=""> <span id="payment">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_currency" value=30 id="module_currency" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_currency"></label>
+        <img src="img/ico/func/currency.png" alt="" class="function_item__img">
+        <div>
+          <h3>Выбор валюты</h3>
+          <p>Функция сайта, облегчающая просчёт стоимости товара в иностранных валютах по текущему курсу. Функциональное предназначение – расширение пользовательского интереса и привлечение новых покупателей.</p>
+          <span ><img src="img/birka.png" alt=""> <span id="currency">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_multitovar" value=50 id="module_multitovar" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_multitovar"></label>
+        <img src="img/ico/func/multitovar.png" alt="" class="function_item__img">
+        <div>
+          <h3>Виды товаров</h3>
+          <p>Удобная функция, цель которой заключается в разработке одной и той же позиции товара, но с разными дополнительными возможностями (различный цветовой фон, цены на продукт и.т.д.).</p>
+          <span ><img src="img/birka.png" alt=""> <span id="multitovar">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_sales" value=40 id="module_sales" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_sales"></label>
+        <img src="img/ico/func/sales.png" alt="" class="function_item__img">
+        <div>
+          <h3>Акции</h3>
+          <p>Разработка специального модуля акций. При помощи него можно очень легко создавать различные виды акций и подбирать под них конкретную товарную продукцию на строго определённое время.</p>
+          <span ><img src="img/birka.png" alt=""> <span id="sales">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_api" value=400 id="module_api" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_api"></label>
+        <img src="img/ico/func/api.png" alt="" class="function_item__img">
+        <div>
+          <h3>API импортер</h3>
+          <p>API импортёр – дополнительная функция на сайте, предназначенная для синхронизации со многими сервисами через API. По желанию клиента таких импортёров может быть прописано несколько.
+          </p>
+          <span ><img src="img/birka.png" alt=""> <span id="api">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_reg" value=50 id="module_reg" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_reg"></label>
+        <img src="img/ico/func/reg.png" alt="" class="function_item__img">
+        <div>
+          <h3>Регистрация</h3>
+          <p>Функциональная особенность, без которой не обойтись практически любому сайту. В такой системе клиент получает самую свежую информацию, которую готова предоставить ему администрация сайта.
+            <span ><img src="img/birka.png" alt=""> <span id="reg">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_cabinet" value=200 id="module_cabinet" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_cabinet"></label>
+        <img src="img/ico/func/cabinet.png" alt="" class="function_item__img">
+        <div>
+          <h3>Личный кабинет пользователя</h3>
+          <p>Персональная страница клиента, доступ к которой возможен только ему. Другое название личного кабинета – аккаунт. Личный кабинет появляется у клиента после регистрации и авторизации на сайте.</p>
+          <span ><img src="img/birka.png" alt=""> <span id="cabinet">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_recomendation" value=30 id="module_recomendation" disabled class="functional" onchange="arrsum(); calculating()">
+        <label for="module_recomendation"></label>
+        <img src="img/ico/func/recomendation.png" alt="" class="function_item__img">
+        <div>
+          <h3>Сопутствующие товары</h3>
+          <p>Реклама товаров другой направленности на странице определённого товара. Функциональное предназначение – расширение пользовательского интереса и привлечение новых покупателей. </p>
+          <span ><img src="img/birka.png" alt=""> <span id="recomendation">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_importer" value=150 id="module_importer" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_importer"></label>
+        <img src="img/ico/import.png" alt="" class="function_item__img">
+        <div>
+          <h3>Импортер ресурсов</h3>
+          <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
+          <span ><img src="img/birka.png" alt=""> <span id="importer">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_referal" value=180 id="module_referal" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_referal"></label>
+        <img src="img/ico/refer.png" alt="" class="function_item__img">
+        <div>
+          <h3>Реферальная программа</h3>
+          <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
+          <span ><img src="img/birka.png" alt=""> <span id="referal">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_filtration" value=100 id="module_filtration" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_filtration"></label>
+        <img src="img/ico/filtr.png" alt="" class="function_item__img">
+        <div>
+          <h3>Фильтрация</h3>
+          <p>Модуль фильтрации помогает людям сократить время для нахождения необходимой информации, а значит, существенно повысить конверсию Вашего сайта</p>
+          <span ><img src="img/birka.png" alt=""> <span id="filtration">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="btn_wrap__calc">
+      <a href="#tech_dev" class="calc_btn">Назад</a>
+      <a href="#support_calc" class="calc_btn" id="support_calc">Далее</a>
+    </div>
+    <h3 class="centr">ПОДДЕРЖКА САЙТА</h3>
+    <hr class="w500">
+    <div class="calc_item">
+      Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+    </div>
+    <div class="support_wrap">
+      <div class="support_item">
+        <input type="checkbox"  name="c_easypage" id="c_easypage"   class="functional" onchange="arrsum(); calculating()">
+        <label for="c_easypage"></label>
+        <img src="img/ico/func/podder/easypage.png" alt="" class="suppor_item__img">
+        <div>
+          <h3>Простая страница</h3>
+          <p>Cамый простой вариант наполнения сайта. Присутствует информационный и графический контент. Отсутствуют сложные таблицы, нет большого количества изображений.
+          </p>
+          <span><img src="img/birka.png" alt=""><span id="c-easypage">10$</span></span>
+        </div>
+        <input type="number" name="content_easypage" value=1 id="content_easypage" min="1" oninput="supportic(); calculating()" >
+      </div>
+      <div class="support_item">
+        <input type="checkbox"  name="c_hardpage"  id="c_hardpage"  class="functional" onchange="arrsum(); calculating()">
+        <label for="c_hardpage"></label>
+        <img src="img/ico/func/podder/hardpage.png" alt="" class="suppor_item__img">
+        <div>
+          <h3>Сложная страница</h3>
+          <p>Помимо информационного и графического контента, включает в себя страницы с таблицами, видео контент, всплывающие изображения (или же адаптивную вёрстку).</p>
+          <span><img src="img/birka.png" alt=""><span id="c-hardpage">30$</span></span>
+        </div>
+        <input type="number" name="content_hardpage" value=1 id="content_hardpage" oninput="supportic(); calculating()" >
+      </div>
+      <div class="support_item">
+        <input type="checkbox"  name="c-editpage" id="c_editpage"  class="functional" onchange="arrsum(); calculating()">
+        <label for="c_editpage"></label>
+        <img src="img/ico/func/podder/editpage.png" alt="" class="suppor_item__img">
+        <div>
+          <h3>Редактирование страницы</h3>
+          <p>Если у вас назрела необходимость изменить страницу на своём сайте, вы можете выбрать из двух предложенных ранее вариантов (простая или сложная страница).
+          </p>
+          <span><img src="img/birka.png" alt=""><span id="c-editpage">10$</span></span>
+        </div>
+        <input type="number" name="content_editpage" value=1 id="content_editpage" oninput="supportic(); calculating()" >
+      </div>
+      <div class="support_item">
+        <input type="checkbox"  name="c_post"   id="c_post" class="functional" onchange="arrsum(); calculating()">
+        <label for="c_post"></label>
+        <img src="img/ico/func/podder/post.png" alt="" class="suppor_item__img">
+        <div>
+          <h3>Размещение материала</h3>
+          <p>Размещение текстового, графического, видео контента на сайте. В таких случаях стоимость зависит от сложности позиции, поэтому расчёт производится индивидуально.</p>
+          <span><img src="img/birka.png" alt=""><span id="c-post">10$</span></span>
+        </div>
+        <input type="number" name="content_post" value=1 id="content_post" onchange="oninput(); calculating()" >
+      </div>
+      <div class="support_item">
+        <input type="checkbox"  name="c_translate"  id="c_translate" class="functional" onchange="arrsum(); calculating()">
+        <label for="c_translate"></label>
+        <img src="img/ico/func/podder/translate.png" alt="" class="suppor_item__img">
+        <div>
+          <h3>Перевод страницы</h3>
+          <p>Заполнение сайта текстом, который переведён на другой язык (английский, китайский и.т.д.). Цена указана за перевод одной страницы. Перевод страницы позволит расширить аудиторию.</p>
+          <span><img src="img/birka.png" alt=""><span id="c-translate">10$</span></span>
+        </div>
+        <input type="number" name="content_translate" value=1 id="content_translate" oninput="supportic(); calculating()" >
+      </div>
+      <div class="support_item">
+        <input type="checkbox"  name="module_googlemaps" value=20 id="module_googlemaps" class="functional" onchange="arrsum(); calculating()">
+        <label for="module_googlemaps"></label>
+        <img src="img/ico/func/podder/googlemaps.png" alt="" class="suppor_item__img">
+        <div>
+          <h3>Google карта</h3>
+          <p>дополнительный элемент для продвижения вашего сайта. Теперь здание где находится ваш офис, представительство будет отмечено на карте с точным маршрутом проезда, изображением фасада дома и графиком работы.</p>
+          <span><img src="img/birka.png" alt=""><span id="c-googlemaps">20$</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="innfo">
+      <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDIzLjYyNSAyMy42MjUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIzLjYyNSAyMy42MjU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4Ij4KPGc+Cgk8cGF0aCBkPSJNMTEuODEyLDBDNS4yODksMCwwLDUuMjg5LDAsMTEuODEyczUuMjg5LDExLjgxMywxMS44MTIsMTEuODEzczExLjgxMy01LjI5LDExLjgxMy0xMS44MTMgICBTMTguMzM1LDAsMTEuODEyLDB6IE0xNC4yNzEsMTguMzA3Yy0wLjYwOCwwLjI0LTEuMDkyLDAuNDIyLTEuNDU1LDAuNTQ4Yy0wLjM2MiwwLjEyNi0wLjc4MywwLjE4OS0xLjI2MiwwLjE4OSAgIGMtMC43MzYsMC0xLjMwOS0wLjE4LTEuNzE3LTAuNTM5cy0wLjYxMS0wLjgxNC0wLjYxMS0xLjM2N2MwLTAuMjE1LDAuMDE1LTAuNDM1LDAuMDQ1LTAuNjU5YzAuMDMxLTAuMjI0LDAuMDgtMC40NzYsMC4xNDctMC43NTkgICBsMC43NjEtMi42ODhjMC4wNjctMC4yNTgsMC4xMjUtMC41MDMsMC4xNzEtMC43MzFjMC4wNDYtMC4yMywwLjA2OC0wLjQ0MSwwLjA2OC0wLjYzM2MwLTAuMzQyLTAuMDcxLTAuNTgyLTAuMjEyLTAuNzE3ICAgYy0wLjE0My0wLjEzNS0wLjQxMi0wLjIwMS0wLjgxMy0wLjIwMWMtMC4xOTYsMC0wLjM5OCwwLjAyOS0wLjYwNSwwLjA5Yy0wLjIwNSwwLjA2My0wLjM4MywwLjEyLTAuNTI5LDAuMTc2bDAuMjAxLTAuODI4ICAgYzAuNDk4LTAuMjAzLDAuOTc1LTAuMzc3LDEuNDMtMC41MjFjMC40NTUtMC4xNDYsMC44ODUtMC4yMTgsMS4yOS0wLjIxOGMwLjczMSwwLDEuMjk1LDAuMTc4LDEuNjkyLDAuNTMgICBjMC4zOTUsMC4zNTMsMC41OTQsMC44MTIsMC41OTQsMS4zNzZjMCwwLjExNy0wLjAxNCwwLjMyMy0wLjA0MSwwLjYxN2MtMC4wMjcsMC4yOTUtMC4wNzgsMC41NjQtMC4xNTIsMC44MTFsLTAuNzU3LDIuNjggICBjLTAuMDYyLDAuMjE1LTAuMTE3LDAuNDYxLTAuMTY3LDAuNzM2Yy0wLjA0OSwwLjI3NS0wLjA3MywwLjQ4NS0wLjA3MywwLjYyNmMwLDAuMzU2LDAuMDc5LDAuNTk5LDAuMjM5LDAuNzI4ICAgYzAuMTU4LDAuMTI5LDAuNDM1LDAuMTk0LDAuODI3LDAuMTk0YzAuMTg1LDAsMC4zOTItMC4wMzMsMC42MjYtMC4wOTdjMC4yMzItMC4wNjQsMC40LTAuMTIxLDAuNTA2LTAuMTdMMTQuMjcxLDE4LjMwN3ogICAgTTE0LjEzNyw3LjQyOWMtMC4zNTMsMC4zMjgtMC43NzgsMC40OTItMS4yNzUsMC40OTJjLTAuNDk2LDAtMC45MjQtMC4xNjQtMS4yOC0wLjQ5MmMtMC4zNTQtMC4zMjgtMC41MzMtMC43MjctMC41MzMtMS4xOTMgICBjMC0wLjQ2NSwwLjE4LTAuODY1LDAuNTMzLTEuMTk2YzAuMzU2LTAuMzMyLDAuNzg0LTAuNDk3LDEuMjgtMC40OTdjMC40OTcsMCwwLjkyMywwLjE2NSwxLjI3NSwwLjQ5NyAgIGMwLjM1MywwLjMzMSwwLjUzLDAuNzMxLDAuNTMsMS4xOTZDMTQuNjY3LDYuNzAzLDE0LjQ5LDcuMTAxLDE0LjEzNyw3LjQyOXoiIGZpbGw9IiMxZmFhZTIiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+      <p>Цены всех указанных выше услуг рассчитаны из проекта базовой (минимальной) сложности. В случае усложнения выполнения работы по проекту, сумма калькуляции может возрасти в три раза.</p>
+    </div>
+    <div class="btn_wrap__calc">
+      <a href="#functional_calc" class="calc_btn">Назад</a>
+      <a href="#zakaz" class="calc_btn" id="zakaz">Далее</a>
+    </div>
+  </form>

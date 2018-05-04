@@ -1,0 +1,38 @@
+<style> form #portfolio_title {
+  border: 1px solid #1faee2;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  padding: 10px;
+}
+form input{
+  font-size:1rem;
+  padding: 10px;
+}
+form .btn {
+  background: #1faae2;
+  btn: white;
+  border-radius:5px;
+}</style>
+<br><br><br>
+<div class="wrap">
+<%= simple_form_for(@portfolio) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <br>
+    <%= f.label :tag, ("Выбор типа") %>
+    <%= f.input_field :tag, :collection => { 'Логотипы' => 1, 'Сайты' => 2, 'Баннера' => 3}; %>
+    <br>
+    <br>
+    <%= f.input :annotation, as: :text, input_html: {class:'ckeditor'}%>
+    <br>
+    <%= f.input :image, as: :file %> <br>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+</div>

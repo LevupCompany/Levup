@@ -1,515 +1,854 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
-<form name="Site">
-  <h1>Тип сайта</h1>
-  <p>
-    <label for="corp_site">Корпоративный сайт</label>
-    <input type="radio" name="site_type" class="site_type" id="corp_site" value="corp_site" onchange="Prices(); arrsum(); arraySum(); calculating()" >
-  </p>
-  <p>
-    <label for="portal_site">Сайт-портал</label>
-    <input type="radio" name="site_type" class="site_type" id="portal_site" value="portal_site" onchange="Prices(); arrsum(); arraySum(); calculating() ">
-  </p>
-  <p>
-    <label for="lending">Лендинг</label>
-    <input type="radio" name="site_type" class="site_type" id="lending" value="lending" onchange="Prices(); arrsum(); arraySum(); calculating()">
-  </p>
-  <p>
-    <label for="ecommerce">Интернет-магазин</label>
-    <input type="radio" name="site_type" class="site_type" id="ecommerce" value="ecommerce" onchange="Prices(); arrsum(); arraySum(); calculating()">
-  </p>
-  <h2>Выберите дизайн</h2>
-  <p>
-    <label for="self_design">Свой дизайн</label>
-    <input type="radio"  name="site_design" id="self_design" value=400 class="design" onchange="arraySum(); calculating()"><span id="self_design-c" ></span>
-  </p>
-  <p>
-    <label for="template_design">Шаблонный дизайн</label>
-    <input type="radio"  name="site_design" id="template_design" value=100 class="design" onchange="arraySum(); calculating()"><span id="template_design-c" ></span>
-  </p>
-  <p>
-    <label for="author_design">Авторский дизайн</label>
-    <input type="radio"  name="site_design" id="author_design" value=600 class="design" onchange="arraySum(); calculating()"><span id="author_design-c"></span>
-  </p>
-  <p>
-    <label for="design_logo">Лого</label>
-    <input type="checkbox" name="design_logo" value=70 id="design_logo" class="design" onchange="arraySum(); calculating()"><span id="design_logo-c"></span>
-  </p>
-  <p>
-    <label for="design_banner">Баннер</label>
-    <input type="checkbox" name="design_banner" value=40 id="design_banner" class="design" onchange="arraySum(); calculating()"><span id="design_banner-c"></span>
-  </p>
-  <p>
-    <label for="design_page">Посадочная странница</label>
-    <input type="checkbox" name="design_page" value=200 id="design_page" class="design" onchange="arraySum(); calculating()"><span id="design_page-c"></span>
-  </p>
-  <h2>Выбор движка</h2>
-  <p>
-    <label for="engine_modx">MODX</label>
-    <input type="radio" name="engine" value="modx" id="engine_modx" onchange="Prices(); arrsum(); arraySum(); calculating() ">
-  </p>
-  <p>
-    <label for="engine_ruby">Ruby On Rails</label>
-    <input type="radio" name="engine" value="rails" id="engine_ruby" onchange="Prices(); arrsum(); arraySum(); calculating()">
-  </p>
-  <p>
-    <label for="engine_python">Python</label>
-    <input type="radio" name="engine" value="python" id="engine_python" onchange="Prices(); arrsum(); arraySum(); calculating()">
-  </p>
-  <h2>Выбор функционала</h2>
-  <p>
-    <label for="module_otzyvy">Отзывы</label>
-    <input type="checkbox"  name="module_otzyvy" value=100 id="module_otzyvy" class="functional" onchange="arrsum(); calculating()"><span id="otzyv"></span>
-  </p>
-  <p>
-    <label for="module_blog">Блог</label>
-    <input type="checkbox" name="module_blog" value=80 id="module_blog" class="functional" onchange="arrsum(); calculating()"><span id="blog"></span>
-  </p>
-  <p>
-    <label for="module_slider">Слайдер</label>
-    <input type="checkbox" name="module_slider" value=20 id="module_slider" class="functional" onchange="arrsum(); calculating()"><span id="slider"></span>
-  </p>
-  <p>
-    <label for="module_gallery">Фотогалерея</label>
-    <input type="checkbox" name="module_gallery" value=30 id="module_gallery" class="functional" onchange="arrsum(); calculating()"><span id="gallery"></span>
-  </p>
-  <p>
-    <label for="module_easycalc">Простой калькулятор</label>
-    <input type="checkbox" name="module_easycalc" value=50 id="module_easycalc" class="functional" onchange="arrsum(); calculating()"><span id="easycalc"></span>
-  </p>
-  <p>
-    <label for="module_hardcalc">Сложный калькулятор</label>
-    <input type="checkbox" name="module_hardcalc" value=200 id="module_hardcalc" class="functional" onchange="arrsum(); calculating()"><span id="hardcalc"></span>
-  </p>
-  <p>
-    <label for="module_formit">Обратная связь</label>
-    <input type="checkbox" name="module_formit" value=20 id="module_formit" class="functional" onchange="arrsum(); calculating()"><span id="formit"></span>
-  </p>
-  <p>
-    <label for="module_callback">Обратный звонок</label>
-    <input type="checkbox" name="module_callback" value=30 id="module_callback" class="functional" onchange="arrsum(); calculating()"><span id="callback"></span>
-  </p>
-  <p>
-    <label for="module_chat">Онлайн чат</label>
-    <input type="checkbox" name="module_chat" value=50 id="module_chat" class="functional" onchange="arrsum(); calculating()"><span id="chat"></span>
-  </p>
-  <p>
-    <label for="module_mailer">Подписка и рассылка</label>
-    <input type="checkbox" name="module_mailer" value=100 id="module_mailer" class="functional" onchange="arrsum(); calculating()"><span id="mailer"></span>
-  </p>
-  <p>
-    <label for="module_multilang">Мультиязычность</label>
-    <input type="checkbox" name="module_multilang" value=100 id="module_multilang" class="functional" onchange="arrsum(); calculating()"><span id="multilang"></span>
-  </p>
-  <p>
-    <label for="module_catalog">Каталог товаров</label>
-    <input type="checkbox" name="module_catalog" value=150 id="module_catalog" class="functional" onchange="arrsum(); calculating()"><span id="catalog"></span>
-  </p>
-  <p>
-    <label for="module_basket">Корзина</label>
-    <input type="checkbox" name="module_basket" value=80 id="module_basket" class="functional" onchange="arrsum(); calculating()"><span id="basket"></span>
-  </p>
-  <p>
-    <label for="module_payment">Онлайн оплата</label>
-    <input type="checkbox" name="module_payment" value=120 id="module_payment" class="functional" onchange="arrsum(); calculating()"><span id="payment"></span>
-  </p>
-  <p>
-    <label for="module_currency">Выбор валюты</label>
-    <input type="checkbox" name="module_currency" value=30 id="module_currency" class="functional" onchange="arrsum(); calculating()"><span id="currency"></span>
-  </p>
-  <p>
-    <label for="module_multitovar">Виды товаров</label>
-    <input type="checkbox" name="module_multitovar" value=60 id="module_multitovar" class="functional" onchange="arrsum(); calculating()"><span id="multitovar"></span>
-  </p>
-  <p>
-    <label for="module_sales">Акции</label>
-    <input type="checkbox" name="module_sales" value=40 id="module_sales" class="functional" onchange="arrsum(); calculating()"><span id="sales"></span>
-  </p>
-  <p>
-    <label for="module_api">API импортер</label>
-    <input type="checkbox" name="module_api" value=300 id="module_api" class="functional" onchange="arrsum(); calculating()"><span id="api"></span>
-  </p>
-  <p>
-    <label for="module_reg">Регистрация</label>
-    <input type="checkbox" name="module_reg" value=50 id="module_reg" class="functional" onchange="arrsum(); calculating()"><span id="reg"></span>
-  </p>
-  <p>
-    <label for="module_cabinet">Личный кабинет пользователя</label>
-    <input type="checkbox" name="module_cabinet" value=200 id="module_cabinet" class="functional" onchange="arrsum(); calculating()"><span id="cabinet"></span>
-  </p>
-  <p>
-    <label for="module_recomendation">Сопутствующие товары</label>
-    <input type="checkbox" name="module_recomendation" value=40 id="module_recomendation" class="functional" onchange="arrsum(); calculating()"><span id="recomendation"></span>
-  </p>
-  <p>
-    <label for="module_importer">Импортер ресурсов</label>
-    <input type="checkbox" name="module_importer" value=100 id="module_importer" class="functional" onchange="arrsum(); calculating()"><span id="importer"></span>
-  </p>
-  <p>
-    <label for="module_referal">Реферальная программа</label>
-    <input type="checkbox" name="module_referal"  value=100 id="module_referal" class="functional" onchange="arrsum(); calculating()"><span id="referal"></span>
-  </p>
-  <h2>Поддержка и наполнение сайта</h2>
-  <p>
-    <label for="content_easypage">Простая страница</label>
-    <input type="number" name="content_easypage" value=1 id="content_easypage" oninput="supportic(); calculating()" >
-    <input type="checkbox" name="c_easypage" class="support" onchange="supportic()"><span id="c-easypage"></span>
-  </p>
-  <p>
-    <label for="content_hardpage">Сложная страница</label>
-    <input type="number" name="content_hardpage" value=1 id="content_hardpage" oninput="supportic(); calculating()" >
-    <input type="checkbox" name="c_hardpage" class="support" onchange="supportic()"><span id="c-hardpage"></span>
 
-  </p>
-  <p>
-    <label for="content_editpage">Редактирование страницы</label>
-    <input type="number" name="content_editpage" value=1 id="content_editpage" oninput="supportic(); calculating()" >
-    <input type="checkbox" name="c_editpage" class="support" onchange="supportic()"><span id="c-editpage"></span>
+<main class="page">
+  <div class="screen for_screen" id="screen2">
+    <h1>УСЛУГИ</h1>
+  </div>
+  <form class="wrap" name="Site">
+    <div class="calc_descr" id="calc_descr">
+      <%=image_tag 'ico/calc.png'%>
+      <div class="calc_descr__info">
+        <h3>Калькулятор стоимости сайта</h3>
+        <p>Калькулятор – универсальный электронный помощник для быстрого расчёта стоимости продукта. Любой из вас теперь сможет быстро и эффективно (в режиме онлайн времени) посчитать какое количество финансовых средств вам придётся затратить для реализации вашего интернет – проекта. С помощью нашего калькулятора вам не придётся прибегать к помощи вспомогательных средств, теперь всё за вас это будет делать дополнительная функция, а у вас останется больше свободного времени для решения повседневных и рабочих задач. Калькулятор – экономия вашего драгоценного рабочего времени.
+      </div>
+    </div>
+    <h3 class="centr">ТИП САЙТА</h3>
+    <hr class="w500">
+    <div class="calc_item">
+      Тип сайта – разновидность сайта, которую заказывает клиент для реализации своего интернет – проекта. Сайты бывают нескольких видов и разной степени сложности. К ним можно отнести: корпоративный сайт, сайт – портал, лендинг (посадочная страница), интернет – магазин. В зависимости от того, что вам нужно разработать зависит и общая финансовая стоимость вашего проекта. Например, разработка интернет – магазина будет стоить вам больше чем, например, лендинга из-за большого объёма работы. Кроме этого выбор типа сайта напрямую влияет на стоимость разработки дизайна и вёрстки. Для уточнения финансовой стоимости вы можете воспользоваться услугами нашего калькулятора.
+    </div>
+    <div class="label_wrap">
+      <div class="label_item">
+        <input type="radio" name="site_type" class="site_type" id="corp_site" value="corp_site" onchange="Prices(); arrsum(); arraySum(); calculating()" >
+        <label for="corp_site"></label>
+        <%=image_tag 'ico/corp.png'%>
+        <h3>Корпоративный сайт</h3>
+        <p>Официальный сайт компании, представленный на просторах интернет паутины. Содержит всю основную информацию о предприятии и дополнительные возможности.</p>
+      </div>
+      <div class="label_item">
+        <input type="radio" name="site_type" class="site_type" id="portal_site" value="portal_site" onchange="Prices(); arrsum(); arraySum(); calculating()">
+        <label for="portal_site"></label>
+        <%=image_tag 'ico/portal.png'%>
+        <h3>Сайт-портал</h3>
+        <p>Обладает разносторонним контентом – новости, обзоры, экономика, спорт, магазины, сайты для предоставления услуг и.т.п. Удобен для поиска информации (“рекламная Википедия”).
+        </p>
+      </div>
+      <div class="label_item">
+        <input type="radio" name="site_type" class="site_type" id="lending" value="lending" onchange="Prices(); arrsum(); arraySum(); calculating()" >
+        <label for="lending"></label>
+        <%=image_tag 'ico/lending.png'%>
+        <h3>Лендинг</h3>
+        <p>Посадочная страница - важнейший элемент для расширения рекламной эффективности и клиентской аудитории. Содержит в себе информационный контент о конкретном товаре или услуге.
+        </p>
+      </div>
+      <div class="label_item">
+        <input type="radio" name="site_type" class="site_type" id="ecommerce" value="ecommerce" onchange="Prices(); arrsum(); arraySum(); calculating()">
+        <label for="ecommerce"></label>
+        <%=image_tag 'ico/shop.png'%>
+        <h3>Интернет-магазин</h3>
+        <p>Ресурс, продающий определенный вид товаров или услуг, на котором можно оформить и оплатить заказ не отходя от веб приложения. Самое перспективное направление продаж XXI века.
+        </p>
+      </div>
+    </div>
+    <a href="#design_and_verstka" id="design_and_verstka" class="calc_btn">Далее</a>
+    <h3 class="centr" >ДИЗАЙН И ВЕРСТКА</h3>
+    <hr class="w500_grey ">
+    <div class="calc_item__grey">
+      Дизайн и вёрстка сайта – два наиважнейших этапа разработки интернет – проекта. Дизайн сайта – это лицо всего проекта, его визуальное олицетворение и эффектная картинка, которая приятна для глаз настоящих и будущих клиентов. Грамотный и со вкусом, сделанный визуал – это минимум 50% предстоящего успеха. То же самое можно отнести и к вёрстке, так как она является своеобразной реализацией дизайна в браузерном окне, благодаря которой ваш сайт будет стабильно работать, не выдавая каждый месяц фатальных ошибок. Дизайн и вёрстка –  это ваши две стороны золотой инновационной медали. Рискните и вы не пожалеете!
+    </div>
+    <div class="design_wrap">
+      <div class="design_item">
+        <input type="radio"  name="site_design" id="self_design" value=300 class="design" disabled onchange="arraySum(); calculating()">
+        <label for="self_design"></label>
+        <%=image_tag 'ico/1.png', class:"design_item__img" %>
+        <h3>Свой дизайн</h3>
+        <p>Дизайн, который сформирован и предоставлен непосредственно клиентом. Пропускается этап дизайна однако время верстки может увеличиться.</p>
+        <span ><%=image_tag 'birka.png'%> <span id="self_design-c">Выберите тип сайта!</span></span>
+      </div>
+      <div class="design_item">
+        <input type="radio"  name="site_design" id="template_design" value=100 class="design"  disabled onchange="arraySum(); calculating()">
+        <label for="template_design"></label>
+        <%=image_tag 'ico/2.png', class:"design_item__img" %>
+        <h3>Шаблонный дизайн</h3>
+        <p>Заказ шаблона у нас с возможностью выбора подходящей цветовой гаммы. Мы готовы предоставить наши варианты руководствуясь вашей тематикой.
+        </p>
+        <span ><%=image_tag 'birka.png'%> <span id="template_design-c">Выберите тип сайта!</span></span>
+      </div>
+      <div class="design_item">
+        <input type="radio"  name="site_design" id="author_design" value=600 class="design" disabled onchange="arraySum(); calculating()">
+        <label for="author_design"></label>
+        <%=image_tag 'ico/3.png', class:"design_item__img" %>
+        <h3>Авторский дизайн</h3>
+        <p>Мы разрабатываем макет в соответствии с Вашими пожеланиями. В итоге дизайн полностью уникальный, что повышает ценность сайта и доверие посетителей.</p>
+        <span ><%=image_tag 'birka.png'%> <span id="author_design-c">Выберите тип сайта!</span></span>
+      </div>
+      <div class="design_item_chek">
+        <input type="checkbox" name="design_logo" value=70 id="design_logo" class="design" onchange="arraySum(); calculating()">
+        <label for="design_logo"></label>
+        <%=image_tag 'ico/design/logo.png'%>
+        <div>
+          <h3>Лого</h3>
+          <p>Помимо разработки сайта мы также можем разработать уникальный подходящий к Вашему стилю логотип. При создании логотипа будет учтена специфика сайта.
+          </p>
+          <span><%=image_tag 'birka.png'%><span id="design_logo-c">70$</span></span>
+        </div>
+      </div>
+      <div class="design_item_chek">
+        <input type="checkbox" name="design_banner" value=40 id="design_banner" class="design" onchange="arraySum(); calculating()">
+        <label for="design_banner"></label>
+        <%=image_tag 'ico/design/banner.png'%>
+        <div>
+          <h3>Баннер</h3>
+          <p>Рекламный баннер для Вашего сайта. Основная задача – привлечение клиентов, подача информации и создание дополнительного имиджа компании.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="design_banner-c">40$</span></span>
+        </div>
+      </div>
+      <div class="design_item_chek">
+        <input type="checkbox" name="design_page" value=200 id="design_page" class="design" onchange="arraySum(); calculating()">
+        <label for="design_page"></label>
+        <%=image_tag 'ico/design/lending_page.png'%>
+        <div>
+          <h3>Посадочная странница</h3>
+          <p>Веб-страница целью, которой является выполнение пользователем определенного действия. Важный элемент для расширения эффективности сайта.
+          </p>
+          <span><%=image_tag 'birka.png'%><span id="design_page-c">200$</span></span>
+        </div>
+      </div>
+    </div>
 
-  </p>
-  <p>
-    <label for="content_post">Размещение материала</label>
-    <input type="number" name="content_post" value=1 id="content_post" oniput="supportic(); calculating()" >
-    <input type="checkbox" name="c_post" class="support" onchange="supportic(); calculating()"><span id="c-post"></span>
-
-  </p>
-  <p>
-    <label for="content_translate">Перевод страницы</label>
-    <input type="number" name="content_translate" value=1 id="content_translate" oninput="supportic(); calculating()" >
-    <input type="checkbox" name="c_translate" class="support" onchange="supportic(); calculating()"><span id="c-translate"></span>
-
-  </p>
-  <p>
-    <label for="module_googlemaps">Google карта</label>
-    <input type="checkbox" name="module_googlemaps" value=20 id="module_googlemaps" class="functional" onchange="arrsum(); calculating(); Prices()"><span id="c-googlemaps"></span>
-  </p>
+    <div class="btn_wrap__calc">
+      <a href="#calc_descr" class="calc_btn">Назад</a>
+      <a href="#tech_dev" class="calc_btn" id="tech_dev">Далее</a>
+    </div>
 
 
+    <h3 class="centr">ВЫБОР (ДВИЖКА) САЙТА</h3>
+    <hr class="w500">
+    <div class="calc_item">
+      Выбор движка – важный и определяющий фактор для вашего будущего интернет – проекта. Данный фактор имеет непосредственное влияние на конечную стоимость разработки функционала и сроки его выполнения. К данному вопросу нужно отнестись бережно, ведь выбор движка определяет его возможность для последующих расширений ресурса (если таковые будут необходимы). Например, для разработки корпоративного сайта, небольших порталов, мелких интернет – магазинов и лендингов идеальным вариантом считается MODX. Для более сложных вариаций порталов, корп.сайтов, интернет – магазинов более уместен фреймворк Ruby on Rails или фреймворки языка Python.
+    </div>
+    <div class="cms_wrap">
+      <div class="cms_item">
+        <input type="radio" name="engine" value="modx" id="engine_modx" onchange="Prices(); arrsum(); arraySum(); calculating() ">
+        <label for="engine_modx"></label>
+        <%=image_tag 'radio_modx.png'%>
+      </div>
+      <div class="cms_item">
+        <input type="radio" name="engine" value="rails" id="engine_ruby" onchange="Prices(); arrsum(); arraySum(); calculating()">
+        <label for="engine_ruby"></label>
+        <%=image_tag 'radio_rails.png'%>
+      </div>
+      <div class="cms_item">
+        <input type="radio" name="engine" value="python" id="engine_python" onchange="Prices(); arrsum(); arraySum(); calculating()">
+        <label for="engine_python"></label>
+        <%=image_tag 'radio_piton.png'%>
+      </div>
+    </div>
+    <div class="btn_wrap__calc">
+      <a href="#design_and_verstka" class="calc_btn">Назад</a>
+      <a href="#functional_calc" class="calc_btn" id="functional_calc">Далее</a>
+    </div>
+    <h3 class="centr">ВЫБОР ФУНКЦИОНАЛА</h3>
+    <hr class="w500_grey">
+    <div class="calc_item__grey">
+      Выбор функционала – одно из важнейших направлений, которое помогает вам правильно сориентироваться и понять, какие конкретно паутинные функции вы хотите видеть в своём интернет – проекте. Внимательно прочтя весь перечень услуг, которые мы готовы вам предоставить, вы получите исчерпывающую информацию, которая будет для вас крайне полезной и эффективной. Вы сможете понять, что, например, функция движущихся слайдеров для привлечения клиентов будет очень кстати на вашем сайте путешествий. А вот функция онлайн чата пока может и подождать. Для просчёта стоимости той или иной услуги функционала вам поможет наш калькулятор.
+    </div>
+    <div class="function_wrap">
+      <div class="function_item">
+        <input type="checkbox"  name="module_otzyvy" value=100 id="module_otzyvy" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_otzyvy"></label>
+        <%=image_tag 'ico/func/otzyv.png', class: "function_item__img"%>
+        <div>
+          <h3>Отзывы</h3>
+          <p>Модуль отзывов или комментариев, который позволяет пользователям давать обратную связь на сайте, тем самым взаимодействую с Вашим веб-приложением.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="otzyv">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_blog" value=80 id="module_blog" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_blog"></label>
+        <%=image_tag 'ico/func/blog.png', class: "function_item__img"%>
+        <div>
+          <h3>Блог</h3>
+          <p>Категория сайта, наполняемая свежим информационным контентом (текстом, изображением или видеороликом). Для более эффективного использования ведётся несколькими людьми.
+          </p>
+          <span ><%=image_tag 'birka.png'%> <span id="blog">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_slider" value="20" id="module_slider" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_slider"></label>
+        <%=image_tag 'ico/func/slider.png', class: "function_item__img"%>
+        <div>
+          <h3>Слайдер</h3>
+          <p>Блок различных размеров, размещённый чаще всего в шапке сайта. Основное достоинство – создание динамичных элементов в ручном или автоматическом режиме (фотографии, изображения, тексты).
+          </p>
+          <span ><%=image_tag 'birka.png'%> <span id="slider">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_gallery" value="30" id="module_gallery" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_gallery"></label>
+        <%=image_tag 'ico/func/gallery.png', class: "function_item__img"%>
+        <div>
+          <h3>Фотогалерея</h3>
+          <p>Выставление на показ всех загруженных фото, картинок и изображений. Имеет множество положительных плюсов, главный из которых – расширение представления клиента о предлагаемом товаре.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="gallery">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_easycalc" value=50 id="module_easycalc" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_easycalc"></label>
+        <%=image_tag 'ico/func/easycalc.png', class: "function_item__img"%>
+        <div>
+          <h3>Простой калькулятор</h3>
+          <p>Функциональная разработка для сайта. Имеет небольшое количество функций для более точного автоматического расчёта стоимости продукта. Команды вводятся при помощи мышки или клавиатуры.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="easycalc">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_hardcalc" value=250 id="module_hardcalc" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_hardcalc"></label>
+        <%=image_tag 'ico/func/hardcalc.png', class: "function_item__img"%>
+        <div>
+          <h3>Сложный калькулятор</h3>
+          <p>Функциональная разработка для сайта. Помимо простейших функций имеет ряд дополнительных и важных функций для более точечного расчета стоимости. Команды вводятся при помощи мышки или клавиатуры.
+          </p>
+          <span ><%=image_tag 'birka.png'%> <span id="hardcalc">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_formit" value=20 id="module_formit" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_formit"></label>
+        <%=image_tag 'ico/func/formit.png', class: "function_item__img"%>
+        <div>
+          <h3>Обратная связь</h3>
+          <p>Удобный инструмент для взаимодействия между администратором сайта и клиентом. Оформлена в виде таблицы размещённой на сайте. Элемент предоставления информационного контента для покупателя.
+          </p>
+          <span ><%=image_tag 'birka.png'%> <span id="formit">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_callback" value=30 id="module_callback" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_callback"></label>
+        <%=image_tag 'ico/func/callback.png', class: "function_item__img"%>
+        <div>
+          <h3>Обратный звонок</h3>
+          <p>Применяется различными сайтами для коммуникации между продавцом и покупателем. Функциональное предназначение – расширение пользовательского интереса и привлечение новых покупателей.
+          </p>
+          <span ><%=image_tag 'birka.png'%> <span id="callback">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_chat" value=50 id="module_chat" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_chat"></label>
+        <%=image_tag 'ico/func/chat.png', class: "function_item__img"%>
+        <div>
+          <h3>Онлайн чат</h3>
+          <p>Очень эффективный инструмент, где проходит интенсивное общение между потребителем и производителем. Помогает выявлять новые направления и идеи, которые способствовали бы развитию интернет сайта.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="chat">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_mailer" value=100 id="module_mailer" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_mailer"></label>
+        <%=image_tag 'ico/func/mailer.png', class: "function_item__img"%>
+        <div>
+          <h3>Подписка и рассылка</h3>
+          <p>Информационный контент, который заинтересовал бы человека на посещение сайта (новые поступления товаров, акции и скидки) пересылается ему через электронную почту. Рассылка бывает платной или бесплатной.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="mailer">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_multilang" value=100 id="module_multilang" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_multilang"></label>
+        <%=image_tag 'ico/func/multilang.png', class: "function_item__img"%>
+        <div>
+          <h3>Мультиязычность</h3>
+          <p>Версия сайта, который не ограничивается одним языком. Весь информационный контент можно прочитать не только на местном, но и на других языках с целью охвата большей аудитории посетителей.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="multilang">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_catalog" value=150 id="module_catalog" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_catalog"></label>
+        <%=image_tag 'ico/func/catalog.png', class: "function_item__img"%>
+        <div>
+          <h3>Каталог товаров</h3>
+          <p>Полный перечень товарной продукции, который представлен на интернет сайте дабы облегчить клиенту поиск необходимого товара. Имеет несколько видов – товарный, рекламный, почтовый, выставочный.
+          </p>
+          <span ><%=image_tag 'birka.png'%> <span id="catalog">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_basket" value=80 id="module_basket" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_basket"></label>
+        <%=image_tag 'ico/func/basket.png', class: "function_item__img"%>
+        <div>
+          <h3>Корзина</h3>
+          <p>Интерфейс сайта, куда клиент может добавлять товарную продукцию. Обязательный элемент для оформления покупки с большим количеством товаров. Присутствует на всех коммерческих сайтах.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="basket">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_payment" value=120 id="module_payment" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_payment"></label>
+        <%=image_tag 'ico/func/payment.png', class: "function_item__img"%>
+        <div>
+          <h3>Онлайн оплата</h3>
+          <p>Подключение на сайте сервиса для приёма денежных платежей. Перспективное направление, которое в будущем будет составлять конкуренцию традиционным видам оплаты за услуги или товар.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="payment">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_currency" value=30 id="module_currency" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_currency"></label>
+        <%=image_tag 'ico/func/currency.png', class: "function_item__img"%>
+        <div>
+          <h3>Выбор валюты</h3>
+          <p>Функция сайта, облегчающая просчёт стоимости товара в иностранных валютах по текущему курсу. Функциональное предназначение – расширение пользовательского интереса и привлечение новых покупателей.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="currency">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_multitovar" value=50 id="module_multitovar" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_multitovar"></label>
+        <%=image_tag 'ico/func/multitovar.png', class: "function_item__img"%>
+        <div>
+          <h3>Виды товаров</h3>
+          <p>Удобная функция, цель которой заключается в разработке одной и той же позиции товара, но с разными дополнительными возможностями (различный цветовой фон, цены на продукт и.т.д.).</p>
+          <span ><%=image_tag 'birka.png'%> <span id="multitovar">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_sales" value=40 id="module_sales" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_sales"></label>
+        <%=image_tag 'ico/func/sales.png', class: "function_item__img"%>
+        <div>
+          <h3>Акции</h3>
+          <p>Разработка специального модуля акций. При помощи него можно очень легко создавать различные виды акций и подбирать под них конкретную товарную продукцию на строго определённое время.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="sales">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_api" value=400 id="module_api" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_api"></label>
+        <%=image_tag 'ico/func/api.png', class: "function_item__img"%>
+        <div>
+          <h3>API импортер</h3>
+          <p>API импортёр – дополнительная функция на сайте, предназначенная для синхронизации со многими сервисами через API. По желанию клиента таких импортёров может быть прописано несколько.
+          </p>
+          <span ><%=image_tag 'birka.png'%> <span id="api">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_reg" value=50 id="module_reg" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_reg"></label>
+        <%=image_tag 'ico/func/reg.png', class: "function_item__img"%>
+        <div>
+          <h3>Регистрация</h3>
+          <p>Функциональная особенность, без которой не обойтись практически любому сайту. В такой системе клиент получает самую свежую информацию, которую готова предоставить ему администрация сайта.
+            <span ><%=image_tag 'birka.png'%> <span id="reg">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_cabinet" value=200 id="module_cabinet" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_cabinet"></label>
+        <%=image_tag 'ico/func/cabinet.png', class: "function_item__img"%>
+        <div>
+          <h3>Личный кабинет пользователя</h3>
+          <p>Персональная страница клиента, доступ к которой возможен только ему. Другое название личного кабинета – аккаунт. Личный кабинет появляется у клиента после регистрации и авторизации на сайте.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="cabinet">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_recomendation" value=30 id="module_recomendation" disabled class="functional" onchange="arrsum(); calculating()">
+        <label for="module_recomendation"></label>
+        <%=image_tag 'ico/func/recomendation.png', class: "function_item__img"%>
+        <div>
+          <h3>Сопутствующие товары</h3>
+          <p>Реклама товаров другой направленности на странице определённого товара. Функциональное предназначение – расширение пользовательского интереса и привлечение новых покупателей. </p>
+          <span ><%=image_tag 'birka.png'%> <span id="recomendation">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_importer" value=150 id="module_importer" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_importer"></label>
+        <%=image_tag 'ico/import.png', class: "function_item__img"%>
+        <div>
+          <h3>Импортер ресурсов</h3>
+          <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="importer">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_referal" value=180 id="module_referal" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_referal"></label>
+        <%=image_tag 'ico/refer.png', class: "function_item__img"%>
+        <div>
+          <h3>Реферальная программа</h3>
+          <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="referal">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox"  name="module_filtration" value=100 id="module_filtration" class="functional" disabled onchange="arrsum(); calculating()">
+        <label for="module_filtration"></label>
+        <%=image_tag 'ico/filtr.png', class: "function_item__img"%>
+        <div>
+          <h3>Фильтрация</h3>
+          <p>Модуль фильтрации помогает людям сократить время для нахождения необходимой информации, а значит, существенно повысить конверсию Вашего сайта</p>
+          <span ><%=image_tag 'birka.png'%> <span id="filtration">Выберите движок сайта!</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="btn_wrap__calc">
+      <a href="#tech_dev" class="calc_btn">Назад</a>
+      <a href="#support_calc" class="calc_btn" id="support_calc">Далее</a>
+    </div>
+    <h3 class="centr">ПОДДЕРЖКА САЙТА</h3>
+    <hr class="w500">
+    <div class="calc_item">
+      Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+    </div>
+    <div class="support_wrap">
+      <div class="support_item">
+        <input type="checkbox"  name="c_easypage" id="c_easypage"   class="support" onchange="supportic(); calculating()">
+        <label for="c_easypage"></label>
+        <%=image_tag 'ico/func/podder/easypage.png', class: "suppor_item__img"%>
+        <div>
+          <h3>Простая страница</h3>
+          <p>Cамый простой вариант наполнения сайта. Присутствует информационный и графический контент. Отсутствуют сложные таблицы, нет большого количества изображений.
+          </p>
+          <span><%=image_tag 'birka.png'%><span id="c-easypage">10$</span></span>
+        </div>
+        <input type="number" name="content_easypage" value=1 id="content_easypage" min="1" oninput="supportic(); calculating()" >
+      </div>
+      <div class="support_item">
+        <input type="checkbox"  name="c_hardpage"  id="c_hardpage"  class="support" onchange="supportic(); calculating()">
+        <label for="c_hardpage"></label>
+        <%=image_tag 'ico/func/podder/hardpage.png', class: "suppor_item__img"%>
+        <div>
+          <h3>Сложная страница</h3>
+          <p>Помимо информационного и графического контента, включает в себя страницы с таблицами, видео контент, всплывающие изображения (или же адаптивную вёрстку).</p>
+          <span><%=image_tag 'birka.png'%><span id="c-hardpage">30$</span></span>
+        </div>
+        <input type="number" name="content_hardpage" value=1 id="content_hardpage" oninput="supportic(); calculating()" >
+      </div>
+      <div class="support_item">
+        <input type="checkbox"  name="c-editpage" id="c_editpage"  class="support" onchange="supportic(); calculating()">
+        <label for="c_editpage"></label>
+        <%=image_tag 'ico/func/podder/editpage.png', class: "suppor_item__img"%>
+        <div>
+          <h3>Редактирование страницы</h3>
+          <p>Если у вас назрела необходимость изменить страницу на своём сайте, вы можете выбрать из двух предложенных ранее вариантов (простая или сложная страница).
+          </p>
+          <span><%=image_tag 'birka.png'%><span id="c-editpage">10$</span></span>
+        </div>
+        <input type="number" name="content_editpage" value=1 id="content_editpage" oninput="supportic(); calculating()" >
+      </div>
+      <div class="support_item">
+        <input type="checkbox"  name="c_post"   id="c_post" class="support" onchange="supportic(); calculating()">
+        <label for="c_post"></label>
+        <%=image_tag 'ico/func/podder/post.png', class: "suppor_item__img"%>
+        <div>
+          <h3>Размещение материала</h3>
+          <p>Размещение текстового, графического, видео контента на сайте. В таких случаях стоимость зависит от сложности позиции, поэтому расчёт производится индивидуально.</p>
+          <span><%=image_tag 'birka.png'%><span id="c-post">10$</span></span>
+        </div>
+        <input type="number" name="content_post" value=1 id="content_post" oninput="supportic(); calculating()" >
+      </div>
+      <div class="support_item">
+        <input type="checkbox"  name="c_translate"  id="c_translate" class="support" onchange="supportic(); calculating()">
+        <label for="c_translate"></label>
+        <%=image_tag 'ico/func/podder/translate.png', class: "suppor_item__img"%>
+        <div>
+          <h3>Перевод страницы</h3>
+          <p>Заполнение сайта текстом, который переведён на другой язык (английский, китайский и.т.д.). Цена указана за перевод одной страницы. Перевод страницы позволит расширить аудиторию.</p>
+          <span><%=image_tag 'birka.png'%><span id="c-translate">10$</span></span>
+        </div>
+        <input type="number" name="content_translate" value=1 id="content_translate" oninput="supportic(); calculating()" >
+      </div>
+      <div class="support_item">
+        <input type="checkbox"  name="module_googlemaps" value=20 id="module_googlemaps" class="support" onchange="supportic(); calculating()">
+        <label for="module_googlemaps"></label>
+        <%=image_tag 'ico/func/podder/googlemaps.png', class: "suppor_item__img"%>
+        <div>
+          <h3>Google карта</h3>
+          <p>дополнительный элемент для продвижения вашего сайта. Теперь здание где находится ваш офис, представительство будет отмечено на карте с точным маршрутом проезда, изображением фасада дома и графиком работы.</p>
+          <span><%=image_tag 'birka.png'%><span id="c-googlemaps">20$</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="innfo">
+      <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDIzLjYyNSAyMy42MjUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIzLjYyNSAyMy42MjU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4Ij4KPGc+Cgk8cGF0aCBkPSJNMTEuODEyLDBDNS4yODksMCwwLDUuMjg5LDAsMTEuODEyczUuMjg5LDExLjgxMywxMS44MTIsMTEuODEzczExLjgxMy01LjI5LDExLjgxMy0xMS44MTMgICBTMTguMzM1LDAsMTEuODEyLDB6IE0xNC4yNzEsMTguMzA3Yy0wLjYwOCwwLjI0LTEuMDkyLDAuNDIyLTEuNDU1LDAuNTQ4Yy0wLjM2MiwwLjEyNi0wLjc4MywwLjE4OS0xLjI2MiwwLjE4OSAgIGMtMC43MzYsMC0xLjMwOS0wLjE4LTEuNzE3LTAuNTM5cy0wLjYxMS0wLjgxNC0wLjYxMS0xLjM2N2MwLTAuMjE1LDAuMDE1LTAuNDM1LDAuMDQ1LTAuNjU5YzAuMDMxLTAuMjI0LDAuMDgtMC40NzYsMC4xNDctMC43NTkgICBsMC43NjEtMi42ODhjMC4wNjctMC4yNTgsMC4xMjUtMC41MDMsMC4xNzEtMC43MzFjMC4wNDYtMC4yMywwLjA2OC0wLjQ0MSwwLjA2OC0wLjYzM2MwLTAuMzQyLTAuMDcxLTAuNTgyLTAuMjEyLTAuNzE3ICAgYy0wLjE0My0wLjEzNS0wLjQxMi0wLjIwMS0wLjgxMy0wLjIwMWMtMC4xOTYsMC0wLjM5OCwwLjAyOS0wLjYwNSwwLjA5Yy0wLjIwNSwwLjA2My0wLjM4MywwLjEyLTAuNTI5LDAuMTc2bDAuMjAxLTAuODI4ICAgYzAuNDk4LTAuMjAzLDAuOTc1LTAuMzc3LDEuNDMtMC41MjFjMC40NTUtMC4xNDYsMC44ODUtMC4yMTgsMS4yOS0wLjIxOGMwLjczMSwwLDEuMjk1LDAuMTc4LDEuNjkyLDAuNTMgICBjMC4zOTUsMC4zNTMsMC41OTQsMC44MTIsMC41OTQsMS4zNzZjMCwwLjExNy0wLjAxNCwwLjMyMy0wLjA0MSwwLjYxN2MtMC4wMjcsMC4yOTUtMC4wNzgsMC41NjQtMC4xNTIsMC44MTFsLTAuNzU3LDIuNjggICBjLTAuMDYyLDAuMjE1LTAuMTE3LDAuNDYxLTAuMTY3LDAuNzM2Yy0wLjA0OSwwLjI3NS0wLjA3MywwLjQ4NS0wLjA3MywwLjYyNmMwLDAuMzU2LDAuMDc5LDAuNTk5LDAuMjM5LDAuNzI4ICAgYzAuMTU4LDAuMTI5LDAuNDM1LDAuMTk0LDAuODI3LDAuMTk0YzAuMTg1LDAsMC4zOTItMC4wMzMsMC42MjYtMC4wOTdjMC4yMzItMC4wNjQsMC40LTAuMTIxLDAuNTA2LTAuMTdMMTQuMjcxLDE4LjMwN3ogICAgTTE0LjEzNyw3LjQyOWMtMC4zNTMsMC4zMjgtMC43NzgsMC40OTItMS4yNzUsMC40OTJjLTAuNDk2LDAtMC45MjQtMC4xNjQtMS4yOC0wLjQ5MmMtMC4zNTQtMC4zMjgtMC41MzMtMC43MjctMC41MzMtMS4xOTMgICBjMC0wLjQ2NSwwLjE4LTAuODY1LDAuNTMzLTEuMTk2YzAuMzU2LTAuMzMyLDAuNzg0LTAuNDk3LDEuMjgtMC40OTdjMC40OTcsMCwwLjkyMywwLjE2NSwxLjI3NSwwLjQ5NyAgIGMwLjM1MywwLjMzMSwwLjUzLDAuNzMxLDAuNTMsMS4xOTZDMTQuNjY3LDYuNzAzLDE0LjQ5LDcuMTAxLDE0LjEzNyw3LjQyOXoiIGZpbGw9IiMxZmFhZTIiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+      <p>Цены всех указанных выше услуг рассчитаны из проекта базовой (минимальной) сложности. В случае усложнения выполнения работы по проекту, сумма калькуляции может возрасти в три раза.</p>
+    </div>
+    <div class="btn_wrap__calc">
+      <a href="#functional_calc" class="calc_btn">Назад</a>
+      <a href="#zakaz" class="calc_btn" id="zakaz">Далее</a>
+    </div>
+    <input type="hidden" id="diz_balance">
+    <input type="hidden" id="prog_balance">
+    <input type="hidden" id="support_balance">
+  </form>
+  <div id="screen_form">
+    <div class="wrap">
+      <form action="#" class="form_calc">
+        <p>Имя Фамилия:</p>
+        <input type="text">
+        <p>E-mail:</p>
+        <input type="email">
+        <p>Телефон:</p>
+        <input type="tel">
+        <p>Описание задания:</p>
+        <textarea></textarea>
+        <div class="calc_price sticky">Цена: <span id="total_calc">Не выбрана</span></div>
+        <button type="submit" class="calc_btn">Отправить заказ</button>
+      </form>
+    </div>
+  </div>
+</main>
+<script>
+function Prices(){
+e_price = document.Site.engine.value;
+otzyv = document.getElementById('module_otzyvy');
+blog = document.getElementById('module_blog');
+slider = document.getElementById('module_slider');
+gallery = document.getElementById('module_gallery');
+easycalc = document.getElementById('module_easycalc');
+hardcalc = document.getElementById('module_hardcalc');
+formit = document.getElementById('module_formit');
+callback = document.getElementById('module_callback');
+chat = document.getElementById('module_chat');
+mailer = document.getElementById('module_mailer');
+multilang = document.getElementById('module_multilang');
+catalog = document.getElementById('module_catalog');
+basket = document.getElementById('module_basket');
+payment = document.getElementById('module_payment');
+currency = document.getElementById('module_currency');
+multitovar = document.getElementById('module_multitovar');
+sales = document.getElementById('module_sales');
+api = document.getElementById('module_api');
+reg = document.getElementById('module_reg');
+cabinet = document.getElementById('module_cabinet');
+recomendation = document.getElementById('module_recomendation');
+importer = document.getElementById('module_importer');
+referal = document.getElementById('module_referal');
+filtration = document.getElementById('module_filtration');
 
-  <button>KUKU</button>
-</form>
-<script type="text/javascript">
-
-    function Prices(){
-        e_price = document.Site.engine.value;
-        otzyv = document.getElementById('module_otzyvy');
-        blog = document.getElementById('module_blog');
-        slider = document.getElementById('module_slider');
-        gallery = document.getElementById('module_gallery');
-        easycalc = document.getElementById('module_easycalc');
-        hardcalc = document.getElementById('module_hardcalc');
-        formit = document.getElementById('module_formit');
-        callback = document.getElementById('module_callback');
-        chat = document.getElementById('module_chat');
-        mailer = document.getElementById('module_mailer');
-        multilang = document.getElementById('module_multilang');
-        catalog = document.getElementById('module_catalog');
-        basket = document.getElementById('module_basket');
-        payment = document.getElementById('module_payment');
-        currency = document.getElementById('module_currency');
-        multitovar = document.getElementById('module_multitovar');
-        sales = document.getElementById('module_sales');
-        api = document.getElementById('module_api');
-        reg = document.getElementById('module_reg');
-        cabinet = document.getElementById('module_cabinet');
-        recomendation = document.getElementById('module_recomendation');
-        importer = document.getElementById('module_importer');
-        referal = document.getElementById('module_referal');
-
-
-        d_price = document.Site.site_type.value;
-        Selfic = document.getElementById('self_design');
-        template = document.getElementById('template_design');
-        author = document.getElementById("author_design");
-        switch(d_price){
-            case "corp_site":
-                Selfic.setAttribute('value', 400);
-                template.setAttribute('value', 100);
-                author.setAttribute('value', 600);
-                author.checked = true;
-                document.Site.design_logo.checked = true;
-                otzyv.checked = false;
-                blog.checked = true;
-                slider.checked = true;
-                gallery.checked = true;
-                easycalc.checked = false;
-                hardcalc.checked = false;
-                formit.checked = true;
-                callback.checked = false;
-                chat.checked = false;
-                mailer.checked = false;
-                multilang.checked = false;
-                catalog.checked = false;
-                basket.checked = false;
-                payment.checked = false;
-                currency.checked = false;
-                multitovar.checked = false;
-                sales.checked = false;
-                api.checked = false;
-                reg.checked = false;
-                cabinet.checked = false;
-                recomendation.checked = false;
-                importer.checked = false;
-                referal.checked = false;
-                break;
-            case "portal_site":
-                Selfic.setAttribute('value', 800);
-                template.setAttribute('value', 200);
-                author.setAttribute('value', 1200);
-                author.checked = true;
-                document.Site.design_logo.checked = true;
-                otzyv.checked = true;
-                blog.checked = true;
-                slider.checked = true;
-                gallery.checked = true;
-                easycalc.checked = false;
-                hardcalc.checked = false;
-                formit.checked = true;
-                callback.checked = true;
-                chat.checked = true;
-                mailer.checked = true;
-                multilang.checked = false;
-                catalog.checked = true;
-                basket.checked = false;
-                payment.checked = false;
-                currency.checked = false;
-                multitovar.checked = false;
-                sales.checked = false;
-                api.checked = false;
-                reg.checked = true;
-                cabinet.checked = true;
-                recomendation.checked = false;
-                importer.checked = false;
-                referal.checked = false;
-                break;
-            case "lending":
-                Selfic.setAttribute('value', 200);
-                template.setAttribute('value', 50);
-                author.setAttribute('value', 300);
-                author.checked = true;
-                document.Site.design_logo.checked = true;
-                otzyv.checked = false;
-                blog.checked = false;
-                slider.checked = true;
-                gallery.checked = true;
-                easycalc.checked = false;
-                hardcalc.checked = false;
-                formit.checked = true;
-                callback.checked = true;
-                chat.checked = true;
-                mailer.checked = false;
-                multilang.checked = false;
-                catalog.checked = false;
-                basket.checked = false;
-                payment.checked = false;
-                currency.checked = false;
-                multitovar.checked = false;
-                sales.checked = false;
-                api.checked = false;
-                reg.checked = false;
-                cabinet.checked = false;
-                recomendation.checked = false;
-                importer.checked = false;
-                referal.checked = false;
-                break;
-            case "ecommerce":
-                Selfic.setAttribute('value', 600);
-                template.setAttribute('value', 150);
-                author.setAttribute('value', 900);
-                author.checked = true;
-                document.Site.design_logo.checked = true;
-                otzyv.checked = false;
-                blog.checked = false;
-                slider.checked = true;
-                gallery.checked = true;
-                easycalc.checked = false;
-                hardcalc.checked = false;
-                formit.checked = true;
-                callback.checked = true;
-                chat.checked = false;
-                mailer.checked = false;
-                multilang.checked = false;
-                catalog.checked = true;
-                basket.checked = true;
-                payment.checked = true;
-                currency.checked = true;
-                multitovar.checked = true;
-                sales.checked = true;
-                api.checked = false;
-                reg.checked = false;
-                cabinet.checked = false;
-                recomendation.checked = false;
-                importer.checked = true;
-                referal.checked = false;
-        }
-        document.getElementById('self_design-c').innerHTML = Selfic.value + '$';
-        document.getElementById('template_design-c').innerHTML = template.value + '$';
-        document.getElementById('author_design-c').innerHTML = author.value + '$';
-        document.getElementById('design_logo-c').innerHTML = document.Site.design_logo.value + '$';
-        document.getElementById('design_banner-c').innerHTML = document.Site.design_banner.value + '$';
-        document.getElementById('design_page-c').innerHTML = document.Site.design_page.value + '$';
+d_price = document.Site.site_type.value;
+Selfic = document.getElementById('self_design');
+template = document.getElementById('template_design');
+author = document.getElementById("author_design");
+functional=document.getElementsByClassName('functional');
+for(i=0; i<functional.length; i++){
+functional[i].removeAttribute('disabled');
+}
+dizayn = document.getElementsByClassName('design');
+for(i=0; i<dizayn.length; i++){
+dizayn[i].removeAttribute('disabled');
+}
+switch(d_price){
+case "corp_site":
+Selfic.setAttribute('value', 300);
+template.setAttribute('value', 100);
+author.setAttribute('value', 500);
+author.checked = true;
+document.Site.design_logo.checked = true;
+otzyv.checked = false;
+blog.checked = true;
+slider.checked = true;
+gallery.checked = true;
+easycalc.checked = false;
+hardcalc.checked = false;
+formit.checked = true;
+callback.checked = false;
+chat.checked = false;
+mailer.checked = false;
+multilang.checked = false;
+catalog.checked = false;
+basket.checked = false;
+payment.checked = false;
+currency.checked = false;
+multitovar.checked = false;
+sales.checked = false;
+api.checked = false;
+reg.checked = false;
+cabinet.checked = false;
+recomendation.checked = false;
+importer.checked = false;
+referal.checked = false;
+filtration.checked = false;
+break;
+case "portal_site":
+Selfic.setAttribute('value', 600);
+template.setAttribute('value', 200);
+author.setAttribute('value', 1000);
+author.checked = true;
+document.Site.design_logo.checked = true;
+otzyv.checked = true;
+blog.checked = true;
+slider.checked = true;
+gallery.checked = true;
+easycalc.checked = false;
+hardcalc.checked = false;
+formit.checked = true;
+callback.checked = true;
+chat.checked = true;
+mailer.checked = true;
+multilang.checked = false;
+catalog.checked = true;
+basket.checked = false;
+payment.checked = false;
+currency.checked = false;
+multitovar.checked = false;
+sales.checked = false;
+api.checked = false;
+reg.checked = true;
+cabinet.checked = true;
+recomendation.checked = false;
+importer.checked = false;
+referal.checked = false;
+filtration.checked = false;
+break;
+case "lending":
+Selfic.setAttribute('value', 150);
+template.setAttribute('value', 50);
+author.setAttribute('value', 250);
+author.checked = true;
+document.Site.design_logo.checked = true;
+otzyv.checked = false;
+blog.checked = false;
+slider.checked = true;
+gallery.checked = true;
+easycalc.checked = false;
+hardcalc.checked = false;
+formit.checked = true;
+callback.checked = true;
+chat.checked = true;
+mailer.checked = false;
+multilang.checked = false;
+catalog.checked = false;
+basket.checked = false;
+payment.checked = false;
+currency.checked = false;
+multitovar.checked = false;
+sales.checked = false;
+api.checked = false;
+reg.checked = false;
+cabinet.checked = false;
+recomendation.checked = false;
+importer.checked = false;
+referal.checked = false;
+filtration.checked=false;
+break;
+case "ecommerce":
+Selfic.setAttribute('value', 450);
+template.setAttribute('value', 150);
+author.setAttribute('value', 750);
+author.checked = true;
+document.Site.design_logo.checked = true;
+otzyv.checked = false;
+blog.checked = false;
+slider.checked = true;
+gallery.checked = true;
+easycalc.checked = false;
+hardcalc.checked = false;
+formit.checked = true;
+callback.checked = true;
+chat.checked = false;
+mailer.checked = false;
+multilang.checked = false;
+catalog.checked = true;
+basket.checked = true;
+payment.checked = true;
+currency.checked = true;
+multitovar.checked = true;
+sales.checked = true;
+api.checked = false;
+reg.checked = false;
+cabinet.checked = false;
+recomendation.checked = false;
+importer.checked = true;
+referal.checked = false;
+filtration.checked = true;
+}
+document.getElementById('self_design-c').innerHTML = Selfic.value + '$';
+document.getElementById('template_design-c').innerHTML = template.value + '$';
+document.getElementById('author_design-c').innerHTML = author.value + '$';
+document.getElementById('design_logo-c').innerHTML = document.Site.design_logo.value + '$';
+document.getElementById('design_banner-c').innerHTML = document.Site.design_banner.value + '$';
+document.getElementById('design_page-c').innerHTML = document.Site.design_page.value + '$';
 
 
-        switch (e_price){
-            case "modx":
-                otzyv.setAttribute('value', 100);
-                blog.setAttribute('value', 80);
-                slider.setAttribute('value', 20);
-                gallery.setAttribute('value', 30);
-                easycalc.setAttribute('value', 50);
-                hardcalc.setAttribute('value', 250);
-                formit.setAttribute('value', 20);
-                callback.setAttribute('value', 30);
-                chat.setAttribute('value', 50);
-                mailer.setAttribute('value', 100);
-                multilang.setAttribute('value', 100);
-                catalog.setAttribute('value', 150);
-                basket.setAttribute('value', 80);
-                payment.setAttribute('value', 120);
-                currency.setAttribute('value', 30);
-                multitovar.setAttribute('value', 50);
-                sales.setAttribute('value', 40);
-                api.setAttribute('value', 400);
-                reg.setAttribute('value', 50);
-                cabinet.setAttribute('value', 200);
-                recomendation.setAttribute('value', 30);
-                importer.setAttribute('value', 150);
-                referal.setAttribute('value', 180);
-                break;
-            case "rails":
-                otzyv.setAttribute('value', 300);
-                blog.setAttribute('value', 240);
-                slider.setAttribute('value', 60);
-                gallery.setAttribute('value', 45);
-                easycalc.setAttribute('value', 90);
-                hardcalc.setAttribute('value', 360);
-                formit.setAttribute('value', 60);
-                callback.setAttribute('value', 90);
-                chat.setAttribute('value', 150);
-                mailer.setAttribute('value', 300);
-                multilang.setAttribute('value', 300);
-                catalog.setAttribute('value', 450);
-                basket.setAttribute('value', 300);
-                payment.setAttribute('value', 250);
-                currency.setAttribute('value', 60);
-                multitovar.setAttribute('value', 120);
-                sales.setAttribute('value', 100);
-                api.setAttribute('value', 900);
-                reg.setAttribute('value', 150);
-                cabinet.setAttribute('value', 600);
-                recomendation.setAttribute('value', 80);
-                importer.setAttribute('value', 300);
-                referal.setAttribute('value', 300);
-                break;
-            case "python":
-                otzyv.setAttribute('value', 320);
-                blog.setAttribute('value', 200);
-                slider.setAttribute('value', 40);
-                gallery.setAttribute('value', 35);
-                easycalc.setAttribute('value', 100);
-                hardcalc.setAttribute('value', 400);
-                formit.setAttribute('value', 90);
-                callback.setAttribute('value', 100);
-                chat.setAttribute('value', 200);
-                mailer.setAttribute('value', 200);
-                multilang.setAttribute('value', 200);
-                catalog.setAttribute('value', 350);
-                basket.setAttribute('value', 250);
-                payment.setAttribute('value', 200);
-                currency.setAttribute('value', 50);
-                multitovar.setAttribute('value', 150);
-                sales.setAttribute('value', 120);
-                api.setAttribute('value', 800);
-                reg.setAttribute('value', 200);
-                cabinet.setAttribute('value', 500);
-                recomendation.setAttribute('value', 100);
-                importer.setAttribute('value', 250);
-                referal.setAttribute('value', 350);
-                break;
-        }
-        document.getElementById('otzyv').innerHTML = otzyv.value + '$';
-        document.getElementById('blog').innerHTML = blog.value + '$';
-        document.getElementById('slider').innerHTML = slider.value + '$';
-        document.getElementById('gallery').innerHTML = gallery.value + '$';
-        document.getElementById('easycalc').innerHTML = easycalc.value + '$';
-        document.getElementById('hardcalc').innerHTML = hardcalc.value + '$';
-        document.getElementById('formit').innerHTML = formit.value + '$';
-        document.getElementById('callback').innerHTML = callback.value + '$';
-        document.getElementById('chat').innerHTML = chat.value + '$';
-        document.getElementById('mailer').innerHTML = mailer.value + '$';
-        document.getElementById('multilang').innerHTML = multilang.value + '$';
-        document.getElementById('catalog').innerHTML = catalog.value + '$';
-        document.getElementById('basket').innerHTML = basket.value + '$';
-        document.getElementById('payment').innerHTML = payment.value + '$';
-        document.getElementById('currency').innerHTML = currency.value + '$';
-        document.getElementById('multitovar').innerHTML = multitovar.value + '$';
-        document.getElementById('sales').innerHTML = sales.value + '$';
-        document.getElementById('api').innerHTML = api.value + '$';
-        document.getElementById('reg').innerHTML = reg.value + '$';
-        document.getElementById('cabinet').innerHTML = cabinet.value + '$';
-        document.getElementById('recomendation').innerHTML = recomendation.value + '$';
-        document.getElementById('importer').innerHTML = importer.value + '$';
-        document.getElementById('referal').innerHTML = referal.value + '$';
-        document.getElementById('c-googlemaps').innerHTML = document.Site.module_googlemaps.value + '$';
+switch (e_price){
+case "modx":
+otzyv.setAttribute('value', 100);
+blog.setAttribute('value', 80);
+slider.setAttribute('value', 20);
+gallery.setAttribute('value', 30);
+easycalc.setAttribute('value', 50);
+hardcalc.setAttribute('value', 250);
+formit.setAttribute('value', 20);
+callback.setAttribute('value', 30);
+chat.setAttribute('value', 50);
+mailer.setAttribute('value', 100);
+multilang.setAttribute('value', 100);
+catalog.setAttribute('value', 150);
+basket.setAttribute('value', 80);
+payment.setAttribute('value', 120);
+currency.setAttribute('value', 30);
+multitovar.setAttribute('value', 50);
+sales.setAttribute('value', 40);
+api.setAttribute('value', 400);
+reg.setAttribute('value', 50);
+cabinet.setAttribute('value', 200);
+recomendation.setAttribute('value', 30);
+importer.setAttribute('value', 150);
+referal.setAttribute('value', 180);
+filtration.setAttribute('value', 80);
+
+break;
+case "rails":
+otzyv.setAttribute('value', 160);
+blog.setAttribute('value', 180);
+slider.setAttribute('value', 40);
+gallery.setAttribute('value', 45);
+easycalc.setAttribute('value', 90);
+hardcalc.setAttribute('value', 360);
+formit.setAttribute('value', 60);
+callback.setAttribute('value', 90);
+chat.setAttribute('value', 100);
+mailer.setAttribute('value', 175);
+multilang.setAttribute('value', 250);
+catalog.setAttribute('value', 250);
+basket.setAttribute('value', 160);
+payment.setAttribute('value', 150);
+currency.setAttribute('value', 50);
+multitovar.setAttribute('value', 100);
+sales.setAttribute('value', 80);
+api.setAttribute('value', 500);
+reg.setAttribute('value', 100);
+cabinet.setAttribute('value', 400);
+recomendation.setAttribute('value', 80);
+importer.setAttribute('value', 200);
+referal.setAttribute('value', 220);
+break;
+case "python":
+otzyv.setAttribute('value', 200);
+blog.setAttribute('value', 200);
+slider.setAttribute('value', 40);
+gallery.setAttribute('value', 35);
+easycalc.setAttribute('value', 100);
+hardcalc.setAttribute('value', 400);
+formit.setAttribute('value', 90);
+callback.setAttribute('value', 100);
+chat.setAttribute('value', 200);
+mailer.setAttribute('value', 200);
+multilang.setAttribute('value', 200);
+catalog.setAttribute('value', 300);
+basket.setAttribute('value', 200);
+payment.setAttribute('value', 200);
+currency.setAttribute('value', 50);
+multitovar.setAttribute('value', 150);
+sales.setAttribute('value', 120);
+api.setAttribute('value', 800);
+reg.setAttribute('value', 200);
+cabinet.setAttribute('value', 500);
+recomendation.setAttribute('value', 100);
+importer.setAttribute('value', 250);
+referal.setAttribute('value', 300);
+break;
+}
+document.getElementById('otzyv').innerHTML = otzyv.value + '$';
+document.getElementById('blog').innerHTML = blog.value + '$';
+document.getElementById('slider').innerHTML = slider.value + '$';
+document.getElementById('gallery').innerHTML = gallery.value + '$';
+document.getElementById('easycalc').innerHTML = easycalc.value + '$';
+document.getElementById('hardcalc').innerHTML = hardcalc.value + '$';
+document.getElementById('formit').innerHTML = formit.value + '$';
+document.getElementById('callback').innerHTML = callback.value + '$';
+document.getElementById('chat').innerHTML = chat.value + '$';
+document.getElementById('mailer').innerHTML = mailer.value + '$';
+document.getElementById('multilang').innerHTML = multilang.value + '$';
+document.getElementById('catalog').innerHTML = catalog.value + '$';
+document.getElementById('basket').innerHTML = basket.value + '$';
+document.getElementById('payment').innerHTML = payment.value + '$';
+document.getElementById('currency').innerHTML = currency.value + '$';
+document.getElementById('multitovar').innerHTML = multitovar.value + '$';
+document.getElementById('sales').innerHTML = sales.value + '$';
+document.getElementById('api').innerHTML = api.value + '$';
+document.getElementById('reg').innerHTML = reg.value + '$';
+document.getElementById('cabinet').innerHTML = cabinet.value + '$';
+document.getElementById('recomendation').innerHTML = recomendation.value + '$';
+document.getElementById('importer').innerHTML = importer.value + '$';
+document.getElementById('referal').innerHTML = referal.value + '$';
+document.getElementById('filtration').innerHTML = filtration.value + '$';
+
+document.getElementById('c-googlemaps').innerHTML = document.Site.module_googlemaps.value + '$';
 
 
-    }
-    design = document.getElementsByClassName('design');
-    function arraySum(){
-        sum = 0;
-        for(i = 0; i < design.length; i++){
-            if (design[i].checked)
-                sum += parseInt(design[i].value);
-        }
-        console.log(sum);
-    }
-    arraySum(design);
-    functional = document.getElementsByClassName('functional');
-    function arrsum() {
-        summa = 0;
-        for(i=0; i < functional.length; i++){
-            if(functional[i].checked)
-                summa+= parseInt(functional[i].value);
-        }
-        console.log(summa);
-    }
-    arrsum(functional);
-    support = document.getElementsByClassName('support');
-    function supportic(){
-        EasypageValue = document.Site.content_easypage.value * 10;
-        document.Site.c_easypage.setAttribute('value', EasypageValue);
-        document.getElementById('c-easypage').innerHTML = EasypageValue + '$';
-        HardpageValue = document.Site.content_hardpage.value * 30;
-        document.Site.c_hardpage.setAttribute('value', HardpageValue);
-        document.getElementById('c-hardpage').innerHTML = HardpageValue + '$';
-        EditpageValue = document.Site.content_editpage.value * 10;
-        document.Site.c_editpage.setAttribute('value', EditpageValue);
-        document.getElementById('c-editpage').innerHTML = EditpageValue + '$';
-        PostValue = document.Site.content_post.value * 10;
-        document.Site.c_post.setAttribute('value', PostValue);
-        document.getElementById('c-post').innerHTML = PostValue + '$';
-        TranslateValue = document.Site.content_translate.value * 10;
-        document.Site.c_translate.setAttribute('value', TranslateValue);
-        document.getElementById('c-translate').innerHTML = TranslateValue + '$';
-        suumma=0;
-        for (i=0; i < support.length; i++){
-            if(support[i].checked)
-                suumma+= parseInt(support[i].value)
-        }
-        console.log(suumma);
-    }
-    supportic(support);
+};
+design = document.getElementsByClassName('design');
+function arraySum(){
+sum = 0;
+for(i = 0; i < design.length; i++){
+if (design[i].checked)
+sum += parseInt(design[i].value);
+}
+console.log(sum);
+};
+arraySum(design);
+functional = document.getElementsByClassName('functional');
+function arrsum() {
+summa = 0;
+for(i=0; i < functional.length; i++){
+if(functional[i].checked)
+summa+= parseInt(functional[i].value);
+}
+console.log(summa);
+}
+arrsum(functional);
+support = document.getElementsByClassName('support');
+function supportic(){
+EasypageValue = document.Site.content_easypage.value * 10;
+document.Site.c_easypage.setAttribute('value', EasypageValue);
+document.getElementById('c-easypage').innerHTML = EasypageValue + '$';
+HardpageValue = document.Site.content_hardpage.value * 30;
+document.Site.c_hardpage.setAttribute('value', HardpageValue);
+document.getElementById('c-hardpage').innerHTML = HardpageValue + '$';
+EditpageValue = document.Site.content_editpage.value * 10;
+document.Site.c_editpage.setAttribute('value', EditpageValue);
+document.getElementById('c-editpage').innerHTML = EditpageValue + '$';
+PostValue = document.Site.content_post.value * 10;
+document.Site.c_post.setAttribute('value', PostValue);
+document.getElementById('c-post').innerHTML = PostValue + '$';
+TranslateValue = document.Site.content_translate.value * 10;
+document.Site.c_translate.setAttribute('value', TranslateValue);
+document.getElementById('c-translate').innerHTML = TranslateValue + '$';
+suumma=0;
+for (i=0; i < support.length; i++){
+if(support[i].checked)
+suumma+= parseInt(support[i].value)
+}
+console.log(suumma);
+}
+supportic(support);
 
-    function calculating() {
-        calculatin = sum + summa + suumma;
-        console.log(calculatin);
-        document.title = calculatin + '$';
-    }
+function calculating() {
+    calculatin = sum + summa + suumma;
+    console.log(calculatin);
+    document.getElementById('total_calc').innerHTML = calculatin + '$';
+    document.getElementById('diz_balance').setAttribute('value',sum);
+    document.getElementById('prog_balance').setAttribute('value',summa);
+    document.getElementById('support_balance').setAttribute('value',suumma);
+};
 
+$(function(){
+$("a[href^='#']").click(function(){
+var _href = $(this).attr("href");
+$("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+return false;
+});
+});
 </script>
-</body>
-</html>

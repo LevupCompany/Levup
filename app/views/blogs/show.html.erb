@@ -1,0 +1,45 @@
+<main class="page">
+  <div class="screen for_screen" id="screen3">
+    <h1>БЛОГ</h1>
+  </div>
+  <div class="screen filtr wrap">
+    <%= render 'filtr'%>
+    <div class="blog_contant">
+      <div class="left_blog">
+        <h3><%= @blog.name%></h3>
+        <p class="data"><%=@blog.created_at%></p>
+        <!--<div class="blog_soclinks">-->
+        <!--<a href="#"><img src="img/twiter1.png"> </a>-->
+        <!--<a href="#"><img src="img/facebook1.png"></a>-->
+        <!--<a href="#"><img src="img/google1.png"></a>-->
+        <!--<a href="#"><img src="img/vk1.png"></a>-->
+        <!--</div>-->
+        <p id="notice"><%= notice %></p>
+
+        <%= raw @blog.description%>
+        <%= image_tag @blog.image.url(:large), class: 'blog_left_img' %>
+      </div>
+      <div class="right_blog">
+        <!--<div class="regiser">-->
+        <!--<h3>Автор</h3>-->
+        <!--<img src="img/unit/wool.png" alt="">-->
+        <!--<p class="regiser_name">Козырь Денис</p>-->
+        <!--<p class="regiser_rang">Арт-директор</p>-->
+        <!--</div>-->
+        <!--<h3 class="title_blog">Рекомендуем:</h3>-->
+        <!--<a href="#" class="blog_name">-->
+        <!--<img src="img/blogitem.jpeg" alt="">-->
+        <!--<p>Название еще одного супер уникального блога</p>-->
+        <!--</a>-->
+        <!--<a href="#" class="blog_name">-->
+        <!--<img src="img/blogitem.jpeg" alt="">-->
+        <!--<p>Название еще одного супер уникального блога</p>-->
+        <!--</a>-->
+        <!--<a href="#" class="blog_name">-->
+        <!--<img src="img/blogitem.jpeg" alt="">-->
+        <!--<p>Название еще одного супер уникального блога</p>-->
+        <!--</a>-->
+      </div>
+    </div>
+  </div>
+</main>

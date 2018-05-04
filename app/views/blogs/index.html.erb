@@ -1,0 +1,101 @@
+<%
+  meta title: "Корпоративный блог",
+       description: "В информационном блоге специалисты нашей компании размещают полезную для клиентов информацию, связанную с нашей деятельностью.",
+       keywords: "Дизайн, Веб разработка" "Мобильные приложения" "CRM системы"
+%>
+
+<main class="page">
+  <div class="screen for_screen" id="screen5">
+    <h1>БЛОГ</h1>
+  </div>
+  <div class="screen filtr wrap mediafont">
+    <%=render 'filtr' %>
+    <div class="blogs_wrap">
+      <% @blogs.each do |blog| %>
+        <div class="blogs_wrap__item">
+          <%= image_tag blog.image.url(:large) %>
+          <div class="blogs_wrap__item_dos">
+            <p><%=  blog.created_at.strftime("%d.%m.%Y") %></p>
+            <h3><%= blog.name %></h3>
+            <p><%= blog.annotation %></p>
+            <%= link_to 'ПОДРОБНЕЕ', blog %>
+          </div>
+        </div>
+      <% end %>
+      <div class="blogs_wrap__item">
+        <%= image_tag "blogitem.jpeg" %>
+        <div class="blogs_wrap__item_dos">
+          <p>22.05.1997</p>
+          <h3>Гульмен разгулялся в безысходных скитания мэддисона</h3>
+          <p>
+            Lorem Ipsum - это текст-"рыба", часто используемый в печати и
+            вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+            текстов на латинице с начала XVI века. В то время некий
+            безымянный печатник создал большую коллекцию размеров
+            и форм шрифтов, используя Lorem Ipsum для распечатки
+          </p>
+          <a href="#">ПОДРОБНЕЕ</a>
+        </div>
+      </div>
+      <div class="blogs_wrap__item">
+        <%= image_tag "blogitem.jpeg" %>
+        <div class="blogs_wrap__item_dos">
+          <p>22.05.1997</p>
+          <h3>Гульмен разгулялся в безысходных скитания мэддисона</h3>
+          <p>
+            Lorem Ipsum - это текст-"рыба", часто используемый в печати и
+            вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+            текстов на латинице с начала XVI века. В то время некий
+            безымянный печатник создал большую коллекцию размеров
+            и форм шрифтов, используя Lorem Ipsum для распечатки
+          </p>
+          <a href="#">ПОДРОБНЕЕ</a>
+        </div>
+      </div>
+      <div class="blogs_wrap__item">
+        <%= image_tag "blogitem.jpeg" %>
+        <div class="blogs_wrap__item_dos">
+          <p>22.05.1997</p>
+          <h3>Гульмен разгулялся в безысходных скитания мэддисона</h3>
+          <p>c
+            Lorem Ipsum - это текст-"рыба", часто используемый в печати и
+            вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+            текстов на латинице с начала XVI века. В то время некий
+            безымянный печатник создал большую коллекцию размеров
+            и форм шрифтов, используя Lorem Ipsum для распечатки
+          </p>
+          <a href="#">ПОДРОБНЕЕ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= render 'layouts/contactform'%>
+
+
+</main>
+<p id="notice"><%= notice %></p>
+
+<h1>Blogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= link_to 'Show', blog %></td>
+        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blog', new_blog_path %>

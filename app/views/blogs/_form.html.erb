@@ -1,0 +1,45 @@
+<style> form #blog_name, form #blog_annotation {
+  border: 1px solid #1faee2;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  padding: 10px;
+}
+form input{
+  font-size:1rem;
+  padding: 10px;
+}
+form .btn {
+  background: #1faae2;
+  btn: white;
+  border-radius:5px;
+}</style>
+
+<br>
+<br>
+<br>
+<div class="wrap">
+  <%= simple_form_for(@blog) do |f| %>
+    <%= f.error_notification %>
+    <%= f.label :name, ("Название статьи") %><br>
+    <%= f.input :name %>
+    <br>
+    <br>
+    <%= f.label :annotation, ("Краткое описание")%><br>
+    <%= f.input :annotation %>
+    <br>
+    <br>
+    <%= f.label :tag, ("Выбор категории") %>
+    <br>
+    <%= f.input_field :tag, :collection => { 'Дизайн' => 1, 'Разработка сайта' => 2, 'CRM' => 3, 'Мобильные приложения' => 4}; %>
+    <br>
+    <br>
+    <%= f.input :description, as: :text, input_html: {class:'ckeditor'} %>
+    <%= f.input :image, as: :file %>
+    <div class="form-actions">
+    <%= f.button :submit %>
+    </div>
+    <br>
+    <br>
+  <% end %>
+</div>

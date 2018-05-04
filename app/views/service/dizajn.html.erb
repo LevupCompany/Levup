@@ -1,181 +1,321 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
-<form name="Designs">
-  <h1>Разработка логотипа</h1>
-  <h2>Вид логотипа</h2>
-  <p>
-    <label for="text_logo">Текстовый</label>
-    <input type="radio" name="type_logo" id="text_logo" class="logo" onchange="designer()" value=25>
-    <span id="text-logo">25$</span>
-  </p>
-  <p>
-    <label for="text_logo">Эмблема</label>
-    <input type="radio" name="type_logo" id="icon_logo" class="logo" onchange="designer()" value=50>
-    <span id="icon-logo">50$</span>
-  </p>
-  <p>
-    <label for="text_logo">Комбинированный</label>
-    <input type="radio" name="type_logo" id="combo_logo" class="logo" onchange="designer()" value=75>
-    <span id="combo-logo">75$</span>
-  </p>
-  <p>
-    <label for="text_logo">Авторская разработка</label>
-    <input type="radio" name="type_logo" id="author_logo" class="logo" onchange="designer()" value=100>
-    <span id="author-logo">100$</span>
-  </p>
-  <h2>Дополнительная информация по логотипу</h2>
-  <p>
-    <label for="elements_logo">Отрисовка с множеством элементов</label>
-    <input type="checkbox" name="elements_logo" onchange="designer()" class="logo" id="elements_logo" disabled value=>
-    <span id="elements-logo"></span>
-  </p>
-  <p>
-    <label for="prototype_logo">Разработка логотипа по предоставленному прототипу</label>
-    <input type="checkbox" name="prototype_logo" onchange="designer()" class="logo" id="prototype_logo" disabled value=>
-    <span id="prototype-logo"></span>
-  </p>
-  <p>
-    <label for="variant_logo">Количество дополнительных вариантов логотипа для выбора заказчика.
-    </label>
-    <input type="number" name="variant_logo" id="variant_logo" oninput="designer()"  disabled value=0 >
-    <input type="hidden" name="variate_logo" disabled id="variate_logo">
-    <span id="variant-logo"></span>
-  </p>
-  <h2>Элементы фирменного стиля</h2>
-  <p>
-    <label for="oneside_visitka">Визитка односторонняя</label>
-    <input type="checkbox" name="oneside_visitka" onchange="designer()" class="firm" id="oneside_visitka" value =20>
-    <span id="oneside-visitka">20$</span>
-  </p>
-  <p>
-    <label for="twoside_visitka">Визитка двусторонняя</label>
-    <input type="checkbox" name="twoside_visitka" onchange="designer()" class="firm" id="twoside_visitka" value=30>
-    <span id="twoside-visitka">30$</span>
-  </p>
-  <p>
-    <label for="blank">Бланк</label>
-    <input type="checkbox" name="blank" onchange="designer()" class="firm" id="blank" value=30>
-    <span id="blanks">30$</span>
-  </p>
-  <p>
-    <label for="convert">Конверт</label>
-    <input type="checkbox" name="convert" onchange="designer()" class="firm" id="convert" value=25>
-    <span id="converts">25$</span>
-  </p>
-  <p>
-    <label for="cennik">Ценник</label>
-    <input type="checkbox" name="cennik" onchange="designer()" class="firm" id="cennik" value=10>
-    <span id="cenniks">10$</span>
-  </p>
-  <p>
-    <label for="papka">Папка</label>
-    <input type="checkbox" name="papka" onchange="designer()" class="firm" id="papka" value=25>
-    <span id="papkas">25$</span>
-  </p>
-  <p>
-    <label for="uniform">Униформа</label>
-    <input type="checkbox" name="uniform" onchange="designer()" class="firm" id="uniform" value=40>
-    <span id="uniforms">40$</span>
-  </p>
-  <p>
-    <label for="disk">Диск + вкладыш</label>
-    <input type="checkbox" name="disk" onchange="designer()" class="firm" id="disk" value=25>
-    <span id="disks">25$</span>
-  </p>
-  <p>
-    <label for="email_send">Письмо для e:mail рассылки</label>
-    <input type="checkbox" name="email_send" onchange="designer()" class="firm" id="email_send" value=75>
-    <span id="email-send">75$</span>
-  </p>
-  <p>
-    <label for="suvenir">Дизайн сувенирной продукции</label>
-    <input type="checkbox" name="suvenir" onchange="designer()" class="firm" id="suvenir" value=20>
-    <span id="suvenirs">20$</span>
-  </p>
-  <p>
-    <label for="flier">Разработка флаера</label>
-    <input type="checkbox" name="flier" onchange="designer()" class="firm" id="flier" value=50>
-    <span id="fliers">50$</span>
-  </p>
-  <p>
-    <label for="plakat">Разработка плаката</label>
-    <input type="checkbox" name="plakat" onchange="designer()" class="firm" id="plakat" value=100>
-    <span id="plakats">100$</span>
-  </p>
-  <p>
-    <label for="banner">Разработка баннера (бигборда)</label>
-    <input type="checkbox" name="banner" onchange="designer()" class="firm" id="banner" value=250>
-    <span id="banners">250$</span>
-  </p>
-  <p>
-    <label for="shtender">Разработка штендера</label>
-    <input type="checkbox" name="shtender" onchange="designer()" class="firm" id="shtender" value=40>
-    <span id="shtenders">40$</span>
-  </p>
-</form>
-<script type="text/javascript">
+<main class="page">
+  <div class="screen for_screen" id="screen2">
+    <h1>УСЛУГИ</h1>
+  </div>
+  <form class="wrap">
+    <div class="calc_descr" id="calc_descr">
+      <%= image_tag 'ico/grafcalc/calc.png' %>
+      <div class="calc_descr__info">
+        <h3>Калькулятор стоимости графического дизайна</h3>
+        <p>Калькулятор – универсальный электронный помощник для быстрого расчёта стоимости продукта. Любой из вас теперь сможет быстро и эффективно (в режиме онлайн времени) посчитать какое количество финансовых средств вам придётся затратить для реализации вашего интернет – проекта. С помощью нашего калькулятора вам не придётся прибегать к помощи вспомогательных средств, теперь всё за вас это будет делать дополнительная функция, а у вас останется больше свободного времени для решения повседневных и рабочих задач. Калькулятор – экономия вашего драгоценного рабочего времени.
+      </div>
+    </div>
+    <h3 class="centr">РАЗРАБОТКА ЛОГОТИПА</h3>
+    <hr class="w500">
+    <div class="calc_item">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut beatae dignissimos exercitationem, fugiat laborum minus quasi rerum ullam veritatis! Architecto aut blanditiis cumque est eum fugiat minima provident! Eum, exercitationem!
+    </div>
+    <div class="design_wrap">
+      <div class="design_item">
+        <input type="radio" name="type_logo" id="text_logo" class="logo" onchange="designer()" value=50>
+        <label for="text_logo"></label>
+        <%=image_tag 'ico/grafcalc/1.png', class:"design_item__img" %>
+        <h3>Текстовый</h3>
+        <p>Вид логотипа, состоящий только из слова или слов, написанных специальным шрифтом. Разрабатывается как в шаблонном виде так и в уникальном (ручная отрисовка и дополнительные элементы).
+        </p>
+        <span ><%=image_tag 'birka.png'%> <span id="text-logo">50$</span></span>
+      </div>
+      <div class="design_item">
+        <input type="radio" name="type_logo" id="icon_logo" class="logo" onchange="designer()" value=75>
+        <label for="icon_logo"></label>
+        <%=image_tag 'ico/grafcalc/2.png', class:"design_item__img" %>
+        <h3>Эмблема</h3>
+        <p>Графическое решение, выполненное для символического изображения некой идеи или понятия. Может содержать в себе графические элементы идентификации и сложные насыщенные детали.
+        </p>
+        <span ><%=image_tag 'birka.png'%> <span id="icon-logo">75$</span></span>
+      </div>
+      <div class="design_item">
+        <input type="radio" name="type_logo" id="combo_logo" class="logo" onchange="designer()" value=100>
+        <label for="combo_logo"></label>
+        <%=image_tag 'ico/grafcalc/3.png', class:"design_item__img" %>
+        <h3>Комбинированный</h3>
+        <p>Логотип-симбиоз, состоящий из текстового контента и графического символа. Один из самых удачных информативных логотипов. Первоочередная цель для малоизвестных компаний.
+        </p>
+        <span ><%=image_tag 'birka.png'%> <span id="combo-logo">100$</span></span>
+      </div>
+    </div>
+    <div class="btn_wrap__calc">
+      <a href="#tech_dev" class="calc_btn" id="tech_dev">Далее</a>
+    </div>
+    <h3 class="centr">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ ПО ЛОГОТИПУ</h3>
+    <hr class="w500_grey">
+    <div class="calc_item__grey">
+      Выбор движка – важный и определяющий фактор для вашего будущего интернет – проекта. Данный фактор имеет непосредственное влияние на конечную стоимость разработки функционала и сроки его выполнения. К данному вопросу нужно отнестись бережно, ведь выбор движка определяет его возможность для последующих расширений ресурса (если таковые будут необходимы). Например, для разработки корпоративного сайта, небольших порталов, мелких интернет – магазинов и лендингов идеальным вариантом считается MODX. Для более сложных вариаций порталов, корп.сайтов, интернет – магазинов более уместен фреймворк Ruby on Rails или фреймворки языка Python.
+    </div>
+    <div class="function_wrap">
+      <div class="function_item">
+        <input type="checkbox" name="elements_logo" onchange="designer()" class="logo" disabled id="elements_logo" >
+        <label for="elements_logo"></label>
+        <%=image_tag 'ico/grafcalc/manyelem.png', class: "function_item__img"%>
+        <div>
+          <h3>Сложная отрисовка</h3>
+          <p>Ручная отрисовка логотипа с большим количеством выделяющихся элементов. Требует от дизайнера особых навыков для такой точечной работы.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="elements-logo">Выберите тип лого!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="prototype_logo" onchange="designer()" class="logo" disabled id="prototype_logo"  value=>
+        <label for="prototype_logo"></label>
+        <%=image_tag 'ico/grafcalc/prototype.png', class: "function_item__img"%>
+        <div>
+          <h3>Есть прототип</h3>
+          <p>Создание логотипа по прототипу, который предоставил клиент. Значительно сокращает время разработки и более точно предсказывает предпочтение заказчика.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="prototype-logo">Выберите тип лого!</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="variate_logo" id="variate_logo" disabled value=0 onchange="designer()">
+        <label for="variate_logo"></label>
+        <%=image_tag 'ico/grafcalc/variant.png', class: "function_item__img"%>
+        <div>
+          <h3>Дополнительные варианты</h3>
+          <p>Предоставление клиенту нескольких дополнительных вариантов логотипов для создания на выходе более качественного рекламного продукта.
+          </p>
+          <span><%=image_tag 'birka.png'%><span id="variant-logo">Выберите тип лого!</span></span>
+        </div>
+        <input type="number" name="variant_logo" id="variant_logo" disabled class="logo" oninput="designer()" min="0" value=0 >
+      </div>
+    </div>
+
+    <div class="btn_wrap__calc">
+      <a href="#calc_descr" class="calc_btn">Назад</a>
+      <a href="#tech_firm" class="calc_btn" id="tech_firm">Далее</a>
+    </div>
+
+    <h3 class="centr">ЭЛЕМЕНТЫ ФИРМЕННОГО СТИЛЯ</h3>
+    <hr class="w500">
+    <div class="calc_item">
+      Выбор функционала – одно из важнейших направлений, которое помогает вам правильно сориентироваться и понять, какие конкретно паутинные функции вы хотите видеть в своём интернет – проекте. Внимательно прочтя весь перечень услуг, которые мы готовы вам предоставить, вы получите исчерпывающую информацию, которая будет для вас крайне полезной и эффективной. Вы сможете понять, что, например, функция движущихся слайдеров для привлечения клиентов будет очень кстати на вашем сайте путешествий. А вот функция онлайн чата пока может и подождать. Для просчёта стоимости той или иной услуги функционала вам поможет наш калькулятор.
+    </div>
+    <div class="function_wrap">
+      <div class="function_item">
+        <input type="checkbox" name="oneside_visitka" onchange="designer()" class="firm" id="oneside_visitka" value =20>
+        <label for="oneside_visitka"></label>
+        <%=image_tag 'ico/grafcalc/vizitka.png', class: "function_item__img"%>
+        <div>
+          <h3>Визитка односторонняя</h3>
+          <p>Разработка визитки, где источником текстовой информации служит одна часть. Идеальный вариант для обмена информацией между деловыми партнерами.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="oneside-visitka">20$</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="twoside_visitka" onchange="designer()" class="firm" id="twoside_visitka" value=30>
+        <label for="twoside_visitka"></label>
+        <%=image_tag 'ico/grafcalc/vizitka2.png', class: "function_item__img"%>
+        <div>
+          <h3>Визитка двусторонняя</h3>
+          <p>Разработка визитки, где источником текстовой информации служит обе части, благодаря чему расширяется возможность информирования клиента о компании.</p>
+          <span ><%=image_tag 'birka.png'%><span id="twoside-visitka">30$</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="blank" onchange="designer()" class="firm" id="blank" value=30>
+        <label for="blank"></label>
+        <%=image_tag 'ico/grafcalc/blank.png', class: "function_item__img"%>
+        <div>
+          <h3>Бланк</h3>
+          <p>Лист бумаги с названием учреждения или фирмы, на котором в качестве основных элементов размещаются логотип, текстовые знаки, фирменные цвета, шрифты или слоган компании.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="blanks">30$</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="convert" onchange="designer()" class="firm" id="convert" value=25>
+        <label for="convert"></label>
+        <%=image_tag 'ico/grafcalc/convert.png', class: "function_item__img"%>
+        <div>
+          <h3>Конверт</h3>
+          <p>Разработка конверта с размещением на нём логотипа, текстовых знаков, фирменных цветов, шрифтов или слогана компании. Элемент стиля, способствующий увеличению узнаваемости. </p>
+          <span ><%=image_tag 'birka.png'%> <span id="converts">25$</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="cennik" onchange="designer()" class="firm" id="cennik" value=10>
+        <label for="cennik"></label>
+        <%=image_tag 'ico/grafcalc/cennik.png', class: "function_item__img"%>
+        <div>
+          <h3>Ценник</h3>
+          <p>Разработка специального ценового ярлыка с размещением на нём логотипа, текстовых знаков, фирменных цветов, шрифтов или слогана компании. Способствует повышению узнаваемости бренда.
+          </p>
+          <span ><%=image_tag 'birka.png'%> <span id="cenniks">10$</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="papka" onchange="designer()" class="firm" id="papka" value=25>
+        <label for="papka"></label>
+        <%=image_tag 'ico/grafcalc/papka.png', class: "function_item__img"%>
+        <div>
+          <h3>Папка</h3>
+          <p>размещение логотипа, текстовых знаков, фирменных цветов, шрифтов или слогана на рабочих папках компании. Папка помогает пвысить узнаваемости имиджа компании в деловой среде.</p>
+          <span ><%=image_tag 'birka.png'%> <span id="papkas">25$</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="uniform" onchange="designer()" class="firm" id="uniform" value=40>
+        <label for="uniform"></label>
+        <%=image_tag 'ico/grafcalc/uniform.png', class: "function_item__img"%>
+        <div>
+          <h3>Униформа</h3>
+          <p>Нанесение фирменного стиля компании на одежду сотрудников, за счёт чего происходит повышение привлекательности компании и последующая реклама бренда.</p>
+          <span ><%=image_tag 'birka.png'%><span id="uniforms">40$</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="disk" onchange="designer()" class="firm" id="disk" value=25>
+        <label for="disk"></label>
+        <%=image_tag 'ico/grafcalc/disk.png', class: "function_item__img"%>
+        <div>
+          <h3>Диск + вкладыш</h3>
+          <p>Размещение логотипа, текстовых знаков, фирменных цветов, шрифтов или слогана на рабочих дисках компании. Повышает узнаваемость лица вашей компании.</p>
+          <span ><%=image_tag 'birka.png'%><span id="disks">25$</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="email_send" onchange="designer()" class="firm" id="email_send" value=75>
+        <label for="email_send"></label>
+        <%=image_tag 'ico/grafcalc/mailsend.png', class: "function_item__img"%>
+        <div>
+          <h3>Письмо для e:mail рассылки</h3>
+          <p>Размещение фирменного стиля на электронном письме. Удобно и никто из партнёров не запутается, так как будет точно знать, что это письмо именно ваше.</p>
+          <span ><%=image_tag 'birka.png'%><span id="email-send">75$</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="suvenir" onchange="designer()" class="firm" id="suvenir" value=20>
+        <label for="suvenir"></label>
+        <%=image_tag 'ico/grafcalc/suvenirs.png', class: "function_item__img"%>
+        <div>
+          <h3>Дизайн сувенирной продукции</h3>
+          <p>Размещение логотипа, текстовых знаков, фирменных цветов, шрифтов или слогана на сувенирных подарках компании (например, фирменный брелок).</p>
+          <span ><%=image_tag 'birka.png'%> <span id="suvenirs">20$</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="flier" onchange="designer()" class="firm" id="flier" value=50>
+        <label for="flier"></label>
+        <%=image_tag 'ico/grafcalc/flier.png', class: "function_item__img"%>
+        <div>
+          <h3>Разработка флаера</h3>
+          <p>Массовый графический продукт, который ценят за небольшие размеры, возможность донесения ключевых маркетинговых предложений и небольшую стоимость производства.
+          </p>
+          <span ><%=image_tag 'birka.png'%><span id="fliers">50$</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="plakat" onchange="designer()" class="firm" id="plakat" value=100>
+        <label for="plakat"></label>
+        <%=image_tag 'ico/grafcalc/plakat.png', class: "function_item__img"%>
+        <div>
+          <h3>Разработка плаката</h3>
+          <p>Создание бумажного продукта с большим количеством информации и графических элементов в фирменных цветах компании для расширения и привлечения клиентской аудитории.</p>
+          <span ><%=image_tag 'birka.png'%><span id="plakats">100$</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="banner" onchange="designer()" class="firm" id="banner" value=250>
+        <label for="banner"></label>
+        <%=image_tag 'ico/grafcalc/banner.png', class: "function_item__img"%>
+        <div>
+          <h3>Разработка баннера (бигборда)</h3>
+          <p>Создание продукта в элементах фирменного стиля для наружной рекламы компании на внешних широкоформатных уличных носителях – баннерах и бигбордах.</p>
+          <span ><%=image_tag 'birka.png'%><span id="banners">250$</span></span>
+        </div>
+      </div>
+      <div class="function_item">
+        <input type="checkbox" name="shtender" onchange="designer()" class="firm" id="shtender" value=40>
+        <label for="shtender"></label>
+        <%=image_tag 'ico/grafcalc/shtender.png', class: "function_item__img"%>
+        <div>
+          <h3>Разработка штендера</h3>
+          <p>Размещение логотипа, текстовых знаков, фирменных цветов, шрифтов или слогана на мобильной конструкции наружной рекламы. Способствует продвижению вашего бизнеса.</p>
+          <span ><%=image_tag 'birka.png'%><span id="shtenders">40$</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="innfo">
+      <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDIzLjYyNSAyMy42MjUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIzLjYyNSAyMy42MjU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4Ij4KPGc+Cgk8cGF0aCBkPSJNMTEuODEyLDBDNS4yODksMCwwLDUuMjg5LDAsMTEuODEyczUuMjg5LDExLjgxMywxMS44MTIsMTEuODEzczExLjgxMy01LjI5LDExLjgxMy0xMS44MTMgICBTMTguMzM1LDAsMTEuODEyLDB6IE0xNC4yNzEsMTguMzA3Yy0wLjYwOCwwLjI0LTEuMDkyLDAuNDIyLTEuNDU1LDAuNTQ4Yy0wLjM2MiwwLjEyNi0wLjc4MywwLjE4OS0xLjI2MiwwLjE4OSAgIGMtMC43MzYsMC0xLjMwOS0wLjE4LTEuNzE3LTAuNTM5cy0wLjYxMS0wLjgxNC0wLjYxMS0xLjM2N2MwLTAuMjE1LDAuMDE1LTAuNDM1LDAuMDQ1LTAuNjU5YzAuMDMxLTAuMjI0LDAuMDgtMC40NzYsMC4xNDctMC43NTkgICBsMC43NjEtMi42ODhjMC4wNjctMC4yNTgsMC4xMjUtMC41MDMsMC4xNzEtMC43MzFjMC4wNDYtMC4yMywwLjA2OC0wLjQ0MSwwLjA2OC0wLjYzM2MwLTAuMzQyLTAuMDcxLTAuNTgyLTAuMjEyLTAuNzE3ICAgYy0wLjE0My0wLjEzNS0wLjQxMi0wLjIwMS0wLjgxMy0wLjIwMWMtMC4xOTYsMC0wLjM5OCwwLjAyOS0wLjYwNSwwLjA5Yy0wLjIwNSwwLjA2My0wLjM4MywwLjEyLTAuNTI5LDAuMTc2bDAuMjAxLTAuODI4ICAgYzAuNDk4LTAuMjAzLDAuOTc1LTAuMzc3LDEuNDMtMC41MjFjMC40NTUtMC4xNDYsMC44ODUtMC4yMTgsMS4yOS0wLjIxOGMwLjczMSwwLDEuMjk1LDAuMTc4LDEuNjkyLDAuNTMgICBjMC4zOTUsMC4zNTMsMC41OTQsMC44MTIsMC41OTQsMS4zNzZjMCwwLjExNy0wLjAxNCwwLjMyMy0wLjA0MSwwLjYxN2MtMC4wMjcsMC4yOTUtMC4wNzgsMC41NjQtMC4xNTIsMC44MTFsLTAuNzU3LDIuNjggICBjLTAuMDYyLDAuMjE1LTAuMTE3LDAuNDYxLTAuMTY3LDAuNzM2Yy0wLjA0OSwwLjI3NS0wLjA3MywwLjQ4NS0wLjA3MywwLjYyNmMwLDAuMzU2LDAuMDc5LDAuNTk5LDAuMjM5LDAuNzI4ICAgYzAuMTU4LDAuMTI5LDAuNDM1LDAuMTk0LDAuODI3LDAuMTk0YzAuMTg1LDAsMC4zOTItMC4wMzMsMC42MjYtMC4wOTdjMC4yMzItMC4wNjQsMC40LTAuMTIxLDAuNTA2LTAuMTdMMTQuMjcxLDE4LjMwN3ogICAgTTE0LjEzNyw3LjQyOWMtMC4zNTMsMC4zMjgtMC43NzgsMC40OTItMS4yNzUsMC40OTJjLTAuNDk2LDAtMC45MjQtMC4xNjQtMS4yOC0wLjQ5MmMtMC4zNTQtMC4zMjgtMC41MzMtMC43MjctMC41MzMtMS4xOTMgICBjMC0wLjQ2NSwwLjE4LTAuODY1LDAuNTMzLTEuMTk2YzAuMzU2LTAuMzMyLDAuNzg0LTAuNDk3LDEuMjgtMC40OTdjMC40OTcsMCwwLjkyMywwLjE2NSwxLjI3NSwwLjQ5NyAgIGMwLjM1MywwLjMzMSwwLjUzLDAuNzMxLDAuNTMsMS4xOTZDMTQuNjY3LDYuNzAzLDE0LjQ5LDcuMTAxLDE0LjEzNyw3LjQyOXoiIGZpbGw9IiMxZmFhZTIiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+      <p>Цены всех указанных выше услуг рассчитаны из проекта базовой (минимальной) сложности. В случае усложнения выполнения работы по проекту, сумма калькуляции может возрасти в три раза.</p>
+    </div>
+    <div class="btn_wrap__calc">
+      <a href="#tech_firm" class="calc_btn">Назад</a>
+      <a href="#zakaz" class="calc_btn" id="zakaz">Далее</a>
+    </div>
+    <input type="hidden" id="log_balance">
+    <input type="hidden" id="firm_balance">
+  </form>
+  <div id="screen_form">
+    <div class="wrap">
+      <form action="#" class="form_calc">
+        <p>Имя Фамилия:</p>
+        <input type="text">
+        <p>E-mail:</p>
+        <input type="email">
+        <p>Телефон:</p>
+        <input type="tel">
+        <p>Описание задания:</p>
+        <textarea></textarea>
+        <div class="calc_price sticky">Цена: <span id="total_calc">Не выбрана</span></div>
+        <button type="submit" class="calc_btn">Отправить заказ</button>
+      </form>
+    </div>
+  </div>
+</main><script type="text/javascript">
     function designer() {
         element = document.getElementById('elements_logo');
         prototype = document.getElementById('prototype_logo');
         variant = document.getElementById('variate_logo');
         variate = document.getElementById('variant_logo').value;
-        if (document.getElementById('text_logo').checked) {
-            element.setAttribute('value', 25);
-            document.getElementById('elements-logo').innerHTML = '+25$';
-            prototype.setAttribute('value', -15);
-            document.getElementById('prototype-logo').innerHTML = '-15$';
-            variant.setAttribute('value', 10);
-            element.removeAttribute('disabled');
-            prototype.removeAttribute('disabled');
-            variant.removeAttribute('disabled');
-            document.getElementById('variant_logo').removeAttribute('disabled');
+        logo = document.getElementsByClassName('logo');
+        vari = variate * variant.value;
 
-        }
-        else if (document.getElementById('icon_logo').checked) {
+        if (document.getElementById('text_logo').checked) {
             element.setAttribute('value', 50);
             document.getElementById('elements-logo').innerHTML = '+50$';
             prototype.setAttribute('value', -20);
             document.getElementById('prototype-logo').innerHTML = '-20$';
             variant.setAttribute('value', 20);
-            element.removeAttribute('disabled');
-            prototype.removeAttribute('disabled');
+            document.getElementById('variant-logo').innerHTML = vari + '$';
+            for (i=0; i<logo.length; i++){
+                logo[i].removeAttribute('disabled');
+            }
             variant.removeAttribute('disabled');
-            document.getElementById('variant_logo').removeAttribute('disabled');
-
         }
-        else if (document.getElementById('combo_logo').checked) {
+        else if (document.getElementById('icon_logo').checked) {
             element.setAttribute('value', 75);
             document.getElementById('elements-logo').innerHTML = '+75$';
             prototype.setAttribute('value', -35);
             document.getElementById('prototype-logo').innerHTML = '-35$';
             element.setAttribute('value', 150);
-            prototype.setAttribute('value', 40);
             variant.setAttribute('value', 30);
-            element.removeAttribute('disabled');
-            prototype.removeAttribute('disabled');
+            document.getElementById('variant-logo').innerHTML = vari + '$';
+            for (i=0; i<logo.length; i++){
+                logo[i].removeAttribute('disabled');
+            }
             variant.removeAttribute('disabled');
-            document.getElementById('variant_logo').removeAttribute('disabled');
 
         }
-        else if (document.getElementById('author_logo').checked) {
+        else if (document.getElementById('combo_logo').checked) {
             element.setAttribute('value', 100);
             document.getElementById('elements-logo').innerHTML = '+100$';
             prototype.setAttribute('value', -50);
             document.getElementById('prototype-logo').innerHTML = '-50$';
             variant.setAttribute('value', 40);
-            element.removeAttribute('disabled');
-            prototype.removeAttribute('disabled');
+            document.getElementById('variant-logo').innerHTML = vari + '$';
+            for (i=0; i<logo.length; i++){
+                logo[i].removeAttribute('disabled');
+            }
             variant.removeAttribute('disabled');
-            document.getElementById('variant_logo').removeAttribute('disabled');
 
         }
-        vari = variate * variant.value;
-        document.getElementById('variant-logo').innerHTML = vari + '$';
-
         holocost = document.getElementsByClassName('logo');
         ssuma = 0;
         for (i = 0; i < holocost.length; i++) {
@@ -192,16 +332,24 @@
         console.log(sumka);
         if (logotype > 0){
             calci = logotype + sumka;
-            document.title = calci+'$';
+            document.getElementById('total_calc').innerHTML = calci + '$';
+            document.getElementById('log_balance').setAttribute('value',logotype);
+            document.getElementById('firm_balance').setAttribute('value',sumka);
+
         }
         else{
-            document.title = sumka + '$';
+            document.getElementById('total_calc').innerHTML = sumka + '$';
+            document.getElementById('log_balance').setAttribute('value',0);
+            document.getElementById('firm_balance').setAttribute('value',sumka);
         }
-
     }
-
-
-
 </script>
-</body>
-</html>
+<script>
+    $(function(){
+        $("a[href^='#']").click(function(){
+            var _href = $(this).attr("href");
+            $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+            return false;
+        });
+    });
+</script>
