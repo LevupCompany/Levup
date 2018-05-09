@@ -1,0 +1,17 @@
+<br><br><h1>Editing Order</h1>
+<%= simple_form_for(@order) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :order_title %>
+  <%= f.input :order_detail, as: :text %>
+
+  <div class="form-inputs">
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Show', @order %> |
+<%= link_to 'Back', orders_path %>

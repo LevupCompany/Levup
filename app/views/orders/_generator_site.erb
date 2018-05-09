@@ -1,0 +1,38 @@
+<% if @order.diz_balance != nil || @order.prog_balance != nil || @order.support_balance != nil %>
+  <div class="srm_details">
+
+    <%= render 'site_type' %>
+
+    <% if @order.design_logo==true %>
+      <ul><li>Разработка логотипа</li></ul>
+    <% end %>
+  <% if @order.design_banner==true %>
+     <ul><li>Разработка баннера</li></ul>
+    <% end %>
+    <% if @order.design_page==true %>
+      <ul><li>Разработка посадочной страницы</li></ul>
+    <% end %>
+
+    <%= render 'engine' %>
+    <% if @order.support_balance != nil  && @order.support_balance > 0 %>
+      <h3>Поддержка сайта</h3>
+    <% end %>
+    <% if @order.c_easypage==true %>
+      <ul><li>Наполнение <%= @order.content_easypage %> cтр. простого типа</li></ul>
+    <% end %>
+    <% if @order.c_hardpage==true %>
+      <ul><li>Наполнение <%= @order.content_hardpage %> cтр. сложного типа</li></ul>
+    <% end %>
+    <% if @order.c_editpage==true %>
+      <ul><li>Редактирование <%= @order.content_editpage %> cтр. </li></ul>
+    <% end %>
+    <% if @order.c_post==true %>
+      <ul><li>Размещение материалов на <%= @order.content_post%> cтр.</li></ul>
+    <% end %>
+    <% if @order.c_translate==true %>
+      <ul><li>Перевод информации на <%= @order.content_translate %> cтр.</li></ul>
+    <% end %>
+  <br> <br>
+
+  </div>
+<% end %>

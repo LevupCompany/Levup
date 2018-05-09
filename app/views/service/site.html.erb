@@ -3,7 +3,9 @@
   <div class="screen for_screen" id="screen2">
     <h1>УСЛУГИ</h1>
   </div>
-  <form class="wrap" name="Site">
+  <%= simple_form_for(@order)  do |f| %>
+    <%= f.error_notification %>
+    <div class="wrap">
     <div class="calc_descr" id="calc_descr">
       <%=image_tag 'ico/calc.png'%>
       <div class="calc_descr__info">
@@ -18,14 +20,14 @@
     </div>
     <div class="label_wrap">
       <div class="label_item">
-        <input type="radio" name="site_type" class="site_type" id="corp_site" value="corp_site" onchange="Prices(); arrsum(); arraySum(); calculating()" >
+        <input type="radio" name="order[site_type]" class="site_type" id="corp_site" value="corp_site" onchange="Prices(); arrsum(); arraySum(); calculating()" >
         <label for="corp_site"></label>
         <%=image_tag 'ico/corp.png'%>
         <h3>Корпоративный сайт</h3>
         <p>Официальный сайт компании, представленный на просторах интернет паутины. Содержит всю основную информацию о предприятии и дополнительные возможности.</p>
       </div>
       <div class="label_item">
-        <input type="radio" name="site_type" class="site_type" id="portal_site" value="portal_site" onchange="Prices(); arrsum(); arraySum(); calculating()">
+        <input type="radio" name="order[site_type]" class="site_type" id="portal_site" value="portal_site" onchange="Prices(); arrsum(); arraySum(); calculating()">
         <label for="portal_site"></label>
         <%=image_tag 'ico/portal.png'%>
         <h3>Сайт-портал</h3>
@@ -33,7 +35,7 @@
         </p>
       </div>
       <div class="label_item">
-        <input type="radio" name="site_type" class="site_type" id="lending" value="lending" onchange="Prices(); arrsum(); arraySum(); calculating()" >
+        <input type="radio" name="order[site_type]" class="site_type" id="lending" value="lending" onchange="Prices(); arrsum(); arraySum(); calculating()" >
         <label for="lending"></label>
         <%=image_tag 'ico/lending.png'%>
         <h3>Лендинг</h3>
@@ -41,7 +43,7 @@
         </p>
       </div>
       <div class="label_item">
-        <input type="radio" name="site_type" class="site_type" id="ecommerce" value="ecommerce" onchange="Prices(); arrsum(); arraySum(); calculating()">
+        <input type="radio" name="order[site_type]" class="site_type" id="ecommerce" value="ecommerce" onchange="Prices(); arrsum(); arraySum(); calculating()">
         <label for="ecommerce"></label>
         <%=image_tag 'ico/shop.png'%>
         <h3>Интернет-магазин</h3>
@@ -57,7 +59,7 @@
     </div>
     <div class="design_wrap">
       <div class="design_item">
-        <input type="radio"  name="site_design" id="self_design" value=300 class="design" disabled onchange="arraySum(); calculating()">
+        <input type="radio"  name="order[site_design]" id="self_design" value=300 class="design" disabled onchange="arraySum(); calculating()">
         <label for="self_design"></label>
         <%=image_tag 'ico/1.png', class:"design_item__img" %>
         <h3>Свой дизайн</h3>
@@ -65,7 +67,7 @@
         <span ><%=image_tag 'birka.png'%> <span id="self_design-c">Выберите тип сайта!</span></span>
       </div>
       <div class="design_item">
-        <input type="radio"  name="site_design" id="template_design" value=100 class="design"  disabled onchange="arraySum(); calculating()">
+        <input type="radio"  name="order[site_design]" id="template_design" value=100 class="design"  disabled onchange="arraySum(); calculating()">
         <label for="template_design"></label>
         <%=image_tag 'ico/2.png', class:"design_item__img" %>
         <h3>Шаблонный дизайн</h3>
@@ -74,7 +76,7 @@
         <span ><%=image_tag 'birka.png'%> <span id="template_design-c">Выберите тип сайта!</span></span>
       </div>
       <div class="design_item">
-        <input type="radio"  name="site_design" id="author_design" value=600 class="design" disabled onchange="arraySum(); calculating()">
+        <input type="radio"  name="order[site_design]" id="author_design" value=600 class="design" disabled onchange="arraySum(); calculating()">
         <label for="author_design"></label>
         <%=image_tag 'ico/3.png', class:"design_item__img" %>
         <h3>Авторский дизайн</h3>
@@ -82,7 +84,7 @@
         <span ><%=image_tag 'birka.png'%> <span id="author_design-c">Выберите тип сайта!</span></span>
       </div>
       <div class="design_item_chek">
-        <input type="checkbox" name="design_logo" value=70 id="design_logo" class="design" onchange="arraySum(); calculating()">
+        <input type="checkbox" name="order[design_logo]" value=70 id="design_logo" class="design" onchange="arraySum(); calculating()">
         <label for="design_logo"></label>
         <%=image_tag 'ico/design/logo.png'%>
         <div>
@@ -93,7 +95,7 @@
         </div>
       </div>
       <div class="design_item_chek">
-        <input type="checkbox" name="design_banner" value=40 id="design_banner" class="design" onchange="arraySum(); calculating()">
+        <input type="checkbox" name="order[design_banner]" value=40 id="design_banner" class="design" onchange="arraySum(); calculating()">
         <label for="design_banner"></label>
         <%=image_tag 'ico/design/banner.png'%>
         <div>
@@ -103,7 +105,7 @@
         </div>
       </div>
       <div class="design_item_chek">
-        <input type="checkbox" name="design_page" value=200 id="design_page" class="design" onchange="arraySum(); calculating()">
+        <input type="checkbox" name="order[design_page]" value=200 id="design_page" class="design" onchange="arraySum(); calculating()">
         <label for="design_page"></label>
         <%=image_tag 'ico/design/lending_page.png'%>
         <div>
@@ -128,17 +130,17 @@
     </div>
     <div class="cms_wrap">
       <div class="cms_item">
-        <input type="radio" name="engine" value="modx" id="engine_modx" onchange="Prices(); arrsum(); arraySum(); calculating() ">
+        <input type="radio" name="order[engine]" value="modx" id="engine_modx" onchange="Prices(); arrsum(); arraySum(); calculating() ">
         <label for="engine_modx"></label>
         <%=image_tag 'radio_modx.png'%>
       </div>
       <div class="cms_item">
-        <input type="radio" name="engine" value="rails" id="engine_ruby" onchange="Prices(); arrsum(); arraySum(); calculating()">
+        <input type="radio" name="order[engine]" value="rails" id="engine_ruby" onchange="Prices(); arrsum(); arraySum(); calculating()">
         <label for="engine_ruby"></label>
         <%=image_tag 'radio_rails.png'%>
       </div>
       <div class="cms_item">
-        <input type="radio" name="engine" value="python" id="engine_python" onchange="Prices(); arrsum(); arraySum(); calculating()">
+        <input type="radio" name="order[engine]" value="python" id="engine_python" onchange="Prices(); arrsum(); arraySum(); calculating()">
         <label for="engine_python"></label>
         <%=image_tag 'radio_piton.png'%>
       </div>
@@ -154,7 +156,7 @@
     </div>
     <div class="function_wrap">
       <div class="function_item">
-        <input type="checkbox"  name="module_otzyvy" value=100 id="module_otzyvy" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_otzyvy]" value=100 id="module_otzyvy" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_otzyvy"></label>
         <%=image_tag 'ico/func/otzyv.png', class: "function_item__img"%>
         <div>
@@ -164,7 +166,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_blog" value=80 id="module_blog" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_blog]" value=80 id="module_blog" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_blog"></label>
         <%=image_tag 'ico/func/blog.png', class: "function_item__img"%>
         <div>
@@ -175,7 +177,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_slider" value="20" id="module_slider" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_slider]" value="20" id="module_slider" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_slider"></label>
         <%=image_tag 'ico/func/slider.png', class: "function_item__img"%>
         <div>
@@ -186,7 +188,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_gallery" value="30" id="module_gallery" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_gallery]" value="30" id="module_gallery" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_gallery"></label>
         <%=image_tag 'ico/func/gallery.png', class: "function_item__img"%>
         <div>
@@ -196,7 +198,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_easycalc" value=50 id="module_easycalc" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_easycalc]" value=50 id="module_easycalc" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_easycalc"></label>
         <%=image_tag 'ico/func/easycalc.png', class: "function_item__img"%>
         <div>
@@ -206,7 +208,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_hardcalc" value=250 id="module_hardcalc" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_hardcalc]" value=250 id="module_hardcalc" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_hardcalc"></label>
         <%=image_tag 'ico/func/hardcalc.png', class: "function_item__img"%>
         <div>
@@ -217,7 +219,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_formit" value=20 id="module_formit" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_formit]" value=20 id="module_formit" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_formit"></label>
         <%=image_tag 'ico/func/formit.png', class: "function_item__img"%>
         <div>
@@ -228,7 +230,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_callback" value=30 id="module_callback" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_callback]" value=30 id="module_callback" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_callback"></label>
         <%=image_tag 'ico/func/callback.png', class: "function_item__img"%>
         <div>
@@ -239,7 +241,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_chat" value=50 id="module_chat" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_chat]" value=50 id="module_chat" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_chat"></label>
         <%=image_tag 'ico/func/chat.png', class: "function_item__img"%>
         <div>
@@ -249,7 +251,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_mailer" value=100 id="module_mailer" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_mailer]" value=100 id="module_mailer" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_mailer"></label>
         <%=image_tag 'ico/func/mailer.png', class: "function_item__img"%>
         <div>
@@ -259,7 +261,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_multilang" value=100 id="module_multilang" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_multilang]" value=100 id="module_multilang" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_multilang"></label>
         <%=image_tag 'ico/func/multilang.png', class: "function_item__img"%>
         <div>
@@ -269,7 +271,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_catalog" value=150 id="module_catalog" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_catalog]" value=150 id="module_catalog" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_catalog"></label>
         <%=image_tag 'ico/func/catalog.png', class: "function_item__img"%>
         <div>
@@ -280,7 +282,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_basket" value=80 id="module_basket" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_basket]" value=80 id="module_basket" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_basket"></label>
         <%=image_tag 'ico/func/basket.png', class: "function_item__img"%>
         <div>
@@ -290,7 +292,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_payment" value=120 id="module_payment" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_payment]" value=120 id="module_payment" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_payment"></label>
         <%=image_tag 'ico/func/payment.png', class: "function_item__img"%>
         <div>
@@ -300,7 +302,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_currency" value=30 id="module_currency" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_currency]" value=30 id="module_currency" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_currency"></label>
         <%=image_tag 'ico/func/currency.png', class: "function_item__img"%>
         <div>
@@ -310,7 +312,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_multitovar" value=50 id="module_multitovar" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_multitovar]" value=50 id="module_multitovar" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_multitovar"></label>
         <%=image_tag 'ico/func/multitovar.png', class: "function_item__img"%>
         <div>
@@ -320,7 +322,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_sales" value=40 id="module_sales" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_sales]" value=40 id="module_sales" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_sales"></label>
         <%=image_tag 'ico/func/sales.png', class: "function_item__img"%>
         <div>
@@ -330,7 +332,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_api" value=400 id="module_api" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_api]" value=400 id="module_api" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_api"></label>
         <%=image_tag 'ico/func/api.png', class: "function_item__img"%>
         <div>
@@ -341,7 +343,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_reg" value=50 id="module_reg" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_reg]" value=50 id="module_reg" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_reg"></label>
         <%=image_tag 'ico/func/reg.png', class: "function_item__img"%>
         <div>
@@ -351,7 +353,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_cabinet" value=200 id="module_cabinet" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_cabinet]" value=200 id="module_cabinet" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_cabinet"></label>
         <%=image_tag 'ico/func/cabinet.png', class: "function_item__img"%>
         <div>
@@ -361,7 +363,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_recomendation" value=30 id="module_recomendation" disabled class="functional" onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_reccomendation]" value=30 id="module_recomendation" disabled class="functional" onchange="arrsum(); calculating()">
         <label for="module_recomendation"></label>
         <%=image_tag 'ico/func/recomendation.png', class: "function_item__img"%>
         <div>
@@ -371,7 +373,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_importer" value=150 id="module_importer" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_importer]" value=150 id="module_importer" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_importer"></label>
         <%=image_tag 'ico/import.png', class: "function_item__img"%>
         <div>
@@ -381,7 +383,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_referal" value=180 id="module_referal" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_referal]" value=180 id="module_referal" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_referal"></label>
         <%=image_tag 'ico/refer.png', class: "function_item__img"%>
         <div>
@@ -391,7 +393,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox"  name="module_filtration" value=100 id="module_filtration" class="functional" disabled onchange="arrsum(); calculating()">
+        <input type="checkbox"  name="order[module_filtration]" value=100 id="module_filtration" class="functional" disabled onchange="arrsum(); calculating()">
         <label for="module_filtration"></label>
         <%=image_tag 'ico/filtr.png', class: "function_item__img"%>
         <div>
@@ -412,7 +414,7 @@
     </div>
     <div class="support_wrap">
       <div class="support_item">
-        <input type="checkbox"  name="c_easypage" id="c_easypage"   class="support" onchange="supportic(); calculating()">
+        <input type="checkbox"  name="order[c_easypage]" id="c_easypage"   class="support" onchange="supportic(); calculating()">
         <label for="c_easypage"></label>
         <%=image_tag 'ico/func/podder/easypage.png', class: "suppor_item__img"%>
         <div>
@@ -421,10 +423,10 @@
           </p>
           <span><%=image_tag 'birka.png'%><span id="c-easypage">10$</span></span>
         </div>
-        <input type="number" name="content_easypage" value=1 id="content_easypage" min="1" oninput="supportic(); calculating()" >
+        <input type="number" name="order[content_easypage]" value=1 id="content_easypage" min="1" oninput="supportic(); calculating()" >
       </div>
       <div class="support_item">
-        <input type="checkbox"  name="c_hardpage"  id="c_hardpage"  class="support" onchange="supportic(); calculating()">
+        <input type="checkbox"  name="order[c_hardpage]"  id="c_hardpage"  class="support" onchange="supportic(); calculating()">
         <label for="c_hardpage"></label>
         <%=image_tag 'ico/func/podder/hardpage.png', class: "suppor_item__img"%>
         <div>
@@ -432,10 +434,10 @@
           <p>Помимо информационного и графического контента, включает в себя страницы с таблицами, видео контент, всплывающие изображения (или же адаптивную вёрстку).</p>
           <span><%=image_tag 'birka.png'%><span id="c-hardpage">30$</span></span>
         </div>
-        <input type="number" name="content_hardpage" value=1 id="content_hardpage" oninput="supportic(); calculating()" >
+        <input type="number" name="order[content_hardpage]" value=1 id="content_hardpage" oninput="supportic(); calculating()" >
       </div>
       <div class="support_item">
-        <input type="checkbox"  name="c-editpage" id="c_editpage"  class="support" onchange="supportic(); calculating()">
+        <input type="checkbox"  name="order[c-editpage]" id="c_editpage"  class="support" onchange="supportic(); calculating()">
         <label for="c_editpage"></label>
         <%=image_tag 'ico/func/podder/editpage.png', class: "suppor_item__img"%>
         <div>
@@ -444,10 +446,10 @@
           </p>
           <span><%=image_tag 'birka.png'%><span id="c-editpage">10$</span></span>
         </div>
-        <input type="number" name="content_editpage" value=1 id="content_editpage" oninput="supportic(); calculating()" >
+        <input type="number" name="order[content_editpage]" value=1 id="content_editpage" oninput="supportic(); calculating()" >
       </div>
       <div class="support_item">
-        <input type="checkbox"  name="c_post"   id="c_post" class="support" onchange="supportic(); calculating()">
+        <input type="checkbox"  name="order[c_post]"   id="c_post" class="support" onchange="supportic(); calculating()">
         <label for="c_post"></label>
         <%=image_tag 'ico/func/podder/post.png', class: "suppor_item__img"%>
         <div>
@@ -455,10 +457,10 @@
           <p>Размещение текстового, графического, видео контента на сайте. В таких случаях стоимость зависит от сложности позиции, поэтому расчёт производится индивидуально.</p>
           <span><%=image_tag 'birka.png'%><span id="c-post">10$</span></span>
         </div>
-        <input type="number" name="content_post" value=1 id="content_post" oninput="supportic(); calculating()" >
+        <input type="number" name="order[content_post]" value=1 id="content_post" oninput="supportic(); calculating()" >
       </div>
       <div class="support_item">
-        <input type="checkbox"  name="c_translate"  id="c_translate" class="support" onchange="supportic(); calculating()">
+        <input type="checkbox"  name="order[c_translate]"  id="c_translate" class="support" onchange="supportic(); calculating()">
         <label for="c_translate"></label>
         <%=image_tag 'ico/func/podder/translate.png', class: "suppor_item__img"%>
         <div>
@@ -466,10 +468,10 @@
           <p>Заполнение сайта текстом, который переведён на другой язык (английский, китайский и.т.д.). Цена указана за перевод одной страницы. Перевод страницы позволит расширить аудиторию.</p>
           <span><%=image_tag 'birka.png'%><span id="c-translate">10$</span></span>
         </div>
-        <input type="number" name="content_translate" value=1 id="content_translate" oninput="supportic(); calculating()" >
+        <input type="number" name="order[content_translate]" value=1 id="content_translate" oninput="supportic(); calculating()" >
       </div>
       <div class="support_item">
-        <input type="checkbox"  name="module_googlemaps" value=20 id="module_googlemaps" class="support" onchange="supportic(); calculating()">
+        <input type="checkbox"  name="order[module_googlemaps]" value=20 id="module_googlemaps" class="support" onchange="supportic(); calculating()">
         <label for="module_googlemaps"></label>
         <%=image_tag 'ico/func/podder/googlemaps.png', class: "suppor_item__img"%>
         <div>
@@ -487,30 +489,17 @@
       <a href="#functional_calc" class="calc_btn">Назад</a>
       <a href="#zakaz" class="calc_btn" id="zakaz">Далее</a>
     </div>
-    <input type="hidden" id="diz_balance">
-    <input type="hidden" id="prog_balance">
-    <input type="hidden" id="support_balance">
-  </form>
-  <div id="screen_form">
-    <div class="wrap">
-      <form action="#" class="form_calc">
-        <p>Имя Фамилия:</p>
-        <input type="text">
-        <p>E-mail:</p>
-        <input type="email">
-        <p>Телефон:</p>
-        <input type="tel">
-        <p>Описание задания:</p>
-        <textarea></textarea>
-        <div class="calc_price sticky">Цена: <span id="total_calc">Не выбрана</span></div>
-        <button type="submit" class="calc_btn">Отправить заказ</button>
-      </form>
+      <%= f.hidden_field  :diz_balance %>
+    <input type="hidden" id="prog_balance" name="order[prog_balance]">
+    <input type="hidden" id="support_balance" name="order[support_balance]">
     </div>
-  </div>
+    <%= render 'layouts/order_detail' %>
+  <% end %>
+
 </main>
 <script>
 function Prices(){
-e_price = document.Site.engine.value;
+    engine = document.getElementById('engine_modx');
 otzyv = document.getElementById('module_otzyvy');
 blog = document.getElementById('module_blog');
 slider = document.getElementById('module_slider');
@@ -535,8 +524,9 @@ recomendation = document.getElementById('module_recomendation');
 importer = document.getElementById('module_importer');
 referal = document.getElementById('module_referal');
 filtration = document.getElementById('module_filtration');
-
-d_price = document.Site.site_type.value;
+logo = document.getElementById('design_logo');
+page = document.getElementById('design_page');
+banner= document.getElementById('design_banner');
 Selfic = document.getElementById('self_design');
 template = document.getElementById('template_design');
 author = document.getElementById("author_design");
@@ -548,106 +538,105 @@ dizayn = document.getElementsByClassName('design');
 for(i=0; i<dizayn.length; i++){
 dizayn[i].removeAttribute('disabled');
 }
-switch(d_price){
-case "corp_site":
-Selfic.setAttribute('value', 300);
-template.setAttribute('value', 100);
-author.setAttribute('value', 500);
-author.checked = true;
-document.Site.design_logo.checked = true;
-otzyv.checked = false;
-blog.checked = true;
-slider.checked = true;
-gallery.checked = true;
-easycalc.checked = false;
-hardcalc.checked = false;
-formit.checked = true;
-callback.checked = false;
-chat.checked = false;
-mailer.checked = false;
-multilang.checked = false;
-catalog.checked = false;
-basket.checked = false;
-payment.checked = false;
-currency.checked = false;
-multitovar.checked = false;
-sales.checked = false;
-api.checked = false;
-reg.checked = false;
-cabinet.checked = false;
-recomendation.checked = false;
-importer.checked = false;
-referal.checked = false;
-filtration.checked = false;
-break;
-case "portal_site":
-Selfic.setAttribute('value', 600);
-template.setAttribute('value', 200);
-author.setAttribute('value', 1000);
-author.checked = true;
-document.Site.design_logo.checked = true;
-otzyv.checked = true;
-blog.checked = true;
-slider.checked = true;
-gallery.checked = true;
-easycalc.checked = false;
-hardcalc.checked = false;
-formit.checked = true;
-callback.checked = true;
-chat.checked = true;
-mailer.checked = true;
-multilang.checked = false;
-catalog.checked = true;
-basket.checked = false;
-payment.checked = false;
-currency.checked = false;
-multitovar.checked = false;
-sales.checked = false;
-api.checked = false;
-reg.checked = true;
-cabinet.checked = true;
-recomendation.checked = false;
-importer.checked = false;
-referal.checked = false;
-filtration.checked = false;
-break;
-case "lending":
-Selfic.setAttribute('value', 150);
-template.setAttribute('value', 50);
-author.setAttribute('value', 250);
-author.checked = true;
-document.Site.design_logo.checked = true;
-otzyv.checked = false;
-blog.checked = false;
-slider.checked = true;
-gallery.checked = true;
-easycalc.checked = false;
-hardcalc.checked = false;
-formit.checked = true;
-callback.checked = true;
-chat.checked = true;
-mailer.checked = false;
-multilang.checked = false;
-catalog.checked = false;
-basket.checked = false;
-payment.checked = false;
-currency.checked = false;
-multitovar.checked = false;
-sales.checked = false;
-api.checked = false;
-reg.checked = false;
-cabinet.checked = false;
-recomendation.checked = false;
-importer.checked = false;
-referal.checked = false;
-filtration.checked=false;
-break;
-case "ecommerce":
+if(document.getElementById('corp_site').checked) {
+    Selfic.setAttribute('value', 300);
+    template.setAttribute('value', 100);
+    author.setAttribute('value', 500);
+    author.checked = true;
+    logo.checked = true;
+    otzyv.checked = false;
+    blog.checked = true;
+    slider.checked = true;
+    gallery.checked = true;
+    easycalc.checked = false;
+    hardcalc.checked = false;
+    formit.checked = true;
+    callback.checked = false;
+    chat.checked = false;
+    mailer.checked = false;
+    multilang.checked = false;
+    catalog.checked = false;
+    basket.checked = false;
+    payment.checked = false;
+    currency.checked = false;
+    multitovar.checked = false;
+    sales.checked = false;
+    api.checked = false;
+    reg.checked = false;
+    cabinet.checked = false;
+    recomendation.checked = false;
+    importer.checked = false;
+    referal.checked = false;
+    filtration.checked = false;
+}
+else if (document.getElementById('portal_site').checked) {
+    Selfic.setAttribute('value', 600);
+    template.setAttribute('value', 200);
+    author.setAttribute('value', 1000);
+    author.checked = true;
+    logo.checked = true;
+    otzyv.checked = true;
+    blog.checked = true;
+    slider.checked = true;
+    gallery.checked = true;
+    easycalc.checked = false;
+    hardcalc.checked = false;
+    formit.checked = true;
+    callback.checked = true;
+    chat.checked = true;
+    mailer.checked = true;
+    multilang.checked = false;
+    catalog.checked = true;
+    basket.checked = false;
+    payment.checked = false;
+    currency.checked = false;
+    multitovar.checked = false;
+    sales.checked = false;
+    api.checked = false;
+    reg.checked = true;
+    cabinet.checked = true;
+    recomendation.checked = false;
+    importer.checked = false;
+    referal.checked = false;
+    filtration.checked = false;
+}
+else if (document.getElementById('lending').checked) {
+    Selfic.setAttribute('value', 150);
+    template.setAttribute('value', 50);
+    author.setAttribute('value', 250);
+    author.checked = true;
+    logo.checked = true;
+    otzyv.checked = false;
+    blog.checked = false;
+    slider.checked = true;
+    gallery.checked = true;
+    easycalc.checked = false;
+    hardcalc.checked = false;
+    formit.checked = true;
+    callback.checked = true;
+    chat.checked = true;
+    mailer.checked = false;
+    multilang.checked = false;
+    catalog.checked = false;
+    basket.checked = false;
+    payment.checked = false;
+    currency.checked = false;
+    multitovar.checked = false;
+    sales.checked = false;
+    api.checked = false;
+    reg.checked = false;
+    cabinet.checked = false;
+    recomendation.checked = false;
+    importer.checked = false;
+    referal.checked = false;
+    filtration.checked = false;
+}
+else if (document.getElementById('ecommerce').checked){
 Selfic.setAttribute('value', 450);
 template.setAttribute('value', 150);
 author.setAttribute('value', 750);
 author.checked = true;
-document.Site.design_logo.checked = true;
+logo.checked = true;
 otzyv.checked = false;
 blog.checked = false;
 slider.checked = true;
@@ -676,89 +665,86 @@ filtration.checked = true;
 document.getElementById('self_design-c').innerHTML = Selfic.value + '$';
 document.getElementById('template_design-c').innerHTML = template.value + '$';
 document.getElementById('author_design-c').innerHTML = author.value + '$';
-document.getElementById('design_logo-c').innerHTML = document.Site.design_logo.value + '$';
-document.getElementById('design_banner-c').innerHTML = document.Site.design_banner.value + '$';
-document.getElementById('design_page-c').innerHTML = document.Site.design_page.value + '$';
+document.getElementById('design_logo-c').innerHTML = logo.value + '$';
+document.getElementById('design_banner-c').innerHTML = banner.value + '$';
+document.getElementById('design_page-c').innerHTML = page.value + '$';
 
 
-switch (e_price){
-case "modx":
-otzyv.setAttribute('value', 100);
-blog.setAttribute('value', 80);
-slider.setAttribute('value', 20);
-gallery.setAttribute('value', 30);
-easycalc.setAttribute('value', 50);
-hardcalc.setAttribute('value', 250);
-formit.setAttribute('value', 20);
-callback.setAttribute('value', 30);
-chat.setAttribute('value', 50);
-mailer.setAttribute('value', 100);
-multilang.setAttribute('value', 100);
-catalog.setAttribute('value', 150);
-basket.setAttribute('value', 80);
-payment.setAttribute('value', 120);
-currency.setAttribute('value', 30);
-multitovar.setAttribute('value', 50);
-sales.setAttribute('value', 40);
-api.setAttribute('value', 400);
-reg.setAttribute('value', 50);
-cabinet.setAttribute('value', 200);
-recomendation.setAttribute('value', 30);
-importer.setAttribute('value', 150);
-referal.setAttribute('value', 180);
-filtration.setAttribute('value', 80);
-
-break;
-case "rails":
-otzyv.setAttribute('value', 160);
-blog.setAttribute('value', 180);
-slider.setAttribute('value', 40);
-gallery.setAttribute('value', 45);
-easycalc.setAttribute('value', 90);
-hardcalc.setAttribute('value', 360);
-formit.setAttribute('value', 60);
-callback.setAttribute('value', 90);
-chat.setAttribute('value', 100);
-mailer.setAttribute('value', 175);
-multilang.setAttribute('value', 250);
-catalog.setAttribute('value', 250);
-basket.setAttribute('value', 160);
-payment.setAttribute('value', 150);
-currency.setAttribute('value', 50);
-multitovar.setAttribute('value', 100);
-sales.setAttribute('value', 80);
-api.setAttribute('value', 500);
-reg.setAttribute('value', 100);
-cabinet.setAttribute('value', 400);
-recomendation.setAttribute('value', 80);
-importer.setAttribute('value', 200);
-referal.setAttribute('value', 220);
-break;
-case "python":
-otzyv.setAttribute('value', 200);
-blog.setAttribute('value', 200);
-slider.setAttribute('value', 40);
-gallery.setAttribute('value', 35);
-easycalc.setAttribute('value', 100);
-hardcalc.setAttribute('value', 400);
-formit.setAttribute('value', 90);
-callback.setAttribute('value', 100);
-chat.setAttribute('value', 200);
-mailer.setAttribute('value', 200);
-multilang.setAttribute('value', 200);
-catalog.setAttribute('value', 300);
-basket.setAttribute('value', 200);
-payment.setAttribute('value', 200);
-currency.setAttribute('value', 50);
-multitovar.setAttribute('value', 150);
-sales.setAttribute('value', 120);
-api.setAttribute('value', 800);
-reg.setAttribute('value', 200);
-cabinet.setAttribute('value', 500);
-recomendation.setAttribute('value', 100);
-importer.setAttribute('value', 250);
-referal.setAttribute('value', 300);
-break;
+if (document.getElementById('engine_modx').checked) {
+    otzyv.setAttribute('value', 100);
+    blog.setAttribute('value', 80);
+    slider.setAttribute('value', 20);
+    gallery.setAttribute('value', 30);
+    easycalc.setAttribute('value', 50);
+    hardcalc.setAttribute('value', 250);
+    formit.setAttribute('value', 20);
+    callback.setAttribute('value', 30);
+    chat.setAttribute('value', 50);
+    mailer.setAttribute('value', 100);
+    multilang.setAttribute('value', 100);
+    catalog.setAttribute('value', 150);
+    basket.setAttribute('value', 80);
+    payment.setAttribute('value', 120);
+    currency.setAttribute('value', 30);
+    multitovar.setAttribute('value', 50);
+    sales.setAttribute('value', 40);
+    api.setAttribute('value', 400);
+    reg.setAttribute('value', 50);
+    cabinet.setAttribute('value', 200);
+    recomendation.setAttribute('value', 30);
+    importer.setAttribute('value', 150);
+    referal.setAttribute('value', 180);
+    filtration.setAttribute('value', 80);
+}
+else if (document.getElementById('engine_ruby').checked){
+    otzyv.setAttribute('value', 160);
+    blog.setAttribute('value', 180);
+    slider.setAttribute('value', 40);
+    gallery.setAttribute('value', 45);
+    easycalc.setAttribute('value', 90);
+    hardcalc.setAttribute('value', 360);
+    formit.setAttribute('value', 60);
+    callback.setAttribute('value', 90);
+    chat.setAttribute('value', 100);
+    mailer.setAttribute('value', 175);
+    multilang.setAttribute('value', 250);
+    catalog.setAttribute('value', 250);
+    basket.setAttribute('value', 160);
+    payment.setAttribute('value', 150);
+    currency.setAttribute('value', 50);
+    multitovar.setAttribute('value', 100);
+    sales.setAttribute('value', 80);
+    api.setAttribute('value', 500);
+    reg.setAttribute('value', 100);
+    cabinet.setAttribute('value', 400);
+    recomendation.setAttribute('value', 80);
+    importer.setAttribute('value', 200);
+    referal.setAttribute('value', 220);
+}
+else if(document.getElementById('engine_python').checked) {
+    otzyv.setAttribute('value', 200);
+    blog.setAttribute('value', 200);
+    slider.setAttribute('value', 40);
+    gallery.setAttribute('value', 35);
+    easycalc.setAttribute('value', 100);
+    hardcalc.setAttribute('value', 400);
+    formit.setAttribute('value', 90);
+    callback.setAttribute('value', 100);
+    chat.setAttribute('value', 200);
+    mailer.setAttribute('value', 200);
+    multilang.setAttribute('value', 200);
+    catalog.setAttribute('value', 300);
+    basket.setAttribute('value', 200);
+    payment.setAttribute('value', 200);
+    currency.setAttribute('value', 50);
+    multitovar.setAttribute('value', 150);
+    sales.setAttribute('value', 120);
+    api.setAttribute('value', 800);
+    reg.setAttribute('value', 200);
+    cabinet.setAttribute('value', 500);
+    recomendation.setAttribute('value', 100);
+    importer.setAttribute('value', 250);
+    referal.setAttribute('value', 300);
 }
 document.getElementById('otzyv').innerHTML = otzyv.value + '$';
 document.getElementById('blog').innerHTML = blog.value + '$';
@@ -785,10 +771,10 @@ document.getElementById('importer').innerHTML = importer.value + '$';
 document.getElementById('referal').innerHTML = referal.value + '$';
 document.getElementById('filtration').innerHTML = filtration.value + '$';
 
-document.getElementById('c-googlemaps').innerHTML = document.Site.module_googlemaps.value + '$';
+document.getElementById('c-googlemaps').innerHTML = document.getElementById('module_googlemaps').value + '$';
 
 
-};
+}
 design = document.getElementsByClassName('design');
 function arraySum(){
 sum = 0;
@@ -796,8 +782,7 @@ for(i = 0; i < design.length; i++){
 if (design[i].checked)
 sum += parseInt(design[i].value);
 }
-console.log(sum);
-};
+}
 arraySum(design);
 functional = document.getElementsByClassName('functional');
 function arrsum() {
@@ -806,49 +791,40 @@ for(i=0; i < functional.length; i++){
 if(functional[i].checked)
 summa+= parseInt(functional[i].value);
 }
-console.log(summa);
 }
 arrsum(functional);
 support = document.getElementsByClassName('support');
 function supportic(){
-EasypageValue = document.Site.content_easypage.value * 10;
-document.Site.c_easypage.setAttribute('value', EasypageValue);
+EasypageValue = document.getElementById('content_easypage').value * 10;
+document.getElementById('c_easypage').setAttribute('value', EasypageValue);
 document.getElementById('c-easypage').innerHTML = EasypageValue + '$';
-HardpageValue = document.Site.content_hardpage.value * 30;
-document.Site.c_hardpage.setAttribute('value', HardpageValue);
+HardpageValue = document.getElementById('content_hardpage').value * 30;
+document.getElementById('c_hardpage').setAttribute('value', HardpageValue);
 document.getElementById('c-hardpage').innerHTML = HardpageValue + '$';
-EditpageValue = document.Site.content_editpage.value * 10;
-document.Site.c_editpage.setAttribute('value', EditpageValue);
+EditpageValue = document.getElementById('content_editpage').value * 10;
+document.getElementById('c_editpage').setAttribute('value', EditpageValue);
 document.getElementById('c-editpage').innerHTML = EditpageValue + '$';
-PostValue = document.Site.content_post.value * 10;
-document.Site.c_post.setAttribute('value', PostValue);
+PostValue = document.getElementById('content_post').value * 10;
+document.getElementById('c_post').setAttribute('value', PostValue);
 document.getElementById('c-post').innerHTML = PostValue + '$';
-TranslateValue = document.Site.content_translate.value * 10;
-document.Site.c_translate.setAttribute('value', TranslateValue);
+TranslateValue = document.getElementById('content_translate').value * 10;
+document.getElementById('c_translate').setAttribute('value', TranslateValue);
 document.getElementById('c-translate').innerHTML = TranslateValue + '$';
 suumma=0;
 for (i=0; i < support.length; i++){
 if(support[i].checked)
 suumma+= parseInt(support[i].value)
 }
-console.log(suumma);
 }
 supportic(support);
 
 function calculating() {
     calculatin = sum + summa + suumma;
-    console.log(calculatin);
     document.getElementById('total_calc').innerHTML = calculatin + '$';
-    document.getElementById('diz_balance').setAttribute('value',sum);
+    document.getElementById('order_diz_balance').setAttribute('value',sum);
     document.getElementById('prog_balance').setAttribute('value',summa);
     document.getElementById('support_balance').setAttribute('value',suumma);
-};
+}
 
-$(function(){
-$("a[href^='#']").click(function(){
-var _href = $(this).attr("href");
-$("html, body").animate({scrollTop: $(_href).offset().top+"px"});
-return false;
-});
-});
+
 </script>

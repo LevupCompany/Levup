@@ -1,0 +1,96 @@
+<% if @prog_balance != nil %>
+  <% case @order.engine%>
+  <% when "modx"%>
+    <ul><h3>Движок сайта:</h3>
+      <li>CMF MODX</li>
+    </ul>
+    <h3>Функционал</h3>
+  <% when "rails"%>
+    <ul><h3>Движок сайта:</h3>
+      <li>Ruby On Rails</li>
+    </ul>
+    <h3>Функционал</h3>
+  <% when "python"%>
+    <ul><h3>Движок сайта:</h3>
+      <li>Python</li>
+    </ul>
+    <h3>Функционал</h3>
+  <% else%>
+    <ul><h3>Движок сайта:</h3>
+      <li>CMF MODX</li>
+    </ul>
+    <h3>Функционал</h3>
+  <% end %>
+<% end %>
+<% if @order.module_otzyvy==true %>
+  <ul><li>Модуль отзывов</li></ul>
+<% end %>
+<% if @order.module_blog==true %>
+  <ul><li>Разработка блога</li></ul>
+<% end %>
+<% if @order.module_slider==true %>
+  <ul><li>Вывод слайдера</li></ul>
+<% end %>
+<% if @order.module_gallery==true %>
+  <ul><li>Вывод фотогалереи</li></ul>
+<% end %>
+<% if @order.module_easycalc==true %>
+  <ul><li>Разработка простого калькулятора</li></ul>
+<% end %>
+<% if @order.module_hardcalc==true %>
+  <ul><li>Разработка сложного калькулятора</li></ul>
+<% end %>
+<% if @order.module_formit==true %>
+  <ul><li>Модуль обратной связи</li></ul>
+<% end %>
+<% if @order.module_callback==true %>
+  <ul><li>Модуль обратного звонка</li></ul>
+<% end %>
+<% if @order.module_chat==true %>
+  <ul><li>Модуль онлайн чата</li></ul>
+<% end %>
+<% if @order.module_mailer==true %>
+  <ul><li>Создание E:mail рассылки</li></ul>
+<% end %>
+<% if @order.module_multilang==true %>
+  <ul><li>Добавление мультиязычности</li></ul>
+<% end %>
+<% if @order.module_catalog==true %>
+  <ul><li>Вывод каталога товаров</li></ul>
+<% end %>
+<% if @order.module_basket==true %>
+  <ul><li>Модуль корзины</li></ul>
+<% end %>
+<% if @order.module_payment==true %>
+  <ul><li>Добавление онлайн оплаты</li></ul>
+<% end %>
+<% if @order.module_currency==true %>
+  <ul><li>Добавление мультивалютности</li></ul>
+<% end %>
+<% if @order.module_multitovar==true %>
+  <ul><li>Добавление видов товара</li></ul>
+<% end %>
+<% if @order.module_sales==true %>
+  <ul><li>Модуль акций</li></ul>
+<% end %>
+<% if @order.module_api==true %>
+  <ul><li>Разработка API импортера</li></ul>
+<% end %>
+<% if @order.module_reg==true %>
+  <ul><li>Добавление модуля регистрации</li></ul>
+<% end %>
+<% if @order.module_cabinet==true %>
+  <ul><li>Разработка личного кабинета</li></ul>
+<% end %>
+<% if @order.module_reccomendation==true %>
+  <ul><li>Вывод рекомендованых товаров (страниц)</li></ul>
+<% end %>
+<% if @order.module_importer==true %>
+  <ul><li>Разработка импортера ресурсов (товаров)</li></ul>
+<% end %>
+<% if @order.module_filtration==true %>
+  <ul><li>Разработка фильтрации ресурсов (товаров)</li></ul>
+<% end %>
+<% if @order.module_googlemaps==true %>
+  <ul><li>Вывод карты Гугла</li></ul>
+<% end %>

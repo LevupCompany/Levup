@@ -1,0 +1,20 @@
+<%if @order.total_sum!=nil%>
+  <%= @order.total_sum %>
+<% else %>
+  <%if @order.diz_balance==nil
+    @order.diz_balance = 0
+   end
+  if @order.prog_balance==nil
+    @order.prog_balance = 0
+  end
+  if @order.support_balance==nil
+    @order.support_balance = 0
+    end
+  if @order.log_balance==nil
+    @order.log_balance = 0
+  end
+  if @order.firm_balance==nil
+    @order.firm_balance = 0
+  end%>
+  <%= @sum = @order.diz_balance + @order.prog_balance + @order.support_balance + @order.log_balance + @order.firm_balance%>
+<% end %>

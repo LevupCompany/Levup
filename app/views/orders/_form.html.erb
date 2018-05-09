@@ -1,0 +1,11 @@
+
+<%= simple_form_for(@orderid) do |f| %>
+  <%= f.error_notification %>
+<%= f.input :site_type %>
+  <div class="form-inputs">
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -2,7 +2,8 @@
   <div class="screen for_screen" id="screen2">
     <h1>УСЛУГИ</h1>
   </div>
-  <form class="wrap">
+  <%= simple_form_for(@order)  do |f| %>
+    <%= f.error_notification %>    <div class="wrap">
     <div class="calc_descr" id="calc_descr">
       <%= image_tag 'ico/grafcalc/calc.png' %>
       <div class="calc_descr__info">
@@ -17,7 +18,7 @@
     </div>
     <div class="design_wrap">
       <div class="design_item">
-        <input type="radio" name="type_logo" id="text_logo" class="logo" onchange="designer()" value=50>
+        <input type="radio" name="order[type_logo]" id="text_logo" class="logo" onchange="designer()" value=50>
         <label for="text_logo"></label>
         <%=image_tag 'ico/grafcalc/1.png', class:"design_item__img" %>
         <h3>Текстовый</h3>
@@ -26,7 +27,7 @@
         <span ><%=image_tag 'birka.png'%> <span id="text-logo">50$</span></span>
       </div>
       <div class="design_item">
-        <input type="radio" name="type_logo" id="icon_logo" class="logo" onchange="designer()" value=75>
+        <input type="radio" name="order[type_logo]" id="icon_logo" class="logo" onchange="designer()" value=75>
         <label for="icon_logo"></label>
         <%=image_tag 'ico/grafcalc/2.png', class:"design_item__img" %>
         <h3>Эмблема</h3>
@@ -35,7 +36,7 @@
         <span ><%=image_tag 'birka.png'%> <span id="icon-logo">75$</span></span>
       </div>
       <div class="design_item">
-        <input type="radio" name="type_logo" id="combo_logo" class="logo" onchange="designer()" value=100>
+        <input type="radio" name="order[type_logo]" id="combo_logo" class="logo" onchange="designer()" value=100>
         <label for="combo_logo"></label>
         <%=image_tag 'ico/grafcalc/3.png', class:"design_item__img" %>
         <h3>Комбинированный</h3>
@@ -54,7 +55,7 @@
     </div>
     <div class="function_wrap">
       <div class="function_item">
-        <input type="checkbox" name="elements_logo" onchange="designer()" class="logo" disabled id="elements_logo" >
+        <input type="checkbox" name="order[elements_logo]" onchange="designer()" class="logo" disabled id="elements_logo" >
         <label for="elements_logo"></label>
         <%=image_tag 'ico/grafcalc/manyelem.png', class: "function_item__img"%>
         <div>
@@ -64,7 +65,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="prototype_logo" onchange="designer()" class="logo" disabled id="prototype_logo"  value=>
+        <input type="checkbox" name="order[prototype_logo]" onchange="designer()" class="logo" disabled id="prototype_logo"  value=>
         <label for="prototype_logo"></label>
         <%=image_tag 'ico/grafcalc/prototype.png', class: "function_item__img"%>
         <div>
@@ -74,7 +75,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="variate_logo" id="variate_logo" disabled value=0 onchange="designer()">
+        <input type="checkbox" name="order[variate_logo]" id="variate_logo" disabled value=0 onchange="designer()">
         <label for="variate_logo"></label>
         <%=image_tag 'ico/grafcalc/variant.png', class: "function_item__img"%>
         <div>
@@ -83,7 +84,7 @@
           </p>
           <span><%=image_tag 'birka.png'%><span id="variant-logo">Выберите тип лого!</span></span>
         </div>
-        <input type="number" name="variant_logo" id="variant_logo" disabled class="logo" oninput="designer()" min="0" value=0 >
+        <input type="number" name="order[variant_logo]" id="variant_logo" disabled class="logo" oninput="designer()" min="0" max="10" value=0 >
       </div>
     </div>
 
@@ -99,7 +100,7 @@
     </div>
     <div class="function_wrap">
       <div class="function_item">
-        <input type="checkbox" name="oneside_visitka" onchange="designer()" class="firm" id="oneside_visitka" value =20>
+        <input type="checkbox" name="order[oneside_visitka]" onchange="designer()" class="firm" id="oneside_visitka" value =20>
         <label for="oneside_visitka"></label>
         <%=image_tag 'ico/grafcalc/vizitka.png', class: "function_item__img"%>
         <div>
@@ -109,7 +110,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="twoside_visitka" onchange="designer()" class="firm" id="twoside_visitka" value=30>
+        <input type="checkbox" name="order[twoside_visitka]" onchange="designer()" class="firm" id="twoside_visitka" value=30>
         <label for="twoside_visitka"></label>
         <%=image_tag 'ico/grafcalc/vizitka2.png', class: "function_item__img"%>
         <div>
@@ -119,7 +120,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="blank" onchange="designer()" class="firm" id="blank" value=30>
+        <input type="checkbox" name="order[blank]" onchange="designer()" class="firm" id="blank" value=30>
         <label for="blank"></label>
         <%=image_tag 'ico/grafcalc/blank.png', class: "function_item__img"%>
         <div>
@@ -129,7 +130,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="convert" onchange="designer()" class="firm" id="convert" value=25>
+        <input type="checkbox" name="order[convert]" onchange="designer()" class="firm" id="convert" value=25>
         <label for="convert"></label>
         <%=image_tag 'ico/grafcalc/convert.png', class: "function_item__img"%>
         <div>
@@ -139,7 +140,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="cennik" onchange="designer()" class="firm" id="cennik" value=10>
+        <input type="checkbox" name="order[cennik]" onchange="designer()" class="firm" id="cennik" value=10>
         <label for="cennik"></label>
         <%=image_tag 'ico/grafcalc/cennik.png', class: "function_item__img"%>
         <div>
@@ -150,7 +151,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="papka" onchange="designer()" class="firm" id="papka" value=25>
+        <input type="checkbox" name="order[papka]" onchange="designer()" class="firm" id="papka" value=25>
         <label for="papka"></label>
         <%=image_tag 'ico/grafcalc/papka.png', class: "function_item__img"%>
         <div>
@@ -160,7 +161,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="uniform" onchange="designer()" class="firm" id="uniform" value=40>
+        <input type="checkbox" name="order[uniform]" onchange="designer()" class="firm" id="uniform" value=40>
         <label for="uniform"></label>
         <%=image_tag 'ico/grafcalc/uniform.png', class: "function_item__img"%>
         <div>
@@ -170,7 +171,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="disk" onchange="designer()" class="firm" id="disk" value=25>
+        <input type="checkbox" name="order[disk]" onchange="designer()" class="firm" id="disk" value=25>
         <label for="disk"></label>
         <%=image_tag 'ico/grafcalc/disk.png', class: "function_item__img"%>
         <div>
@@ -180,7 +181,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="email_send" onchange="designer()" class="firm" id="email_send" value=75>
+        <input type="checkbox" name="order[email_send]" onchange="designer()" class="firm" id="email_send" value=75>
         <label for="email_send"></label>
         <%=image_tag 'ico/grafcalc/mailsend.png', class: "function_item__img"%>
         <div>
@@ -190,7 +191,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="suvenir" onchange="designer()" class="firm" id="suvenir" value=20>
+        <input type="checkbox" name="order[suvenir]" onchange="designer()" class="firm" id="suvenir" value=20>
         <label for="suvenir"></label>
         <%=image_tag 'ico/grafcalc/suvenirs.png', class: "function_item__img"%>
         <div>
@@ -200,7 +201,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="flier" onchange="designer()" class="firm" id="flier" value=50>
+        <input type="checkbox" name="order[flier]" onchange="designer()" class="firm" id="flier" value=50>
         <label for="flier"></label>
         <%=image_tag 'ico/grafcalc/flier.png', class: "function_item__img"%>
         <div>
@@ -211,7 +212,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="plakat" onchange="designer()" class="firm" id="plakat" value=100>
+        <input type="checkbox" name="order[plakat]" onchange="designer()" class="firm" id="plakat" value=100>
         <label for="plakat"></label>
         <%=image_tag 'ico/grafcalc/plakat.png', class: "function_item__img"%>
         <div>
@@ -221,7 +222,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="banner" onchange="designer()" class="firm" id="banner" value=250>
+        <input type="checkbox" name="order[banner]" onchange="designer()" class="firm" id="banner" value=250>
         <label for="banner"></label>
         <%=image_tag 'ico/grafcalc/banner.png', class: "function_item__img"%>
         <div>
@@ -231,7 +232,7 @@
         </div>
       </div>
       <div class="function_item">
-        <input type="checkbox" name="shtender" onchange="designer()" class="firm" id="shtender" value=40>
+        <input type="checkbox" name="order[shtender]" onchange="designer()" class="firm" id="shtender" value=40>
         <label for="shtender"></label>
         <%=image_tag 'ico/grafcalc/shtender.png', class: "function_item__img"%>
         <div>
@@ -249,25 +250,11 @@
       <a href="#tech_firm" class="calc_btn">Назад</a>
       <a href="#zakaz" class="calc_btn" id="zakaz">Далее</a>
     </div>
-    <input type="hidden" id="log_balance">
-    <input type="hidden" id="firm_balance">
-  </form>
-  <div id="screen_form">
-    <div class="wrap">
-      <form action="#" class="form_calc">
-        <p>Имя Фамилия:</p>
-        <input type="text">
-        <p>E-mail:</p>
-        <input type="email">
-        <p>Телефон:</p>
-        <input type="tel">
-        <p>Описание задания:</p>
-        <textarea></textarea>
-        <div class="calc_price sticky">Цена: <span id="total_calc">Не выбрана</span></div>
-        <button type="submit" class="calc_btn">Отправить заказ</button>
-      </form>
-    </div>
+    <input type="hidden" id="log_balance" name="order[log_balance]">
+    <input type="hidden" id="firm_balance" name="order[firm_balance]">
   </div>
+    <%= render 'layouts/order_detail'%>
+<% end %>
 </main><script type="text/javascript">
     function designer() {
         element = document.getElementById('elements_logo');
@@ -276,13 +263,13 @@
         variate = document.getElementById('variant_logo').value;
         logo = document.getElementsByClassName('logo');
         vari = variate * variant.value;
-
         if (document.getElementById('text_logo').checked) {
             element.setAttribute('value', 50);
             document.getElementById('elements-logo').innerHTML = '+50$';
             prototype.setAttribute('value', -20);
             document.getElementById('prototype-logo').innerHTML = '-20$';
             variant.setAttribute('value', 20);
+            variant.checked =true;
             document.getElementById('variant-logo').innerHTML = vari + '$';
             for (i=0; i<logo.length; i++){
                 logo[i].removeAttribute('disabled');
@@ -296,6 +283,7 @@
             document.getElementById('prototype-logo').innerHTML = '-35$';
             element.setAttribute('value', 150);
             variant.setAttribute('value', 30);
+            variant.checked =true;
             document.getElementById('variant-logo').innerHTML = vari + '$';
             for (i=0; i<logo.length; i++){
                 logo[i].removeAttribute('disabled');
@@ -309,6 +297,7 @@
             prototype.setAttribute('value', -50);
             document.getElementById('prototype-logo').innerHTML = '-50$';
             variant.setAttribute('value', 40);
+            variant.checked =true;
             document.getElementById('variant-logo').innerHTML = vari + '$';
             for (i=0; i<logo.length; i++){
                 logo[i].removeAttribute('disabled');
@@ -343,13 +332,4 @@
             document.getElementById('firm_balance').setAttribute('value',sumka);
         }
     }
-</script>
-<script>
-    $(function(){
-        $("a[href^='#']").click(function(){
-            var _href = $(this).attr("href");
-            $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
-            return false;
-        });
-    });
 </script>

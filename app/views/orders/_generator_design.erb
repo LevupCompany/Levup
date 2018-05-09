@@ -1,0 +1,73 @@
+<% if @order.log_balance != nil || @order.firm_balance != nil %>
+  <% case @order.type_logo%>
+    <% when "50"%>
+      <ul><h3>Вид логотипа:</h3>
+        <li>Текстовый</li>
+      </ul>
+    <% when "75"%>
+      <ul><h3>Вид логотипа:</h3>
+        <li>Эмблема</li>
+      </ul>
+    <% when "100"%>
+      <ul><h3>Вид логотипа:</h3>
+        <li>Комбинированный</li>
+      </ul>
+    <br> <br>
+  <% end %>
+
+  <% if @order.elements_logo==true %>
+    <ul><li>Логотип со сложными элементами</li></ul>
+  <% end %>
+  <% if @order.prototype_logo==true %>
+    <ul><li>Имеется прототип логотипа</li></ul>
+  <% end %>
+  <% if @order.variate_logo==true %>
+    <ul><li>Дополнительных вариантов лого - <%= @order.variant_logo %></li></ul>
+  <% end %>
+  <% if @order.firm_balance != nil %>
+    <h3>Разработка фирменного стиля</h3>
+    <% if @order.oneside_visitka==true %>
+      <ul><li>Односторонняя визитка</li></ul>
+    <% end %>
+    <% if @order.twoside_visitka==true %>
+      <ul><li>Двусторонняя визитка</li></ul>
+    <% end %>
+    <% if @order.blank==true %>
+      <ul><li>Односторонняя визитка</li></ul>
+    <% end %>
+    <% if @order.convert==true %>
+      <ul><li>Конверт</li></ul>
+    <% end %>
+    <% if @order.cennik==true %>
+      <ul><li>Ценник</li></ul>
+    <% end %>
+    <% if @order.papka==true %>
+      <ul><li>Папка</li></ul>
+    <% end %>
+    <% if @order.uniform==true %>
+      <ul><li>Униформа</li></ul>
+    <% end %>
+    <% if @order.disk==true %>
+      <ul><li></li></ul>
+    <% end %>
+    <% if @order.email_send==true %>
+      <ul><li>Электронное письмо</li></ul>
+    <% end %>
+    <% if @order.suvenir==true %>
+      <ul><li>Сувенирная продукция</li></ul>
+    <% end %>
+    <% if @order.flier==true %>
+      <ul><li>Флаер</li></ul>
+    <% end %>
+    <% if @order.plakat==true %>
+      <ul><li>Плакат</li></ul>
+    <% end %>
+    <% if @order.banner==true %>
+      <ul><li>Баннер (Бигборд)</li></ul>
+    <% end %>
+    <% if @order.shtender==true %>
+      <ul><li>Штендер</li></ul>
+    <% end %>
+  <% end %>
+  <br> <br>
+<% end %>
